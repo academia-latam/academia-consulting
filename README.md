@@ -4,6 +4,8 @@ Bilingual (English + Spanish) marketing site for **AcademIA**, an AI-in-educatio
 
 Static, dependency-free (HTML + CSS + a little JS). No build step. Deploys to Vercel as-is.
 
+> **Canonical repo:** `academia-latam/academia-consulting` (this is the source connected to Vercel, scoped to the AcademIA org). `HesusG/academia-consulting` is kept only as a personal reference mirror.
+
 ## Structure
 ```
 index.html         # root: detects language, redirects to /en/ or /es/
