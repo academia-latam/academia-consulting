@@ -1,0 +1,9 @@
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AcademIA">
+  <rect width="40" height="40" rx="10" fill="oklch(0.50 0.15 252)"/>
+  <!-- node-graph spark: knowledge connecting -->
+  <circle cx="13" cy="27" r="3.2" fill="white"/>
+  <circle cx="27" cy="25" r="3.2" fill="white"/>
+  <circle cx="20.5" cy="13" r="3.6" fill="oklch(0.80 0.15 78)"/>
+  <path d="M13 27 L20.5 13 L27 25" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
+  <path d="M13 27 L27 25" stroke="white" stroke-width="1.8" stroke-linecap="round" opacity="0.55"/>
+</svg>

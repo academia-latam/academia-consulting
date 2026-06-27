@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AcademIA</title>
+  <link rel="icon" href="/assets/logo.svg" type="image/svg+xml" />
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("academia_lang");
+        var nav = (navigator.language || "en").toLowerCase();
+        var lang = saved || (nav.indexOf("es") === 0 ? "es" : "en");
+        location.replace("/" + (lang === "es" ? "es" : "en") + "/");
+      } catch (e) { location.replace("/en/"); }
+    })();
+  </script>
+  <meta http-equiv="refresh" content="0; url=/en/" />
+</head>
+<body>
+  <p style="font-family:system-ui;padding:2rem;">Redirecting / Redirigiendo&hellip; <a href="/en/">English</a> &middot; <a href="/es/">Espanol</a></p>
+</body>
+</html>
