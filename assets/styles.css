@@ -133,9 +133,9 @@ b, strong { font-weight: 600; }
 .roi-col { padding: clamp(1.6rem, 3vw, 2.6rem) 0; }
 @media (min-width: 820px) { .roi-col { padding: clamp(1.6rem, 3vw, 2.6rem) clamp(1.6rem, 3vw, 2.6rem); } .roi-col:first-child { padding-left: 0; } .roi-col:last-child { padding-right: 0; } }
 .roi-col h3 { margin-bottom: 1.2rem; }
-.metric { display: grid; grid-template-columns: auto 1fr; gap: 0.2rem 1rem; align-items: baseline; padding: 0.9rem 0; border-top: 1px solid var(--line); }
-.metric .n { font-family: var(--font-mono); font-weight: 600; color: var(--primary); font-size: 1.05rem; white-space: nowrap; }
-.metric .d { color: var(--ink); }
+.metric { display: block; padding: 0.95rem 0; border-top: 1px solid var(--line); }
+.metric .n { display: block; margin-bottom: 0.3rem; font-family: var(--font-mono); font-weight: 600; color: var(--primary); font-size: 1.02rem; letter-spacing: 0.01em; }
+.metric .d { color: var(--ink); font-size: 0.98rem; }
 .roi-quote { font-family: var(--font-display); font-style: italic; color: var(--ink-blue); margin-top: 1.2rem; font-size: 1.1rem; }
 .roi-tags { display: flex; gap: 0.8rem; margin-top: 0.6rem; }
 
