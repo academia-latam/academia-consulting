@@ -1,0 +1,20 @@
+<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Hesus Garcia Cobos">
+  <defs><clipPath id="ch"><circle cx="60" cy="60" r="60"/></clipPath></defs>
+  <g clip-path="url(#ch)">
+    <rect width="120" height="120" fill="oklch(0.93 0.05 252)"/>
+    <rect x="20" y="94" width="80" height="44" rx="40" fill="oklch(0.50 0.14 252)"/>
+    <rect x="52" y="74" width="16" height="22" rx="8" fill="oklch(0.74 0.07 55)"/>
+    <circle cx="60" cy="55" r="25" fill="oklch(0.76 0.07 55)"/>
+    <!-- short hair -->
+    <path d="M35 50 a25 25 0 0 1 50 0 q-8 -14 -25 -14 q-17 0 -25 14 Z" fill="oklch(0.24 0.02 40)"/>
+    <!-- light beard -->
+    <path d="M40 58 a20 20 0 0 0 40 0 a20 24 0 0 1 -40 0 Z" fill="oklch(0.55 0.04 45)" opacity="0.35"/>
+    <!-- glasses -->
+    <circle cx="51" cy="55" r="6.5" fill="none" stroke="oklch(0.30 0.03 252)" stroke-width="2"/>
+    <circle cx="69" cy="55" r="6.5" fill="none" stroke="oklch(0.30 0.03 252)" stroke-width="2"/>
+    <path d="M57.5 55 h5" stroke="oklch(0.30 0.03 252)" stroke-width="2"/>
+    <circle cx="51" cy="55" r="2.3" fill="oklch(0.24 0.02 252)"/>
+    <circle cx="69" cy="55" r="2.3" fill="oklch(0.24 0.02 252)"/>
+    <path d="M51 65 q9 8 18 0" stroke="oklch(0.40 0.06 30)" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+  </g>
+</svg>

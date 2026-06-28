@@ -1,0 +1,16 @@
+<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sergio Cruz Gomez">
+  <defs><clipPath id="cs"><circle cx="60" cy="60" r="60"/></clipPath></defs>
+  <g clip-path="url(#cs)">
+    <rect width="120" height="120" fill="oklch(0.93 0.05 165)"/>
+    <rect x="20" y="94" width="80" height="44" rx="40" fill="oklch(0.46 0.10 200)"/>
+    <rect x="52" y="74" width="16" height="22" rx="8" fill="oklch(0.71 0.07 58)"/>
+    <circle cx="60" cy="55" r="25" fill="oklch(0.73 0.07 58)"/>
+    <path d="M36 49 a24 24 0 0 1 48 0 q-7 -13 -24 -13 q-17 0 -24 13 Z" fill="oklch(0.20 0.01 40)"/>
+    <circle cx="51" cy="55" r="6.2" fill="none" stroke="oklch(0.28 0.02 200)" stroke-width="2"/>
+    <circle cx="69" cy="55" r="6.2" fill="none" stroke="oklch(0.28 0.02 200)" stroke-width="2"/>
+    <path d="M57.3 55 h5.4" stroke="oklch(0.28 0.02 200)" stroke-width="2"/>
+    <circle cx="51" cy="55" r="2.3" fill="oklch(0.22 0.02 252)"/>
+    <circle cx="69" cy="55" r="2.3" fill="oklch(0.22 0.02 252)"/>
+    <path d="M51 65 q9 8 18 0" stroke="oklch(0.40 0.06 30)" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+  </g>
+</svg>
