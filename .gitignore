@@ -5,6 +5,8 @@ node_modules/
 *.log
 .env
 .env.*
-tools/review/shots/
+tools/review/
+docs/superpowers/
+assets/img/*-src
 PRODUCT.md
 DESIGN.md

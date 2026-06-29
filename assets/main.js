@@ -58,6 +58,14 @@
     Object.keys(spyMap).forEach(function (id) { spy.observe(document.getElementById(id)); });
   }
 
+  // Navbar gains presence once the page is scrolled
+  var navEl = document.querySelector(".nav");
+  if (navEl) {
+    var onNavScroll = function () { navEl.classList.toggle("scrolled", window.scrollY > 8); };
+    onNavScroll();
+    window.addEventListener("scroll", onNavScroll, { passive: true });
+  }
+
   // Remember language choice for the root redirect
   document.querySelectorAll("[data-lang-set]").forEach(function (a) {
     a.addEventListener("click", function () {
