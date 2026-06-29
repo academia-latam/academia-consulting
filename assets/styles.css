@@ -126,9 +126,8 @@ b, strong { font-weight: 600; }
 .case { display: grid; gap: clamp(1.6rem, 4vw, 3rem); }
 @media (min-width: 880px) { .case { grid-template-columns: 1.5fr 1fr; gap: clamp(2rem, 5vw, 5rem); } }
 .case-body p { font-size: clamp(1.15rem, 1rem + 0.8vw, 1.55rem); line-height: 1.5; max-width: 40ch; }
-.case-turn { font-family: var(--font-display); font-weight: 350; font-size: var(--fs-h3); color: var(--ink-blue); margin-top: 1.4rem; }
-.case-notes { font-family: var(--font-mono); font-size: 0.9rem; color: var(--muted); border-top: 1px solid var(--line); padding-top: 1rem; display: grid; gap: 0.8rem; }
-.case-notes b { color: var(--ink); }
+.case-turn { font-family: var(--font-display); font-weight: 350; font-size: var(--fs-h3); color: var(--ink-blue);
+  line-height: 1.14; text-align: right; text-wrap: balance; margin-top: 0.4rem; padding-top: 1.4rem; border-top: 1px solid var(--line); }
 
 /* ROI ledger */
 .roi { display: grid; gap: 0; border-top: 1px solid var(--line); }
