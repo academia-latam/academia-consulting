@@ -1,19 +1,42 @@
 // AcademIA — progressive enhancement only. Fully readable without JS.
 (function () {
   "use strict";
+  var root = document.documentElement;
   var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  // Scroll reveals (gated by html.anim so content is visible without JS / in headless / for crawlers)
+  // main.js is running, so cancel the inline head-script failsafe that would
+  // otherwise un-hide everything (that failsafe only matters if this never runs).
+  if (window.__revealFS) { clearTimeout(window.__revealFS); window.__revealFS = null; }
+
+  // Scroll reveals (gated by html.anim so content is visible without JS / in headless / for crawlers).
   var els = document.querySelectorAll("[data-reveal]");
+  function show(el) { el.classList.add("in"); }
+
   if (reduce || !("IntersectionObserver" in window)) {
-    els.forEach(function (el) { el.classList.add("in"); });
+    els.forEach(show);
   } else {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
-        if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+        if (e.isIntersecting) { show(e.target); io.unobserve(e.target); }
       });
-    }, { rootMargin: "0px 0px -12% 0px", threshold: 0.06 });
+    }, { rootMargin: "0px 0px -10% 0px", threshold: 0.04 });
     els.forEach(function (el) { io.observe(el); });
+
+    // Fallback: some browsers (Android in-app/WebView, bfcache restores) never
+    // fire the observer. Reveal whatever is in view on paint / scroll / load so
+    // content is never stranded behind opacity:0.
+    var showInView = function () {
+      var vh = window.innerHeight || root.clientHeight;
+      els.forEach(function (el) {
+        if (el.classList.contains("in")) return;
+        var r = el.getBoundingClientRect();
+        if (r.top < vh * 0.97 && r.bottom > 0) show(el);
+      });
+    };
+    requestAnimationFrame(function () { requestAnimationFrame(showInView); });
+    window.addEventListener("load", showInView, { passive: true });
+    window.addEventListener("scroll", showInView, { passive: true });
+    window.addEventListener("resize", showInView, { passive: true });
   }
 
   // Remember language choice for the root redirect

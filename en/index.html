@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <script>if(!matchMedia('(prefers-reduced-motion: reduce)').matches && !navigator.webdriver){document.documentElement.classList.add('anim');}</script>
+  <script>(function(){var d=document.documentElement;if(matchMedia('(prefers-reduced-motion: reduce)').matches||navigator.webdriver)return;d.classList.add('anim');window.__revealFS=setTimeout(function(){d.classList.remove('anim');},2200);})();</script>
   <title>AcademIAS: AI in education, pedagogy first</title>
   <meta name="description" content="AcademIAS trains faculty, redesigns assessments, and writes AI policy for schools and universities in Mexico. We start with the class, not the tool." />
   <link rel="canonical" href="https://academias.dev/en/" />
