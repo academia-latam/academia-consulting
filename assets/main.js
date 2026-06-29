@@ -39,6 +39,25 @@
     window.addEventListener("resize", showInView, { passive: true });
   }
 
+  // Scroll-spy: mark the current section in the nav
+  var navLinks = [].slice.call(document.querySelectorAll('.nav-menu a[href^="#"]'));
+  if (navLinks.length && "IntersectionObserver" in window) {
+    var spyMap = {};
+    navLinks.forEach(function (a) {
+      var sec = document.getElementById(a.getAttribute("href").slice(1));
+      if (sec) spyMap[sec.id] = a;
+    });
+    var spy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        navLinks.forEach(function (a) { a.classList.remove("is-active"); a.removeAttribute("aria-current"); });
+        var link = spyMap[e.target.id];
+        if (link) { link.classList.add("is-active"); link.setAttribute("aria-current", "true"); }
+      });
+    }, { rootMargin: "-45% 0px -50% 0px", threshold: 0 });
+    Object.keys(spyMap).forEach(function (id) { spy.observe(document.getElementById(id)); });
+  }
+
   // Remember language choice for the root redirect
   document.querySelectorAll("[data-lang-set]").forEach(function (a) {
     a.addEventListener("click", function () {

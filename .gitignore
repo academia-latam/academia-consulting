@@ -6,3 +6,5 @@ node_modules/
 .env
 .env.*
 tools/review/shots/
+PRODUCT.md
+DESIGN.md

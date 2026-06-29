@@ -301,3 +301,19 @@ html.anim [data-reveal].in { opacity: 1; transform: none; clip-path: inset(0 0 0
   .vmarquee__track { writing-mode: horizontal-tb; flex-direction: row; flex-wrap: wrap; }
   html.anim [data-reveal] { opacity: 1; transform: none; clip-path: none; }
 }
+
+/* skip link (a11y) */
+.skip { position: fixed; left: 0.75rem; top: 0.75rem; z-index: 100; transform: translateY(-180%); background: var(--primary); color: var(--on-blue); font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.7rem 1.1rem; border-radius: 2px; transition: transform 0.18s var(--ease-out); }
+.skip:focus { transform: translateY(0); outline: 2.5px solid var(--on-blue); outline-offset: 2px; }
+
+/* nav scroll-spy active state + roomier tap target */
+.nav-menu a { padding-block: 0.35rem; }
+.nav-menu a.is-active { color: var(--primary); }
+
+/* button press feedback */
+.btn-primary:active { transform: translateY(0); background: var(--primary-press); }
+
+/* crew-row hover (matches svc-row) */
+.crew-row { transition: transform 0.3s var(--ease-out); }
+.crew-row:hover { transform: translateX(0.6rem); }
+.crew-row:hover .nm { color: var(--ink-blue); }
