@@ -23,16 +23,19 @@
     });
   });
 
-  // CTA service selector -> mailto body (progressive: link already works without JS)
-  var dcta = document.querySelector(".cta .btn-primary");
+  // CTA service selector -> email body on the "email us" link (the primary CTA
+  // now opens Calendly). Progressive: the mailto link already works without JS.
+  var dcta = document.querySelector('.cta a[href^="mailto"]');
   if (dcta) {
     dcta.addEventListener("click", function () {
       var picked = [].slice.call(document.querySelectorAll(".selector input:checked")).map(function (i) { return i.value; });
-      var href = dcta.getAttribute("href").split("&body=")[0];
+      var base = dcta.getAttribute("href").split(/[?&]body=/)[0];
       var es = (document.documentElement.lang || "en").slice(0, 2) === "es";
       var lead = es ? "Interes en: " : "Interested in: ";
-      if (picked.length) href += "&body=" + encodeURIComponent(lead + picked.join(", "));
-      dcta.setAttribute("href", href);
+      if (picked.length) {
+        var sep = base.indexOf("?") === -1 ? "?" : "&";
+        dcta.setAttribute("href", base + sep + "body=" + encodeURIComponent(lead + picked.join(", ")));
+      }
     });
   }
 

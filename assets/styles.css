@@ -1,4 +1,4 @@
-/* AcademIA — PLATE / PROTOCOL. Content-first, no images. OKLCH, no deps. */
+/* AcademIAS — PLATE / PROTOCOL. Content-first, no images. OKLCH, no deps. */
 :root {
   --bg: oklch(0.99 0.004 255);
   --surface: oklch(0.975 0.006 255);
@@ -87,7 +87,9 @@ b, strong { font-weight: 600; }
 /* nav */
 .nav { position: sticky; top: var(--fw); z-index: 60; background: oklch(0.99 0.004 255 / 0.86); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
 .nav-in { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.7rem var(--gutter); }
-.brand { font-family: var(--font-wordmark); font-weight: 500; font-size: 1.2rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink); }
+.brand { display: inline-flex; align-items: center; gap: 0.6rem; font-family: var(--font-wordmark); font-weight: 500; font-size: 1.5rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink); }
+.brand-mark { height: 64px; width: auto; display: block; }
+@media (max-width: 560px) { .brand-mark { height: 52px; } .brand { font-size: 1.25rem; } .nav-right .btn-ghost { display: none; } }
 .nav-menu { display: flex; gap: clamp(0.9rem, 2vw, 1.8rem); }
 .nav-menu a { font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.78rem; color: var(--ink); }
 .nav-menu a:hover { color: var(--primary); }
@@ -101,7 +103,7 @@ b, strong { font-weight: 600; }
 .hero { position: relative; padding-block: clamp(2.5rem, 6vh, 5rem) clamp(3rem, 8vh, 6rem); }
 .hero .eyebrow { margin-bottom: clamp(1.5rem, 5vh, 3.5rem); }
 .wordmark { font-family: var(--font-wordmark); font-weight: 400; font-size: var(--fs-wordmark); line-height: 0.84; letter-spacing: 0.02em; text-transform: uppercase; color: var(--ink); margin: 0; }
-.hero h1 { margin-top: clamp(1.2rem, 3vw, 2.2rem); max-width: 16ch; }
+.hero h1 { margin-top: clamp(1.2rem, 3vw, 2.2rem); max-width: 19ch; }
 .hero h1 em { font-style: normal; color: var(--primary); }
 .hero-sub { font-family: var(--font-mono); color: var(--muted); max-width: 56ch; margin-top: 1.4rem; }
 .hero-cta { display: flex; flex-wrap: wrap; gap: 1rem 1.4rem; align-items: center; margin-top: 2rem; }
@@ -206,6 +208,84 @@ b, strong { font-weight: 600; }
 .hero-proof { font-family: var(--font-mono); font-size: 0.9rem; color: var(--ink-blue); letter-spacing: 0.02em; margin-top: 1.4rem; padding-top: 1rem; border-top: 1px solid var(--line); max-width: 54ch; }
 .hero-proof b { color: var(--primary); }
 .crew-row .desc { grid-column: 1 / -1; font-family: var(--font-mono); font-size: 0.9rem; color: var(--muted); margin: 0.3rem 0 0; }
+
+/* hero two-column (text + engraving) */
+.hero-grid { display: grid; gap: 2.2rem; align-items: center; margin-top: clamp(1.6rem, 4vw, 2.6rem); }
+@media (min-width: 900px) { .hero-grid { grid-template-columns: 1.15fr 0.85fr; gap: clamp(2rem, 5vw, 4rem); } }
+.hero-grid .plate { max-width: 380px; width: 100%; margin: 0 auto; }
+figure.plate.wide { margin-top: clamp(1.6rem, 4vw, 2.6rem); }
+.manifesto figure.plate { max-width: 300px; margin-bottom: 1.4rem; }
+
+/* engravings (B&W copperplate). multiply blends the aged paper into the page;
+   on dark/blue sections we invert to white linework. */
+figure.plate { margin: 0; }
+figure.plate figcaption { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-top: 0.6rem; }
+.engraving { display: block; width: 100%; height: auto; mix-blend-mode: multiply; }
+.manifesto .engraving, .cta .engraving { mix-blend-mode: screen; filter: invert(1) contrast(1.08); }
+
+/* ============================================================
+   PHOTO INTEGRATION SYSTEM
+   Full-bleed blue-duotone (hero + manifesto) and edge-bleed B&W
+   split sections. Photos are always edge-to-edge, never boxed.
+   ============================================================ */
+
+/* shared duotone: grayscale photo multiplied over electric ultramarine */
+.duo-bg { position: absolute; inset: 0; z-index: 0; }
+.duo-bg img { width: 100%; height: 100%; object-fit: cover; display: block;
+  mix-blend-mode: luminosity; filter: grayscale(1) contrast(1.06); }
+/* baked duotone (etching already mapped to navy->electric in the file) */
+.duo-bg--baked img { mix-blend-mode: normal; filter: none; }
+.duo-scrim { position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(90deg, rgba(7,9,30,0.9), rgba(7,9,30,0.5) 55%, rgba(7,9,30,0.15)); }
+
+/* hero — full-bleed duotone, text on top */
+.hero-fb { position: relative; overflow: hidden; background: var(--surface-blue);
+  color: var(--on-blue); min-height: clamp(560px, 84vh, 800px); display: flex; align-items: center; }
+.hero-fb__in { position: relative; z-index: 2; padding-block: clamp(2.5rem, 7vh, 5rem); width: 100%; }
+.hero-fb .eyebrow { color: oklch(0.99 0.004 255 / 0.8); margin-bottom: clamp(1rem, 3vh, 1.6rem); }
+.hero-fb h1 { color: var(--on-blue); margin: 0; max-width: 19ch; }
+.hero-fb h1 em { font-style: normal; color: var(--accent); }
+.hero-fb .hero-sub { color: oklch(0.99 0.004 255 / 0.88); max-width: 54ch; }
+.hero-fb .hero-proof { color: oklch(0.99 0.004 255 / 0.92); border-top-color: oklch(0.99 0.004 255 / 0.28); max-width: 54ch; }
+.hero-fb .hero-proof b { color: var(--accent); }
+.hero-fb .btn-primary { background: var(--on-blue); color: var(--ink-blue); border-color: var(--on-blue); }
+.hero-fb .btn-primary:hover { background: var(--accent); color: var(--ink-blue); border-color: var(--accent); }
+.hero-fb .tlink { color: var(--on-blue); border-color: var(--on-blue); }
+.hero-fb .tlink:hover { color: var(--accent); border-color: var(--accent); }
+
+/* hero — white left + etching contained in a column on the right */
+.hero-split { display: grid; grid-template-columns: 1fr; background: var(--bg); }
+@media (min-width: 900px) { .hero-split { grid-template-columns: 1.08fr 0.92fr; align-items: stretch; } }
+.hero-split__body { padding: clamp(2.6rem, 8vh, 7rem) var(--gutter); display: flex; flex-direction: column; justify-content: center; }
+.hero-split__body .eyebrow { margin-bottom: clamp(1rem, 3vh, 1.8rem); }
+.hero-split h1 { margin: 0; max-width: 16ch; font-size: clamp(2rem, 1.2rem + 2.6vw, 3.5rem); }
+.hero-split h1 em { font-style: normal; color: var(--primary); }
+.hero-split .hero-sub { max-width: 50ch; }
+.hero-split .hero-proof { max-width: 50ch; }
+.hero-split__media { position: relative; min-height: 420px; background: var(--surface-blue); overflow: hidden; }
+.hero-split__media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+@media (max-width: 899px) { .hero-split__media { order: -1; min-height: 280px; } }
+
+/* split — text + edge-bleed B&W photo */
+.split { display: grid; grid-template-columns: 1fr; background: var(--surface); }
+@media (min-width: 880px) { .split { grid-template-columns: 1.05fr 0.95fr; align-items: stretch; } }
+.split__body { padding: clamp(3rem, 8vh, 7rem) var(--gutter); }
+.split__media { min-height: 320px; }
+.split__media img { width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(1) contrast(1.04); }
+/* contained transparent illustration variant (etching line-art, centered) */
+.split__media--art { display: flex; align-items: center; justify-content: center; padding: clamp(2rem, 5vw, 4.5rem); min-height: 0; }
+.split__media--art img { width: 100%; max-width: 430px; height: auto; object-fit: contain; filter: none; }
+@media (max-width: 879px) { .split__media { order: -1; } }
+.split .case { grid-template-columns: 1fr; gap: 1.4rem; }
+
+/* manifesto — full-bleed duotone statement */
+.manifesto-fb { position: relative; overflow: hidden; background: var(--surface-blue);
+  color: var(--on-blue); padding-block: clamp(4.5rem, 11vh, 10rem); }
+.manifesto-fb__in { position: relative; z-index: 2; }
+.manifesto-fb .idx { color: var(--accent); border-color: var(--accent); }
+.manifesto-fb h2 { color: var(--on-blue); font-weight: 800; font-size: clamp(2.4rem, 7vw, 5.5rem); line-height: 0.95; margin-top: 1.1rem; }
+.manifesto-fb h2 em { font-style: normal; color: var(--accent); }
+.manifesto-fb p { color: oklch(0.99 0.004 255 / 0.9); font-family: var(--font-mono); max-width: 56ch; margin-top: 1.6rem; }
 
 ::selection { background: var(--accent); color: var(--ink-blue); }
 :focus-visible { outline: 2.5px solid var(--primary); outline-offset: 3px; }
