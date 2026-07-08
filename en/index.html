@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Bodoni+Moda:opsz,wght@6..96,400..600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/assets/styles.css?v=20260704" />
+  <link rel="stylesheet" href="/assets/styles.css?v=20260708" />
 </head>
 <body>
   <a class="skip" href="#top">Skip to content</a>
@@ -30,15 +30,17 @@
   <header class="nav">
     <div class="nav-in">
       <a class="brand" href="/en/"><img class="brand-mark" src="/assets/img/logo6-h4-t.webp" alt="" width="64" height="64" /><span>ACADEMIAS</span></a>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true" tabindex="-1" />
       <nav class="nav-menu" aria-label="Primary">
-        <a href="#case">Case</a>
-        <a href="#value">What we fix</a>
-        <a href="#services">Work</a>
+        <a href="/en/manifesto/">Manifesto</a>
+        <a href="/en/servicios/">Services</a>
+        <a href="/en/curso/">Course</a>
         <a href="#team">Team</a>
       </nav>
       <div class="nav-right">
         <a class="btn btn-ghost" href="https://calendly.com/hesus-cobos/30min" target="_blank" rel="noopener" style="padding:0.5rem 0.9rem;">Book a call</a>
         <span class="lang"><a href="/en/" aria-current="true" data-lang-set="en">EN</a> / <a href="/es/" data-lang-set="es">ES</a></span>
+        <label for="nav-toggle" class="nav-burger" aria-label="Open menu"><span></span><span></span><span></span></label>
       </div>
     </div>
   </header>
@@ -172,9 +174,9 @@
           <h2 data-reveal>The people behind AcademIAS.</h2>
         </div>
         <div class="crew" data-reveal>
-          <div class="crew-row"><span class="nm">Gabriela González Domínguez</span><span class="ro">Director</span><span class="desc">Master's in language teaching. Built student-success systems for thousands of learners.</span></div>
-          <div class="crew-row"><span class="nm">Hesus García Cobos</span><span class="ro">Chief Learning Officer</span><span class="desc">Master's in pedagogy. Designs AI courses and curricula, and researches AI-in-education policy.</span></div>
-          <div class="crew-row"><span class="nm">Sergio Cruz Gómez</span><span class="ro">Technical Lead</span><span class="desc">PhD in computer science (computer vision). Teaches AI and machine learning at university.</span></div>
+          <div class="crew-row"><img class="crew-av" src="/assets/img/team-gaby.webp" alt="Gabriela González Domínguez" width="78" height="78" loading="lazy" /><span class="nm">Gabriela González Domínguez</span><span class="ro">Director</span><span class="desc">Master's in language teaching. Built student-success systems for thousands of learners.</span></div>
+          <div class="crew-row"><img class="crew-av" src="/assets/img/team-hesus.webp" alt="Hesus García Cobos" width="78" height="78" loading="lazy" /><span class="nm">Hesus García Cobos</span><span class="ro">Chief Learning Officer</span><span class="desc">Master's in pedagogy. Designs AI courses and curricula, and researches AI-in-education policy.</span></div>
+          <div class="crew-row"><span class="crew-av crew-av--mono" aria-hidden="true">SC</span><span class="nm">Sergio Cruz Gómez</span><span class="ro">Technical Lead</span><span class="desc">PhD in computer science (computer vision). Teaches AI and machine learning at university.</span></div>
         </div>
         <p class="crew-foot" data-reveal>Educators first. Engineers too.</p>
       </div>
@@ -214,6 +216,6 @@
       <span class="stamp" style="opacity:0.66;">Figures rounded from recent educator surveys (Digital Education Council, EDUCAUSE, ENIAG/SEP).</span>
     </div>
   </footer>
-  <script src="/assets/main.js?v=20260704" defer></script>
+  <script src="/assets/main.js?v=20260708" defer></script>
 </body>
 </html>
