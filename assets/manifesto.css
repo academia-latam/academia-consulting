@@ -1,0 +1,113 @@
+/* ============================================================
+   MANIFESTO — cinematic scrollytelling (page-scoped)
+   Loaded only on /manifesto. Built on the AcademIAS OKLCH tokens
+   from styles.css. Default state (no JS / reduced-motion / crawler)
+   is fully visible and readable; the .mf-enhanced class (added by
+   manifesto.js only when GSAP inits on a motion-OK desktop) gates
+   the hidden-initial states so nothing ever ships blank.
+   ============================================================ */
+
+.mf { background: var(--bg); }
+.mf ::selection { background: var(--accent); color: var(--ink-blue); }
+
+/* kicker chip (FIG.) reused voice */
+.mf-kick { font-family: var(--font-mono); display: inline-block; font-size: clamp(0.72rem, 0.9vw, 0.9rem); font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); border: 1.5px solid currentColor; border-radius: 2px; padding: 0.34rem 0.7rem; }
+
+/* ---------- ACT 0 · HERO ---------- */
+.mf-hero { position: relative; min-height: 100svh; display: grid; align-items: center; overflow: hidden; background: var(--surface-ink); color: var(--on-blue); isolation: isolate; }
+.mf-hero__bg { position: absolute; inset: -8% -4%; z-index: 0; will-change: transform; }
+.mf-hero__bg img { width: 100%; height: 100%; object-fit: cover; object-position: 60% 40%; display: block; filter: none; }
+.mf-hero__scrim { position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(90deg, oklch(0.20 0.07 264 / 0.92), oklch(0.24 0.08 264 / 0.62) 52%, oklch(0.24 0.08 264 / 0.30)); }
+.mf-hero__in { position: relative; z-index: 2; padding-inline: var(--gutter); max-width: var(--maxw); margin-inline: auto; width: 100%; }
+.mf-hero__title { font-family: var(--font-display); font-weight: 800; line-height: 0.92; letter-spacing: -0.03em; margin: 1.1rem 0 0; font-size: clamp(2.9rem, 8.5vw, 6rem); }
+.mf-hero__title .l1 { display: block; color: var(--on-blue); }
+.mf-hero__title .l2 { display: block; color: var(--accent); }
+.mf-hero__sub { font-family: var(--font-mono); color: oklch(0.99 0.004 255 / 0.82); margin-top: 1.5rem; max-width: 46ch; }
+.mf-scrollcue { position: absolute; z-index: 2; bottom: 1.5rem; left: var(--gutter); font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: oklch(0.99 0.004 255 / 0.7); }
+
+/* the warp target (Faust etching in hero + blue act) */
+.mf-warp { }
+
+/* ---------- ACTS 1..5 ---------- */
+.act { position: relative; min-height: 100svh; display: grid; align-items: center; overflow: hidden; background: var(--bg); color: var(--ink); }
+.act__stage { position: relative; z-index: 2; width: 100%; max-width: var(--maxw); margin-inline: auto; padding-inline: var(--gutter); padding-block: clamp(3rem, 8vh, 6rem); }
+
+/* giant outline numeral watermark */
+.act__num { position: absolute; z-index: 0; font-family: var(--font-display); font-weight: 800; line-height: 0.8; font-size: clamp(9rem, 34vw, 30rem); letter-spacing: -0.04em; color: transparent; -webkit-text-stroke: 1.5px var(--line); text-stroke: 1.5px var(--line); top: 50%; right: clamp(0.5rem, 3vw, 3rem); transform: translateY(-50%); pointer-events: none; user-select: none; opacity: 0.7; }
+
+.act__eyebrow { font-family: var(--font-mono); font-weight: 600; font-size: clamp(0.75rem, 1vw, 0.9rem); letter-spacing: 0.16em; text-transform: uppercase; color: var(--primary); }
+.act__h { font-family: var(--font-display); font-weight: 700; font-size: clamp(2.3rem, 6.6vw, 5.6rem); line-height: 0.98; letter-spacing: -0.025em; margin: 0.7rem 0 0; max-width: 15ch; text-wrap: balance; }
+.act__h em { font-style: normal; color: var(--primary); }
+.act__rule { display: block; height: 3px; width: clamp(64px, 12vw, 200px); background: var(--accent); margin: 1.5rem 0 0; transform-origin: left center; }
+.act__p { font-family: var(--font-mono); color: var(--muted); max-width: 52ch; margin-top: 1.4rem; font-size: var(--fs-body); }
+
+/* SPLIT layout (light acts: copy left, edge-bleed etching right) */
+.act--split .act__stage { display: grid; gap: clamp(1.5rem, 4vw, 3rem); }
+@media (min-width: 900px) { .act--split .act__stage { grid-template-columns: 1.05fr 0.95fr; align-items: center; } }
+.act__media { position: relative; overflow: hidden; }
+.act--split .act__media { align-self: stretch; min-height: 46vh; border: 1px solid var(--line); }
+@media (min-width: 900px) { .act--split .act__media { min-height: 68vh; } }
+.act__media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(1) contrast(1.04); }
+.act--split .act__num { right: auto; left: clamp(0.5rem, 2vw, 2rem); top: 8%; transform: none; opacity: 0.5; }
+
+/* PLATE media: dark linework etching sits on the white plate (multiply) */
+.act__media--plate { background: var(--surface); }
+.act__media--plate img { object-fit: contain; filter: none; mix-blend-mode: multiply; padding: clamp(1rem, 3vw, 2.6rem); }
+
+/* FULL layout (drenched acts: etching full-bleed behind text) */
+.act--full .act__bg { position: absolute; inset: 0; z-index: 0; }
+.act--full .act__bg img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.act--full .act__scrim { position: absolute; inset: 0; z-index: 1; }
+.act--full .act__stage { max-width: var(--maxw); }
+.act--full .act__h { max-width: 18ch; }
+
+/* colour worlds */
+.act--blue { background: var(--surface-blue); color: var(--on-blue); }
+.act--blue .act__eyebrow { color: var(--accent); }
+.act--blue .act__h { color: var(--on-blue); }
+.act--blue .act__h em { color: var(--accent); }
+.act--blue .act__p { color: oklch(0.99 0.004 255 / 0.86); }
+.act--blue .act__num { -webkit-text-stroke-color: oklch(0.99 0.004 255 / 0.3); text-stroke-color: oklch(0.99 0.004 255 / 0.3); }
+.act--blue .act__scrim { background: linear-gradient(90deg, oklch(0.42 0.24 264 / 0.9), oklch(0.46 0.26 264 / 0.55) 55%, oklch(0.46 0.26 264 / 0.2)); }
+
+.act--ink { background: var(--surface-ink); color: var(--on-blue); }
+.act--ink .act__eyebrow { color: var(--accent); }
+.act--ink .act__h { color: var(--on-blue); }
+.act--ink .act__h em { color: var(--accent); }
+.act--ink .act__p { color: oklch(0.99 0.004 255 / 0.82); }
+.act--ink .act__num { -webkit-text-stroke-color: oklch(0.99 0.004 255 / 0.22); text-stroke-color: oklch(0.99 0.004 255 / 0.22); }
+.act--ink .act__scrim { background: linear-gradient(90deg, oklch(0.18 0.06 264 / 0.92), oklch(0.22 0.07 264 / 0.6) 55%, oklch(0.22 0.07 264 / 0.25)); }
+
+/* ---------- DATA BEAT ---------- */
+.mf-databeat { position: relative; min-height: 100svh; display: grid; align-items: center; overflow: hidden; background: var(--surface-blue); color: var(--on-blue); padding-block: clamp(3rem, 8vh, 6rem); }
+.mf-data { position: relative; z-index: 2; width: 100%; max-width: var(--maxw); margin-inline: auto; padding-inline: var(--gutter); }
+.mf-data__lead { font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.8rem; color: var(--accent); }
+.mf-data__row { display: flex; align-items: baseline; gap: clamp(0.6rem, 2vw, 1.6rem); border-top: 1px solid oklch(0.99 0.004 255 / 0.16); padding: clamp(0.8rem, 3vh, 2rem) 0; }
+.mf-data__row:last-child { border-bottom: 1px solid oklch(0.99 0.004 255 / 0.16); }
+.mf-data__n { font-family: var(--font-display); font-weight: 800; line-height: 0.82; letter-spacing: -0.04em; font-size: clamp(4.5rem, 20vw, 15rem); color: var(--on-blue); font-variant-numeric: tabular-nums; }
+.mf-data__row--muted .mf-data__n { color: var(--accent); }
+.mf-data__unit { font-family: var(--font-mono); font-size: clamp(1rem, 2.4vw, 1.9rem); color: oklch(0.99 0.004 255 / 0.8); max-width: 20ch; }
+.mf-data__unit b { color: var(--on-blue); font-weight: 600; }
+
+/* ---------- CLOSE / CTA ---------- */
+.mf-close { position: relative; background: var(--surface-blue); color: var(--on-blue); overflow: hidden; padding-block: clamp(4.5rem, 14vh, 11rem); }
+.mf-close__in { position: relative; z-index: 2; max-width: var(--maxw); margin-inline: auto; padding-inline: var(--gutter); }
+.mf-close h2 { font-family: var(--font-display); font-weight: 800; color: var(--on-blue); font-size: clamp(2.4rem, 7vw, 5.4rem); line-height: 0.96; letter-spacing: -0.025em; }
+.mf-close h2 em { font-style: normal; color: var(--accent); }
+.mf-close p { font-family: var(--font-mono); color: oklch(0.99 0.004 255 / 0.86); margin-top: 1.4rem; max-width: 52ch; }
+
+/* the inline SVG filter host must not take layout space */
+.mf-defs { position: absolute; width: 0; height: 0; overflow: hidden; }
+
+/* ============================================================
+   ENHANCED-ONLY hidden-initial states (only when .mf-enhanced)
+   Without this class every element is fully visible (no-JS,
+   reduced-motion, crawlers, mobile fallback).
+   ============================================================ */
+.mf-enhanced .act__h .char { display: inline-block; will-change: transform; }
+.mf-enhanced .mf-hero__title .char { display: inline-block; will-change: transform; }
+
+@media (prefers-reduced-motion: reduce) {
+  .mf-hero__bg { inset: 0; }
+}

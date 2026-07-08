@@ -382,57 +382,6 @@ html.anim [data-reveal].in { opacity: 1; transform: none; clip-path: inset(0 0 0
 .meta-bar span { display: inline-flex; gap: 0.5rem; align-items: baseline; }
 .meta-bar b { color: var(--primary); font-weight: 600; }
 
-/* ---- MANIFESTO: scroll-driven, dependency-free ---- */
-.mf-hero { position: relative; min-height: 100svh; display: grid; place-items: center; text-align: center; overflow: hidden; background: var(--surface-blue); color: var(--on-blue); }
-.mf-hero .duo-bg { z-index: 0; }
-.mf-hero .duo-scrim { background: radial-gradient(120% 100% at 50% 50%, oklch(0.24 0.08 264 / 0.35), oklch(0.24 0.08 264 / 0.82)); }
-.mf-hero__in { position: relative; z-index: 2; padding: var(--gutter); max-width: 24ch; }
-.mf-hero .idx { color: var(--accent); border-color: var(--accent); }
-.mf-hero h1 { font-family: var(--font-display); font-weight: 800; color: var(--on-blue); font-size: clamp(2.6rem, 9vw, 7rem); line-height: 0.94; letter-spacing: -0.02em; margin: 1.2rem 0 0; }
-.mf-hero h1 em { font-style: normal; color: var(--accent); }
-.mf-hero__sub { font-family: var(--font-mono); color: oklch(0.99 0.004 255 / 0.85); margin: 1.4rem auto 0; max-width: 46ch; }
-.mf-hero__scroll { position: absolute; bottom: 1.5rem; left: 50%; z-index: 2; font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: oklch(0.99 0.004 255 / 0.72); transform: translateX(-50%); }
-
-/* values: full-height panels that pin and stack over one another */
-.mf-vals { position: relative; }
-.mf-val { position: sticky; top: 0; min-height: 100svh; display: grid; align-content: center; padding-block: clamp(4rem, 12vh, 9rem); padding-inline: var(--gutter); background: var(--bg); border-top: 1.5px solid var(--line); }
-.mf-val:nth-child(even) { background: var(--surface); }
-.mf-val--blue { background: var(--surface-blue); color: var(--on-blue); border-top-color: var(--ink-blue); }
-.mf-val--ink { background: var(--surface-ink); color: var(--on-blue); border-top-color: var(--ink-blue); }
-.mf-val__in { max-width: var(--maxw); margin-inline: auto; width: 100%; }
-.mf-val__num { font-family: var(--font-mono); font-weight: 600; color: var(--primary); font-size: clamp(0.85rem, 2vw, 1.05rem); letter-spacing: 0.16em; }
-.mf-val--blue .mf-val__num, .mf-val--ink .mf-val__num { color: var(--accent); }
-.mf-val__h { font-family: var(--font-display); font-weight: 700; font-size: clamp(2.1rem, 6.5vw, 5.6rem); line-height: 0.98; letter-spacing: -0.02em; margin: 0.7rem 0 0; max-width: 17ch; text-wrap: balance; }
-.mf-val--blue .mf-val__h, .mf-val--ink .mf-val__h { color: var(--on-blue); }
-.mf-val__h em { font-style: normal; color: var(--primary); }
-.mf-val--blue .mf-val__h em, .mf-val--ink .mf-val__h em { color: var(--accent); }
-.mf-val__p { font-family: var(--font-mono); color: var(--muted); max-width: 56ch; margin-top: 1.4rem; font-size: var(--fs-body); }
-.mf-val--blue .mf-val__p, .mf-val--ink .mf-val__p { color: oklch(0.99 0.004 255 / 0.85); }
-.mf-val__rule { width: clamp(48px, 8vw, 130px); height: 3px; background: var(--accent); margin-top: 1.7rem; }
-
-/* scroll-driven layer — progressive enhancement only */
-@supports (animation-timeline: view()) {
-  @media (prefers-reduced-motion: no-preference) {
-    .mf-val__in { animation: mf-rise linear both; animation-timeline: view(); animation-range: entry 8% cover 34%; }
-    @keyframes mf-rise { from { opacity: 0; transform: translateY(46px); } to { opacity: 1; transform: none; } }
-  }
-}
-@supports (animation-timeline: scroll()) {
-  @media (prefers-reduced-motion: no-preference) {
-    .mf-hero .duo-bg { animation: mf-par linear both; animation-timeline: scroll(root); animation-range: 0 90vh; }
-    @keyframes mf-par { to { transform: translateY(11%) scale(1.09); } }
-  }
-}
-/* hero entrance (on load, not scroll) */
-@media (prefers-reduced-motion: no-preference) {
-  .mf-hero__in > * { opacity: 0; animation: mf-rise 0.9s var(--ease-out) forwards; }
-  .mf-hero__in > :nth-child(1) { animation-delay: 0.05s; }
-  .mf-hero__in > :nth-child(2) { animation-delay: 0.18s; }
-  .mf-hero__in > :nth-child(3) { animation-delay: 0.32s; }
-  .mf-hero__scroll { animation: mf-bob 1.9s ease-in-out infinite; }
-  @keyframes mf-bob { 0%, 100% { transform: translate(-50%, 0); } 50% { transform: translate(-50%, 7px); } }
-}
-
 /* ---- SERVICIOS: price ledger ---- */
 .price { border-top: 1px solid var(--line); margin-top: 1.4rem; }
 .price-row { display: grid; grid-template-columns: 1fr auto; gap: 0.4rem 1.4rem; align-items: baseline; padding: clamp(1.2rem, 3vw, 2rem) 0; border-bottom: 1px solid var(--line); transition: background 0.25s var(--ease-out); }
