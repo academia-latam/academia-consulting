@@ -19,7 +19,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Bodoni+Moda:opsz,wght@6..96,400..600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/assets/styles.css?v=20260708" />
+  <link rel="stylesheet" href="/assets/styles.css?v=20260708b" />
+  <link rel="stylesheet" href="/assets/manifesto.css?v=20260708b" />
 </head>
 <body>
   <a class="skip" href="#top">Skip to content</a>
@@ -45,63 +46,116 @@
     </div>
   </header>
 
-  <main id="top">
+  <main id="top" class="mf">
+
+    <!-- ACT 0 · HERO -->
     <section class="mf-hero">
-      <div class="duo-bg duo-bg--baked" aria-hidden="true">
-        <img class="duo-neg" src="/assets/img/etch-faust-neg.webp" alt="" width="1800" height="1100" fetchpriority="high" />
-      </div>
-      <div class="duo-scrim" aria-hidden="true"></div>
+      <svg class="mf-defs" aria-hidden="true"><defs>
+        <filter id="mf-warp" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB">
+          <feTurbulence type="fractalNoise" baseFrequency="0.006 0.011" numOctaves="2" seed="7" result="n" />
+          <feDisplacementMap in="SourceGraphic" in2="n" scale="0" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+      </defs></svg>
+      <div class="mf-hero__bg"><img class="mf-warp" src="/assets/img/etch-faust-neg.webp" style="filter:url(#mf-warp)" alt="Rembrandt's etching of the scholar Faust before a radiant disc appearing at the window" width="1800" height="1100" fetchpriority="high" /></div>
+      <div class="mf-hero__scrim" aria-hidden="true"></div>
       <div class="mf-hero__in">
-        <span class="idx">FIG. 00 &middot; MANIFESTO</span>
-        <h1>We don't add AI.<br /><em>We amplify the teacher.</em></h1>
+        <span class="mf-kick">FIG. 00 &middot; MANIFESTO</span>
+        <h1 class="mf-hero__title"><span class="l1">We don't add AI.</span><span class="l2">We amplify the teacher.</span></h1>
         <p class="mf-hero__sub">Five convictions about artificial intelligence in the classroom. What we believe, and why we always start with people.</p>
       </div>
-      <span class="mf-hero__scroll" aria-hidden="true">Scroll to read &darr;</span>
+      <span class="mf-scrollcue" aria-hidden="true">Scroll to read &darr;</span>
     </section>
 
-    <section class="mf-vals" aria-label="What we believe">
-      <article class="mf-val">
-        <div class="mf-val__in" data-reveal>
-          <span class="mf-val__num">01 &middot; PRINCIPLE</span>
-          <h2 class="mf-val__h">Class first,<br /><em>tool second.</em></h2>
-          <p class="mf-val__p">The question isn't which app to buy. It's what this classroom needs to learn. Pedagogy leads; a tool comes in only when it earns its place, and almost none do.</p>
-          <div class="mf-val__rule" aria-hidden="true"></div>
+    <!-- ACT 01 · light · Athens -->
+    <section class="act act--split act--light" aria-label="Conviction 1">
+      <span class="act__num" aria-hidden="true">01</span>
+      <div class="act__stage">
+        <div class="act__copy">
+          <span class="act__eyebrow">Conviction 01</span>
+          <h2 class="act__h">Class first,<br /><em>tool second.</em></h2>
+          <span class="act__rule" aria-hidden="true"></span>
+          <p class="act__p">The question isn't which app to buy. It's what this classroom needs to learn. Pedagogy leads; a tool comes in only when it earns its place, and almost none do.</p>
         </div>
-      </article>
-      <article class="mf-val mf-val--blue">
-        <div class="mf-val__in" data-reveal>
-          <span class="mf-val__num">02 &middot; PRINCIPLE</span>
-          <h2 class="mf-val__h">Neither ban it,<br /><em>nor worship it.</em></h2>
-          <p class="mf-val__p">Fear and hype end up in the same place: no one learns to use it with judgment. Not banning it as a threat, not worshipping it as a miracle. We teach how to use it well.</p>
-          <div class="mf-val__rule" aria-hidden="true"></div>
-        </div>
-      </article>
-      <article class="mf-val">
-        <div class="mf-val__in" data-reveal>
-          <span class="mf-val__num">03 &middot; PRINCIPLE</span>
-          <h2 class="mf-val__h">Understand the machine,<br /><em>don't revere it.</em></h2>
-          <p class="mf-val__p">AI doesn't think: it predicts. An engine, not an oracle. Once a teacher understands how it works inside, the fear goes and judgment begins.</p>
-          <div class="mf-val__rule" aria-hidden="true"></div>
-        </div>
-      </article>
-      <article class="mf-val mf-val--ink">
-        <div class="mf-val__in" data-reveal>
-          <span class="mf-val__num">04 &middot; PRINCIPLE</span>
-          <h2 class="mf-val__h">AI drafts;<br /><em>the teacher decides.</em></h2>
-          <p class="mf-val__p">The machine suggests; the relationship confirms. It can write a first attempt, never watch a student go quiet and know why. Trust, judgment and care don't automate.</p>
-          <div class="mf-val__rule" aria-hidden="true"></div>
-        </div>
-      </article>
-      <article class="mf-val mf-val--blue">
-        <div class="mf-val__in" data-reveal>
-          <span class="mf-val__num">05 &middot; PRINCIPLE</span>
-          <h2 class="mf-val__h">Trust,<br /><em>not control.</em></h2>
-          <p class="mf-val__p">Accompanying isn't surveilling. A dashboard that only flags doesn't accompany, and tracking a student isn't caring for them. We protect their data as part of the work, not as a checkbox.</p>
-          <div class="mf-val__rule" aria-hidden="true"></div>
-        </div>
-      </article>
+        <div class="act__media"><img src="/assets/img/etch-athens-col.webp" alt="The School of Athens: philosophers and teachers gathered in a great hall of knowledge" width="1200" height="1600" loading="lazy" /></div>
+      </div>
     </section>
 
+    <!-- ACT 02 · BLUE drenched · Faust (warp) -->
+    <section class="act act--full act--blue" aria-label="Conviction 2">
+      <svg class="mf-defs" aria-hidden="true"><defs>
+        <filter id="mf-warp2" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB">
+          <feTurbulence type="fractalNoise" baseFrequency="0.007 0.012" numOctaves="2" seed="3" result="n" />
+          <feDisplacementMap in="SourceGraphic" in2="n" scale="0" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+      </defs></svg>
+      <div class="act__bg"><img src="/assets/img/etch-faust-neg.webp" style="filter:url(#mf-warp2)" alt="" aria-hidden="true" width="1800" height="1100" loading="lazy" /></div>
+      <div class="act__scrim" aria-hidden="true"></div>
+      <span class="act__num" aria-hidden="true">02</span>
+      <div class="act__stage">
+        <span class="act__eyebrow">Conviction 02</span>
+        <h2 class="act__h">Neither ban it,<br /><em>nor worship it.</em></h2>
+        <span class="act__rule" aria-hidden="true"></span>
+        <p class="act__p">Fear and hype end up in the same place: no one learns to use it with judgment. Not banning it as a threat, not worshipping it as a miracle. We teach how to use it well.</p>
+      </div>
+    </section>
+
+    <!-- ACT 03 · light plate · Faust positive (the oracle disc) -->
+    <section class="act act--split act--light" aria-label="Conviction 3">
+      <span class="act__num" aria-hidden="true">03</span>
+      <div class="act__stage">
+        <div class="act__copy">
+          <span class="act__eyebrow">Conviction 03</span>
+          <h2 class="act__h">Understand the machine,<br /><em>don't revere it.</em></h2>
+          <span class="act__rule" aria-hidden="true"></span>
+          <p class="act__p">AI doesn't think: it predicts. An engine, not an oracle. Once a teacher understands how it works inside, the fear goes and judgment begins.</p>
+        </div>
+        <div class="act__media act__media--plate"><img src="/assets/img/etch-faust-pos.webp" alt="Detail of the Faust etching: a radiant disc, the false oracle" width="1800" height="1100" loading="lazy" /></div>
+      </div>
+    </section>
+
+    <!-- ACT 04 · INK · the teacher (Van Ostade) -->
+    <section class="act act--full act--ink" aria-label="Conviction 4">
+      <div class="act__bg"><img src="/assets/img/teach-ostade.webp" alt="" aria-hidden="true" width="1800" height="1100" loading="lazy" /></div>
+      <div class="act__scrim" aria-hidden="true"></div>
+      <span class="act__num" aria-hidden="true">04</span>
+      <div class="act__stage">
+        <span class="act__eyebrow">Conviction 04</span>
+        <h2 class="act__h">AI drafts;<br /><em>the teacher decides.</em></h2>
+        <span class="act__rule" aria-hidden="true"></span>
+        <p class="act__p">The machine suggests; the relationship confirms. It can write a first attempt, never watch a student go quiet and know why. Trust, judgment and care don't automate.</p>
+      </div>
+    </section>
+
+    <!-- DATA BEAT · BLUE -->
+    <section class="mf-databeat" aria-label="The data">
+      <div class="mf-data">
+        <p class="mf-data__lead" data-mf-reveal>The starting point</p>
+        <div class="mf-data__row">
+          <span class="mf-data__n" data-count="9">9</span>
+          <span class="mf-data__unit">of every <b>10</b> teachers already use AI.</span>
+        </div>
+        <div class="mf-data__row mf-data__row--muted">
+          <span class="mf-data__n" data-count="3">3</span>
+          <span class="mf-data__unit">of every <b>10</b> know what to do with what it answers.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACT 05 · light · Athens (resolution) -->
+    <section class="act act--split act--light" aria-label="Conviction 5">
+      <span class="act__num" aria-hidden="true">05</span>
+      <div class="act__stage">
+        <div class="act__copy">
+          <span class="act__eyebrow">Conviction 05</span>
+          <h2 class="act__h">Trust,<br /><em>not control.</em></h2>
+          <span class="act__rule" aria-hidden="true"></span>
+          <p class="act__p">Accompanying isn't surveilling. A dashboard that only flags doesn't accompany, and tracking a student isn't caring for them. We protect their data as part of the work, not as a checkbox.</p>
+        </div>
+        <div class="act__media"><img src="/assets/img/etch-athens-pos.webp" alt="The School of Athens, positive detail" width="1200" height="1600" loading="lazy" /></div>
+      </div>
+    </section>
+
+    <!-- KINETIC BAND -->
     <section class="band" aria-label="In short">
       <div class="marquee"><div class="marquee__track">
         <span class="mq-item">Class first</span><span class="mq-item mq-sep">//</span><span class="mq-item">Judgment, not fear</span><span class="mq-item mq-sep">//</span><span class="mq-item">Predicts, doesn't think</span><span class="mq-item mq-sep">//</span><span class="mq-item">The teacher decides</span><span class="mq-item mq-sep">//</span><span class="mq-item">Trust, not control</span><span class="mq-item mq-sep">//</span>
@@ -109,13 +163,14 @@
       </div></div>
     </section>
 
-    <section class="section cta" id="contact">
-      <div class="wrap">
-        <p class="label" data-reveal style="color:var(--accent);">IF YOU SHARE IT</p>
-        <h2 data-reveal>Let's work from here.</h2>
-        <p data-reveal>If this is how you see AI too, let's start. In twenty minutes we'll tell you what to fix first at your institution, with or without a tool.</p>
-        <div class="hero-cta" data-reveal>
-          <a class="btn btn-primary" href="https://calendly.com/hesus-cobos/30min" target="_blank" rel="noopener">Book a 30-min call &rarr;</a>
+    <!-- CLOSE · CTA -->
+    <section class="mf-close" id="contact">
+      <div class="mf-close__in">
+        <span class="mf-kick" data-mf-reveal>FIG. 06 &middot; LET'S BEGIN</span>
+        <h2 data-mf-reveal>We don't add AI.<br /><em>We amplify the teacher.</em></h2>
+        <p data-mf-reveal>If this is how you see AI too, let's start. In twenty minutes we'll tell you what to fix first at your institution, with or without a tool.</p>
+        <div class="hero-cta" data-mf-reveal style="margin-top:2rem;">
+          <a class="btn btn-primary" href="https://calendly.com/hesus-cobos/30min" target="_blank" rel="noopener" style="background:var(--accent);color:var(--ink-blue);border-color:var(--accent);">Book a 30-min call &rarr;</a>
           <a class="tlink" href="/en/servicios/" style="color:var(--on-blue);border-color:var(--on-blue);">See services and pricing</a>
         </div>
       </div>
@@ -129,6 +184,12 @@
       <span class="stamp" style="opacity:0.66;">Convictions, not slogans. Educators first. Engineers too.</span>
     </div>
   </footer>
-  <script src="/assets/main.js?v=20260708" defer></script>
+
+  <script src="/assets/vendor/gsap.min.js" defer></script>
+  <script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="/assets/vendor/lenis.min.js" defer></script>
+  <script src="/assets/vendor/split-type.min.js" defer></script>
+  <script src="/assets/manifesto.js?v=20260708b" defer></script>
+  <script src="/assets/main.js?v=20260708b" defer></script>
 </body>
 </html>

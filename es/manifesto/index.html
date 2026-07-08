@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <script>(function(){var d=document.documentElement;if(matchMedia('(prefers-reduced-motion: reduce)').matches||navigator.webdriver)return;d.classList.add('anim');window.__revealFS=setTimeout(function(){d.classList.remove('anim');},2200);})();</script>
   <title>Manifiesto · AcademIAS: en qué creemos sobre la IA en el salón</title>
-  <meta name="description" content="Cinco convicciones de AcademIAS sobre la inteligencia artificial en educación: primero la clase, criterio antes que miedo, entender la máquina, el maestro decide y confianza sobre control." />
+  <meta name="description" content="Cinco convicciones de AcademIAS sobre la inteligencia artificial en educación: primero la clase, ni prohibirla ni endiosarla, entender la máquina, el maestro decide y confianza sobre control." />
   <link rel="canonical" href="https://academias.dev/es/manifesto/" />
   <link rel="alternate" hreflang="es" href="https://academias.dev/es/manifesto/" />
   <link rel="alternate" hreflang="en" href="https://academias.dev/en/manifesto/" />
@@ -19,7 +19,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Bodoni+Moda:opsz,wght@6..96,400..600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/assets/styles.css?v=20260708" />
+  <link rel="stylesheet" href="/assets/styles.css?v=20260708b" />
+  <link rel="stylesheet" href="/assets/manifesto.css?v=20260708b" />
 </head>
 <body>
   <a class="skip" href="#top">Saltar al contenido</a>
@@ -45,75 +46,113 @@
     </div>
   </header>
 
-  <main id="top">
-    <!-- HERO -->
+  <main id="top" class="mf">
+
+    <!-- ACT 0 · HERO -->
     <section class="mf-hero">
-      <div class="duo-bg duo-bg--baked" aria-hidden="true">
-        <img class="duo-neg" src="/assets/img/etch-faust-neg.webp" alt="" width="1800" height="1100" fetchpriority="high" />
-      </div>
-      <div class="duo-scrim" aria-hidden="true"></div>
+      <svg class="mf-defs" aria-hidden="true"><defs>
+        <filter id="mf-warp" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB">
+          <feTurbulence type="fractalNoise" baseFrequency="0.006 0.011" numOctaves="2" seed="7" result="n" />
+          <feDisplacementMap in="SourceGraphic" in2="n" scale="0" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+      </defs></svg>
+      <div class="mf-hero__bg"><img class="mf-warp" src="/assets/img/etch-faust-neg.webp" style="filter:url(#mf-warp)" alt="Grabado de Rembrandt, el estudioso Fausto ante un disco radiante que aparece en la ventana" width="1800" height="1100" fetchpriority="high" /></div>
+      <div class="mf-hero__scrim" aria-hidden="true"></div>
       <div class="mf-hero__in">
-        <span class="idx">FIG. 00 &middot; MANIFIESTO</span>
-        <h1>No agregamos IA.<br /><em>Potenciamos al maestro.</em></h1>
+        <span class="mf-kick">FIG. 00 &middot; MANIFIESTO</span>
+        <h1 class="mf-hero__title"><span class="l1">No agregamos IA.</span><span class="l2">Potenciamos al maestro.</span></h1>
         <p class="mf-hero__sub">Cinco convicciones sobre la inteligencia artificial en el salón. En qué creemos, y por qué siempre empezamos por las personas.</p>
       </div>
-      <span class="mf-hero__scroll" aria-hidden="true">Desplázate para leer &darr;</span>
+      <span class="mf-scrollcue" aria-hidden="true">Desplázate para leer &darr;</span>
     </section>
 
-    <!-- INTRO -->
-    <section class="section">
-      <div class="wrap">
-        <p class="lede" data-reveal style="font-family:var(--font-display);font-weight:350;font-size:clamp(1.4rem,3.4vw,2.4rem);line-height:1.2;max-width:24ch;color:var(--ink-blue);">La IA no hizo más fácil dar clase. Cambió el terreno.</p>
-        <p data-reveal style="margin-top:1.4rem;max-width:56ch;">Estas cinco ideas sostienen todo lo que hacemos: formación docente, rediseño de evaluación, filtro de herramientas y política de IA. Ninguna empieza en la app. Todas empiezan en el salón.</p>
+    <!-- ACT 01 · light · Athens -->
+    <section class="act act--split act--light" aria-label="Convicción 1">
+      <span class="act__num" aria-hidden="true">01</span>
+      <div class="act__stage">
+        <div class="act__copy">
+          <span class="act__eyebrow">Convicción 01</span>
+          <h2 class="act__h">Primero la clase,<br /><em>después la herramienta.</em></h2>
+          <span class="act__rule" aria-hidden="true"></span>
+          <p class="act__p">La pregunta no es qué app comprar. Es qué necesita aprender este salón. La pedagogía manda; una herramienta entra solo cuando se gana su lugar, y casi ninguna lo logra.</p>
+        </div>
+        <div class="act__media"><img src="/assets/img/etch-athens-col.webp" alt="La Escuela de Atenas: filósofos y maestros reunidos en una gran sala del saber" width="1200" height="1600" loading="lazy" /></div>
       </div>
     </section>
 
-    <!-- VALUES (pin + stack) -->
-    <section class="mf-vals" aria-label="En qué creemos">
-      <article class="mf-val">
-        <div class="mf-val__in" data-reveal>
-          <span class="mf-val__num">01 &middot; PRINCIPIO</span>
-          <h2 class="mf-val__h">Primero la clase,<br /><em>después la herramienta.</em></h2>
-          <p class="mf-val__p">La pregunta no es qué app comprar. Es qué necesita aprender este salón. La pedagogía manda; una herramienta entra solo cuando se gana su lugar, y casi ninguna lo logra.</p>
-          <div class="mf-val__rule" aria-hidden="true"></div>
-        </div>
-      </article>
+    <!-- ACT 02 · BLUE drenched · Faust (warp) -->
+    <section class="act act--full act--blue" aria-label="Convicción 2">
+      <svg class="mf-defs" aria-hidden="true"><defs>
+        <filter id="mf-warp2" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB">
+          <feTurbulence type="fractalNoise" baseFrequency="0.007 0.012" numOctaves="2" seed="3" result="n" />
+          <feDisplacementMap in="SourceGraphic" in2="n" scale="0" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+      </defs></svg>
+      <div class="act__bg"><img src="/assets/img/etch-faust-neg.webp" style="filter:url(#mf-warp2)" alt="" aria-hidden="true" width="1800" height="1100" loading="lazy" /></div>
+      <div class="act__scrim" aria-hidden="true"></div>
+      <span class="act__num" aria-hidden="true">02</span>
+      <div class="act__stage">
+        <span class="act__eyebrow">Convicción 02</span>
+        <h2 class="act__h">Ni prohibirla,<br /><em>ni endiosarla.</em></h2>
+        <span class="act__rule" aria-hidden="true"></span>
+        <p class="act__p">El miedo y el hype terminan en el mismo lugar: nadie aprende a usarla con criterio. Ni vetarla como amenaza ni adorarla como milagro. Enseñamos a usarla bien, a conciencia.</p>
+      </div>
+    </section>
 
-      <article class="mf-val mf-val--blue">
-        <div class="mf-val__in" data-reveal>
-          <span class="mf-val__num">02 &middot; PRINCIPIO</span>
-          <h2 class="mf-val__h">Ni prohibirla,<br /><em>ni endiosarla.</em></h2>
-          <p class="mf-val__p">El miedo y el hype terminan en el mismo lugar: nadie aprende a usarla con criterio. Ni vetarla como amenaza ni adorarla como milagro. Enseñamos a usarla bien, a conciencia.</p>
-          <div class="mf-val__rule" aria-hidden="true"></div>
+    <!-- ACT 03 · light plate · Faust positive (the oracle disc) -->
+    <section class="act act--split act--light" aria-label="Convicción 3">
+      <span class="act__num" aria-hidden="true">03</span>
+      <div class="act__stage">
+        <div class="act__copy">
+          <span class="act__eyebrow">Convicción 03</span>
+          <h2 class="act__h">Entender la máquina,<br /><em>no venerarla.</em></h2>
+          <span class="act__rule" aria-hidden="true"></span>
+          <p class="act__p">La IA no piensa: predice. Es un motor, no un oráculo. Cuando un maestro entiende cómo funciona por dentro, deja de tenerle miedo y empieza a usarla con juicio.</p>
         </div>
-      </article>
+        <div class="act__media act__media--plate"><img src="/assets/img/etch-faust-pos.webp" alt="Detalle del grabado de Fausto: un disco radiante, el falso oráculo" width="1800" height="1100" loading="lazy" /></div>
+      </div>
+    </section>
 
-      <article class="mf-val">
-        <div class="mf-val__in" data-reveal>
-          <span class="mf-val__num">03 &middot; PRINCIPIO</span>
-          <h2 class="mf-val__h">Entender la máquina,<br /><em>no venerarla.</em></h2>
-          <p class="mf-val__p">La IA no piensa: predice. Es un motor, no un oráculo. Cuando un maestro entiende cómo funciona por dentro, deja de tenerle miedo y empieza a usarla con juicio.</p>
-          <div class="mf-val__rule" aria-hidden="true"></div>
-        </div>
-      </article>
+    <!-- ACT 04 · INK · the teacher (Van Ostade) -->
+    <section class="act act--full act--ink" aria-label="Convicción 4">
+      <div class="act__bg"><img src="/assets/img/teach-ostade.webp" alt="" aria-hidden="true" width="1800" height="1100" loading="lazy" /></div>
+      <div class="act__scrim" aria-hidden="true"></div>
+      <span class="act__num" aria-hidden="true">04</span>
+      <div class="act__stage">
+        <span class="act__eyebrow">Convicción 04</span>
+        <h2 class="act__h">La IA hace el borrador;<br /><em>el maestro decide.</em></h2>
+        <span class="act__rule" aria-hidden="true"></span>
+        <p class="act__p">La máquina sugiere; la relación confirma. Puede escribir un primer intento, nunca ver a un alumno quedarse callado y saber por qué. La confianza, el juicio y el cuidado no se automatizan.</p>
+      </div>
+    </section>
 
-      <article class="mf-val mf-val--ink">
-        <div class="mf-val__in" data-reveal>
-          <span class="mf-val__num">04 &middot; PRINCIPIO</span>
-          <h2 class="mf-val__h">La IA hace el borrador;<br /><em>el maestro decide.</em></h2>
-          <p class="mf-val__p">La máquina sugiere; la relación confirma. Puede escribir un primer intento, nunca ver a un alumno quedarse callado y saber por qué. La confianza, el juicio y el cuidado no se automatizan.</p>
-          <div class="mf-val__rule" aria-hidden="true"></div>
+    <!-- DATA BEAT · BLUE -->
+    <section class="mf-databeat" aria-label="El dato">
+      <div class="mf-data">
+        <p class="mf-data__lead" data-mf-reveal>El punto de partida</p>
+        <div class="mf-data__row">
+          <span class="mf-data__n" data-count="9">9</span>
+          <span class="mf-data__unit">de cada <b>10</b> maestros ya usan IA.</span>
         </div>
-      </article>
+        <div class="mf-data__row mf-data__row--muted">
+          <span class="mf-data__n" data-count="3">3</span>
+          <span class="mf-data__unit">de cada <b>10</b> saben qué hacer con lo que les contesta.</span>
+        </div>
+      </div>
+    </section>
 
-      <article class="mf-val mf-val--blue">
-        <div class="mf-val__in" data-reveal>
-          <span class="mf-val__num">05 &middot; PRINCIPIO</span>
-          <h2 class="mf-val__h">Confianza,<br /><em>no control.</em></h2>
-          <p class="mf-val__p">Acompañar no es vigilar. Un panel que solo señala no acompaña, y rastrear al alumno no es cuidarlo. Protegemos sus datos como parte del trabajo, no como una casilla que se marca.</p>
-          <div class="mf-val__rule" aria-hidden="true"></div>
+    <!-- ACT 05 · light · Athens (resolution) -->
+    <section class="act act--split act--light" aria-label="Convicción 5">
+      <span class="act__num" aria-hidden="true">05</span>
+      <div class="act__stage">
+        <div class="act__copy">
+          <span class="act__eyebrow">Convicción 05</span>
+          <h2 class="act__h">Confianza,<br /><em>no control.</em></h2>
+          <span class="act__rule" aria-hidden="true"></span>
+          <p class="act__p">Acompañar no es vigilar. Un panel que solo señala no acompaña, y rastrear al alumno no es cuidarlo. Protegemos sus datos como parte del trabajo, no como una casilla que se marca.</p>
         </div>
-      </article>
+        <div class="act__media"><img src="/assets/img/etch-athens-pos.webp" alt="La Escuela de Atenas, detalle en positivo" width="1200" height="1600" loading="lazy" /></div>
+      </div>
     </section>
 
     <!-- KINETIC BAND -->
@@ -124,14 +163,14 @@
       </div></div>
     </section>
 
-    <!-- CLOSING CTA -->
-    <section class="section cta" id="contact">
-      <div class="wrap">
-        <p class="label" data-reveal style="color:var(--accent);">SI LO COMPARTES</p>
-        <h2 data-reveal>Trabajemos desde aquí.</h2>
-        <p data-reveal>Si esta forma de ver la IA se parece a la tuya, empecemos. En veinte minutos te decimos qué conviene arreglar primero en tu institución, con o sin herramienta.</p>
-        <div class="hero-cta" data-reveal>
-          <a class="btn btn-primary" href="https://calendly.com/hesus-cobos/30min" target="_blank" rel="noopener">Agenda una llamada de 30 min &rarr;</a>
+    <!-- CLOSE · CTA -->
+    <section class="mf-close" id="contact">
+      <div class="mf-close__in">
+        <span class="mf-kick" data-mf-reveal>FIG. 06 &middot; EMPECEMOS</span>
+        <h2 data-mf-reveal>No agregamos IA.<br /><em>Potenciamos al maestro.</em></h2>
+        <p data-mf-reveal>Si esta forma de ver la IA se parece a la tuya, empecemos. En veinte minutos te decimos qué conviene arreglar primero en tu institución, con o sin herramienta.</p>
+        <div class="hero-cta" data-mf-reveal style="margin-top:2rem;">
+          <a class="btn btn-primary" href="https://calendly.com/hesus-cobos/30min" target="_blank" rel="noopener" style="background:var(--accent);color:var(--ink-blue);border-color:var(--accent);">Agenda una llamada de 30 min &rarr;</a>
           <a class="tlink" href="/es/servicios/" style="color:var(--on-blue);border-color:var(--on-blue);">Ver servicios y precios</a>
         </div>
       </div>
@@ -145,6 +184,12 @@
       <span class="stamp" style="opacity:0.66;">Convicciones, no consignas. Educadores primero. Ingenieros también.</span>
     </div>
   </footer>
-  <script src="/assets/main.js?v=20260708" defer></script>
+
+  <script src="/assets/vendor/gsap.min.js" defer></script>
+  <script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="/assets/vendor/lenis.min.js" defer></script>
+  <script src="/assets/vendor/split-type.min.js" defer></script>
+  <script src="/assets/manifesto.js?v=20260708b" defer></script>
+  <script src="/assets/main.js?v=20260708b" defer></script>
 </body>
 </html>
