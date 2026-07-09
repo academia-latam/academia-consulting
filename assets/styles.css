@@ -439,3 +439,7 @@ html.anim [data-reveal].in { opacity: 1; transform: none; clip-path: inset(0 0 0
 .ml-field input:focus-visible { outline: none; border-color: var(--primary); }
 .ml-form .btn { justify-content: center; margin-top: 0.3rem; }
 .ml-note { font-family: var(--font-mono); font-size: 0.78rem; color: var(--muted); margin: 0.2rem 0 0; }
+/* embedded provider form (Brevo iframe) */
+.webi__form--embed { padding: 0; overflow: hidden; }
+.webi__form--embed iframe { width: 100%; min-height: 380px; border: 0; display: block; background: var(--bg); }
+.webi__form--embed .ml-note { padding: 0.85rem clamp(1rem, 3vw, 1.4rem) 1.05rem; margin: 0; border-top: 1px solid var(--line); }
