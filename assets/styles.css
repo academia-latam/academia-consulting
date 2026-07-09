@@ -443,3 +443,7 @@ html.anim [data-reveal].in { opacity: 1; transform: none; clip-path: inset(0 0 0
 .webi__form--embed { padding: 0; overflow: hidden; }
 .webi__form--embed iframe { width: 100%; min-height: 380px; border: 0; display: block; background: var(--bg); }
 .webi__form--embed .ml-note { padding: 0.85rem clamp(1rem, 3vw, 1.4rem) 1.05rem; margin: 0; border-top: 1px solid var(--line); }
+/* freebie strip (direct PDF download, separate from the webinar form) */
+.freebie { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.2rem 2rem; margin-top: clamp(2rem, 5vw, 3.2rem); padding-top: clamp(1.6rem, 4vw, 2.4rem); border-top: 1.5px solid var(--line); }
+.freebie__txt h3 { font-family: var(--font-display); font-weight: 700; font-size: clamp(1.4rem, 3vw, 2.1rem); letter-spacing: -0.02em; margin: 0.4rem 0 0.5rem; }
+.freebie__txt p { font-family: var(--font-mono); color: var(--muted); font-size: 0.95rem; max-width: 52ch; margin: 0; }
