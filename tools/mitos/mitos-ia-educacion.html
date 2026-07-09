@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<title>6 mitos de la IA en la educación · AcademIAS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,600;0,700;0,800&family=Bodoni+Moda:opsz,wght@6..96,400..600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#fbfbfe; --ink:#10131f; --primary:#1f2bd6; --primary-deep:#141a8f;
+    --accent:#e9f43a; --muted:#4a4f6b; --line:#e2e3ee; --on-blue:#ffffff;
+    --ink-blue:#2a2f8a;
+    --fd:"Archivo",sans-serif; --fw:"Bodoni Moda",serif; --fm:"IBM Plex Mono",monospace;
+  }
+  *{box-sizing:border-box;}
+  @page{ size:Letter; margin:0; }
+  html,body{margin:0;padding:0;background:#5457c8;}
+  body{ font-family:var(--fm); color:var(--ink); -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .page{ position:relative; width:8.5in; min-height:11in; background:var(--bg); padding:0.85in 0.8in 0.7in; page-break-after:always; overflow:hidden; }
+  .page:last-child{ page-break-after:auto; }
+
+  /* shared type */
+  .kick{ font-family:var(--fm); font-size:9.5pt; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:var(--primary); border:1.4px solid currentColor; border-radius:2px; padding:4px 8px; display:inline-block; }
+  h1{ font-family:var(--fd); font-weight:800; letter-spacing:-0.02em; line-height:0.98; margin:0; }
+  h2{ font-family:var(--fd); font-weight:800; letter-spacing:-0.02em; line-height:1.0; margin:0; }
+  p{ line-height:1.5; margin:0 0 0.5em; }
+  .mono-label{ font-family:var(--fm); font-size:8.5pt; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); }
+
+  /* COVER */
+  .cover{ background:var(--primary); color:var(--on-blue); display:flex; flex-direction:column; justify-content:space-between; }
+  .cover .kick{ color:var(--accent); border-color:var(--accent); }
+  .cover h1{ color:var(--on-blue); font-size:52pt; margin-top:0.35in; }
+  .cover h1 em{ font-style:normal; color:var(--accent); }
+  .cover .sub{ font-family:var(--fm); font-size:13pt; line-height:1.5; color:rgba(255,255,255,0.9); max-width:5in; margin-top:0.3in; }
+  .cover .brand{ font-family:var(--fw); font-size:20pt; letter-spacing:0.06em; text-transform:uppercase; }
+  .cover .foot{ font-family:var(--fm); font-size:9.5pt; letter-spacing:0.06em; color:rgba(255,255,255,0.82); border-top:1px solid rgba(255,255,255,0.3); padding-top:12px; display:flex; justify-content:space-between; }
+  .cover .disc{ position:absolute; right:-1.1in; top:2.2in; width:4.6in; height:4.6in; border-radius:50%; border:1.5px solid rgba(233,244,58,0.5); }
+  .cover .disc2{ position:absolute; right:-0.2in; top:3.2in; width:2.8in; height:2.8in; border-radius:50%; border:1.5px solid rgba(255,255,255,0.28); }
+
+  /* MYTH page */
+  .top{ display:flex; align-items:center; justify-content:space-between; border-bottom:1.5px solid var(--line); padding-bottom:10px; margin-bottom:0.34in; }
+  .top .num{ font-family:var(--fd); font-weight:800; font-size:15pt; color:var(--primary); }
+  .myth-tag{ font-family:var(--fm); font-size:9pt; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); }
+  .myth-h{ font-family:var(--fd); font-weight:800; font-size:30pt; line-height:1.0; letter-spacing:-0.02em; color:var(--ink); max-width:6.2in; }
+  .myth-h .q{ color:var(--muted); }
+  .block{ margin-top:0.3in; }
+  .block .lab{ font-family:var(--fm); font-size:9pt; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--primary); margin-bottom:6px; }
+  .block.real .lab{ color:var(--ink-blue); }
+  .block p{ font-size:11.5pt; color:var(--ink); max-width:6.3in; }
+  .block.why p{ color:var(--muted); }
+  .doit{ margin-top:0.3in; background:#eef0ff; border:1.5px solid #d5d8f5; border-radius:3px; padding:14px 16px; max-width:6.3in; }
+  .doit .lab{ display:inline-block; font-family:var(--fm); font-size:8.5pt; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--primary-deep); background:var(--accent); padding:2px 7px; border-radius:2px; margin-bottom:8px; }
+  .doit p{ font-size:11pt; margin:0; }
+  .src{ position:absolute; bottom:0.55in; left:0.8in; right:0.8in; font-family:var(--fm); font-size:8pt; color:var(--muted); border-top:1px solid var(--line); padding-top:7px; }
+  .pageno{ position:absolute; bottom:0.55in; right:0.8in; font-family:var(--fm); font-size:8pt; color:var(--muted); }
+
+  /* CLOSING toolkit */
+  .kit-h{ font-family:var(--fd); font-weight:800; font-size:26pt; line-height:1.02; letter-spacing:-0.02em; max-width:6in; margin-top:6px; }
+  .kit-h em{ font-style:normal; color:var(--primary); }
+  .kit{ margin-top:0.32in; }
+  .kit-item{ display:flex; gap:12px; padding:11px 0; border-top:1px solid var(--line); }
+  .kit-item .n{ font-family:var(--fm); font-weight:600; color:var(--primary); font-size:10pt; min-width:22px; }
+  .kit-item .t{ font-size:11pt; line-height:1.45; }
+  .kit-item .t b{ color:var(--ink-blue); }
+  .kicker-line{ font-family:var(--fd); font-weight:700; font-size:15pt; color:var(--ink-blue); margin-top:0.3in; max-width:6in; line-height:1.2; }
+  .cta-box{ margin-top:0.3in; background:var(--primary); color:var(--on-blue); padding:18px 20px; display:flex; justify-content:space-between; align-items:center; gap:16px; }
+  .cta-box .l{ font-family:var(--fm); font-size:11pt; line-height:1.4; }
+  .cta-box .l b{ color:var(--accent); }
+  .cta-box .u{ font-family:var(--fw); font-size:15pt; letter-spacing:0.04em; text-transform:uppercase; white-space:nowrap; }
+
+  /* SOURCES */
+  .src-h{ font-family:var(--fd); font-weight:800; font-size:22pt; }
+  .refs{ margin-top:0.28in; }
+  .ref{ font-family:var(--fm); font-size:9.5pt; line-height:1.5; color:var(--ink); padding:8px 0; border-top:1px solid var(--line); }
+  .ref b{ color:var(--ink-blue); }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<section class="page cover">
+  <div class="disc" aria-hidden="true"></div>
+  <div class="disc2" aria-hidden="true"></div>
+  <div>
+    <span class="kick">ACADEMIAS · RECURSO GRATUITO</span>
+    <h1>6 mitos de la IA<br />en la <em>educación</em>.</h1>
+    <p class="sub">Lo que conviene desarmar antes de llevar la IA a tu salón. Con evidencia, y con qué hacer el lunes.</p>
+  </div>
+  <div>
+    <div class="brand">AcademIAS</div>
+    <div class="foot"><span>academias.dev</span><span>IA en educación · primero la pedagogía</span></div>
+  </div>
+</section>
+
+<!-- MITO 01 -->
+<section class="page">
+  <div class="top"><span class="num">01</span><span class="myth-tag">Mito · La máquina</span></div>
+  <h2 class="myth-h">"La IA piensa y entiende como una persona."</h2>
+  <div class="block why"><div class="lab">Por qué se siente cierto</div><p>Responde en segundos, con seguridad y en oraciones bien armadas. Parece que razona igual que tú.</p></div>
+  <div class="block real"><div class="lab">La realidad</div><p>Un modelo de lenguaje predice la siguiente palabra más probable, una tras otra. No comprende lo que dice ni verifica si es verdad. Por eso "alucina": inventa datos, citas y fuentes con el mismo tono seguro con el que acierta.</p></div>
+  <div class="doit"><div class="lab">Qué hacer en tu clase</div><p>Trátala como un becario veloz pero sin criterio: pídele borradores, no veredictos. Dale tus propias fuentes (tus apuntes, tu PDF, tu rúbrica) para que trabaje sobre ellas, y verifica siempre lo que afirme.</p></div>
+  <div class="pageno">2</div>
+</section>
+
+<!-- MITO 02 -->
+<section class="page">
+  <div class="top"><span class="num">02</span><span class="myth-tag">Mito · Vigilancia</span></div>
+  <h2 class="myth-h">"Los detectores de IA atrapan a los tramposos."</h2>
+  <div class="block why"><div class="lab">Por qué se siente cierto</div><p>Suena a solución perfecta: pegas el texto, el sistema te dice "es IA" y listo.</p></div>
+  <div class="block real"><div class="lab">La realidad</div><p>No funcionan de forma confiable. OpenAI retiró su propio detector en 2023 porque acertaba apenas el 26%. Un estudio de Stanford mostró que estos detectores marcan como "IA" los textos de estudiantes que no tienen el idioma como lengua materna; en un análisis, más de la mitad de los ensayos de no nativos fueron señalados por error. Turnitin admite un margen de más o menos 15 puntos en cada resultado.</p></div>
+  <div class="doit"><div class="lab">Qué hacer en tu clase</div><p>No bases una acusación en un detector. Rediseña la tarea: pide el proceso (borradores, notas, versiones), suma una parte oral o en clase, y usa criterios que la IA no pueda cumplir sola.</p></div>
+  <div class="src">Fuentes: OpenAI (2023); Liang et al., Stanford, "GPT detectors are biased against non-native English writers", Patterns (2023).</div>
+  <div class="pageno">3</div>
+</section>
+
+<!-- MITO 03 -->
+<section class="page">
+  <div class="top"><span class="num">03</span><span class="myth-tag">Mito · El maestro</span></div>
+  <h2 class="myth-h">"La IA va a reemplazar al maestro."</h2>
+  <div class="block why"><div class="lab">Por qué se siente cierto</div><p>Si redacta, explica y hasta califica, uno se pregunta para qué sigue el docente.</p></div>
+  <div class="block real"><div class="lab">La realidad</div><p>La IA automatiza tareas: planear, redactar, generar variantes. No automatiza la relación. No nota que un alumno llegó sin dormir, no sostiene la motivación de un grupo, no decide qué vale la pena aprender. La guía de la UNESCO (2023) lo dice claro: la IA debe servir a las capacidades humanas, no sustituirlas.</p></div>
+  <div class="doit"><div class="lab">Qué hacer en tu clase</div><p>Delega lo mecánico y recupera ese tiempo para lo que sí necesita un humano: acompañar, dar retroalimentación en persona y ajustar la clase sobre la marcha.</p></div>
+  <div class="src">Fuente: UNESCO, "Guidance for generative AI in education and research" (2023).</div>
+  <div class="pageno">4</div>
+</section>
+
+<!-- MITO 04 -->
+<section class="page">
+  <div class="top"><span class="num">04</span><span class="myth-tag">Mito · La prohibición</span></div>
+  <h2 class="myth-h">"Prohibir la IA resuelve el problema."</h2>
+  <div class="block why"><div class="lab">Por qué se siente cierto</div><p>Si no se puede usar, parece que no hay nada de qué preocuparse.</p></div>
+  <div class="block real"><div class="lab">La realidad</div><p>La usan de todos modos. En 2025, el 92% de los estudiantes reportó usar IA, contra 66% un año antes, y el 88% la usa para tareas y exámenes. Prohibirla no la desaparece: solo asegura que la usen a escondidas y sin criterio, justo lo contrario de lo que quieres.</p></div>
+  <div class="doit"><div class="lab">Qué hacer en tu clase</div><p>Cambia el veto por reglas claras y alfabetización. Define en qué partes sí y en cuáles no, y enseña a declarar su uso. Una política corta y honesta funciona mejor que una prohibición que nadie sigue.</p></div>
+  <div class="src">Fuente: HEPI, "Student Generative AI Survey 2025".</div>
+  <div class="pageno">5</div>
+</section>
+
+<!-- MITO 05 -->
+<section class="page">
+  <div class="top"><span class="num">05</span><span class="myth-tag">Mito · La trampa</span></div>
+  <h2 class="myth-h">"Si el alumno usó IA, hizo trampa."</h2>
+  <div class="block why"><div class="lab">Por qué se siente cierto</div><p>Usar una máquina que "hace el trabajo" se siente, de entrada, como copiar.</p></div>
+  <div class="block real"><div class="lab">La realidad</div><p>Depende de la tarea y de las reglas que pusiste. La misma herramienta puede ser trampa (que entregue el trabajo por él) o andamiaje legítimo (que le ayude a entender, practicar o revisar). Sin reglas explícitas, ni el alumno ni tú saben dónde está la línea.</p></div>
+  <div class="doit"><div class="lab">Qué hacer en tu clase</div><p>Define los usos permitidos por tarea, pide que declaren cómo la usaron y evalúa el proceso y el pensamiento, no solo el producto final.</p></div>
+  <div class="pageno">6</div>
+</section>
+
+<!-- MITO 06 -->
+<section class="page">
+  <div class="top"><span class="num">06</span><span class="myth-tag">Mito · La compra</span></div>
+  <h2 class="myth-h">"Comprar una herramienta de IA mejora el aprendizaje."</h2>
+  <div class="block why"><div class="lab">Por qué se siente cierto</div><p>Firmar la compra se siente como avanzar, como que la escuela ya "hizo algo" con la IA.</p></div>
+  <div class="block real"><div class="lab">La realidad</div><p>La herramienta no enseña; enseña el diseño de la clase. Una IA cara sobre una tarea mal pensada sigue siendo una tarea mal pensada, solo que más rápida. Lo que mueve el aprendizaje es el objetivo pedagógico, y la herramienta se suma cuando de verdad lo sirve.</p></div>
+  <div class="doit"><div class="lab">Qué hacer en tu clase</div><p>Empieza por la pregunta de clase, no por el catálogo de apps. Pilotea en pequeño, observa si de verdad ayuda a aprender y quédate solo con lo que gane su lugar.</p></div>
+  <div class="src">Marco: UNESCO (2023), enfoque humanista y centrado en la pedagogía.</div>
+  <div class="pageno">7</div>
+</section>
+
+<!-- CLOSING TOOLKIT -->
+<section class="page">
+  <div class="top"><span class="num">+</span><span class="myth-tag">Kit práctico</span></div>
+  <span class="kick" style="color:var(--primary);border-color:var(--primary);">LO QUE SÍ FUNCIONA</span>
+  <h2 class="kit-h">Lo que sí puedes hacer con IA,<br /><em>si diseñas bien.</em></h2>
+  <div class="kit">
+    <div class="kit-item"><span class="n">01</span><span class="t"><b>Diferencia por nivel:</b> pídele tres versiones del mismo ejercicio (fácil, medio, reto) para el mismo grupo.</span></div>
+    <div class="kit-item"><span class="n">02</span><span class="t"><b>Retroalimentación en borrador:</b> convierte tu rúbrica en comentarios que tú revisas y ajustas antes de entregar.</span></div>
+    <div class="kit-item"><span class="n">03</span><span class="t"><b>Explica lo difícil:</b> genera ejemplos y contraejemplos para un concepto que siempre se atora.</span></div>
+    <div class="kit-item"><span class="n">04</span><span class="t"><b>Planea más rápido:</b> un primer borrador de tu secuencia didáctica, que adaptas a tu grupo real.</span></div>
+    <div class="kit-item"><span class="n">05</span><span class="t"><b>Tareas a prueba de IA:</b> diséñalas para que pidan proceso, voz propia, datos locales o una defensa oral.</span></div>
+    <div class="kit-item"><span class="n">06</span><span class="t"><b>Baja las alucinaciones:</b> dale tus fuentes (tu PDF, tus apuntes, herramientas como NotebookLM) para que trabaje sobre ellas.</span></div>
+  </div>
+  <p class="kicker-line">La IA no reemplaza tu criterio. Bien usada, le da más alcance.</p>
+  <div class="cta-box">
+    <span class="l"><b>¿Quieres llevar esto a tu escuela?</b><br />Webinar gratis, el 22 de cada mes.</span>
+    <span class="u">academias.dev</span>
+  </div>
+  <div class="pageno">8</div>
+</section>
+
+<!-- SOURCES -->
+<section class="page">
+  <div class="top"><span class="num">§</span><span class="myth-tag">Fuentes</span></div>
+  <h2 class="src-h">De dónde salen los datos.</h2>
+  <div class="refs">
+    <div class="ref"><b>OpenAI (2023).</b> Retiro del clasificador de texto por IA por baja precisión (acierto reportado del 26%).</div>
+    <div class="ref"><b>Liang, W. et al. (2023).</b> "GPT detectors are biased against non-native English writers." Patterns / Stanford HAI.</div>
+    <div class="ref"><b>PNAS Nexus (2023).</b> Más del 50% de ensayos TOEFL de no nativos marcados por error como IA.</div>
+    <div class="ref"><b>Turnitin.</b> Margen declarado de más o menos 15 puntos por resultado; RAID Benchmark, U. Pennsylvania (2024), sobre la caída de precisión de los detectores.</div>
+    <div class="ref"><b>HEPI (2025).</b> "Student Generative AI Survey": 92% de estudiantes usan IA (66% en 2024); 88% la usa para evaluaciones.</div>
+    <div class="ref"><b>UNESCO (2023).</b> "Guidance for generative AI in education and research": enfoque humanista, la IA al servicio de las capacidades humanas.</div>
+  </div>
+  <div class="cta-box" style="margin-top:0.5in;">
+    <span class="l"><b>AcademIAS.</b> IA en educación, primero la pedagogía.<br />Formación docente · rediseño de evaluación · política de IA.</span>
+    <span class="u">academias.dev</span>
+  </div>
+  <div class="pageno">9</div>
+</section>
+
+</body>
+</html>
