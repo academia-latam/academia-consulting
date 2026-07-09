@@ -410,7 +410,6 @@ html.anim [data-reveal].in { opacity: 1; transform: none; clip-path: inset(0 0 0
 .ses-row .t b { color: var(--primary); font-weight: 600; }
 .mod__deliver { font-family: var(--font-mono); font-size: 0.86rem; color: var(--primary); margin-top: 0.9rem; }
 .mod__deliver::before { content: "↳ Entregable: "; color: var(--muted); }
-.mod--free .mod__title::after { content: "Sesión 1 · demo gratis"; font-family: var(--font-mono); font-size: 0.64rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-blue); background: var(--accent); padding: 0.22rem 0.5rem; border-radius: 2px; margin-left: 0.7rem; vertical-align: 0.2em; white-space: nowrap; }
 
 /* two-column prose grid (audience / outcomes) — reuses .roi rhythm */
 .cols { display: grid; gap: 1.4rem; margin-top: 1.2rem; }
@@ -419,3 +418,24 @@ html.anim [data-reveal].in { opacity: 1; transform: none; clip-path: inset(0 0 0
 .ck { display: grid; grid-template-columns: auto 1fr; gap: 0.6rem 0.8rem; padding: 0.5rem 0; border-top: 1px solid var(--line); font-family: var(--font-mono); font-size: 0.95rem; }
 .ck::before { content: "→"; color: var(--primary); font-weight: 600; }
 .ck b { color: var(--primary); }
+
+/* ---- WEBINAR + FREEBIE (servicios) ---- */
+.webi { display: grid; gap: clamp(1.6rem, 4vw, 3rem); margin-top: 0.4rem; }
+@media (min-width: 900px) { .webi { grid-template-columns: 1.1fr 0.9fr; align-items: start; } }
+.webi__k { font-family: var(--font-mono); font-weight: 600; font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--primary); }
+.webi__pitch h3 { font-family: var(--font-display); font-weight: 700; font-size: clamp(1.5rem, 3.5vw, 2.4rem); letter-spacing: -0.02em; margin: 0.5rem 0 0.9rem; }
+.webi__pitch > p { max-width: 48ch; }
+.webi__list { list-style: none; margin: 1.1rem 0 1.2rem; padding: 0; border-top: 1px solid var(--line); }
+.webi__list li { font-family: var(--font-mono); font-size: 0.95rem; color: var(--ink); padding: 0.7rem 0 0.7rem 1.7rem; border-bottom: 1px solid var(--line); position: relative; }
+.webi__list li::before { content: "→"; position: absolute; left: 0; color: var(--primary); font-weight: 600; }
+.webi__free { font-family: var(--font-mono); font-size: 0.95rem; color: var(--ink-blue); }
+.webi__free b { color: var(--primary); }
+/* MailerLite form, styled in-brand (ledger, no card chrome) */
+.webi__form { background: var(--bg); border: 1.5px solid var(--line); border-radius: 2px; padding: clamp(1.2rem, 3vw, 1.8rem); }
+.ml-form { display: grid; gap: 0.9rem; }
+.ml-field { display: grid; gap: 0.35rem; }
+.ml-field span { font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.ml-field input { font-family: var(--font-mono); font-size: 1rem; color: var(--ink); background: var(--surface); border: 1.5px solid var(--line); border-radius: 2px; padding: 0.7rem 0.8rem; width: 100%; transition: border-color 0.15s var(--ease-out); }
+.ml-field input:focus-visible { outline: none; border-color: var(--primary); }
+.ml-form .btn { justify-content: center; margin-top: 0.3rem; }
+.ml-note { font-family: var(--font-mono); font-size: 0.78rem; color: var(--muted); margin: 0.2rem 0 0; }
