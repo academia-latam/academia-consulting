@@ -448,3 +448,23 @@ html.anim [data-reveal].in { opacity: 1; transform: none; clip-path: inset(0 0 0
 .freebie { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.2rem 2rem; margin-top: clamp(2rem, 5vw, 3.2rem); padding-top: clamp(1.6rem, 4vw, 2.4rem); border-top: 1.5px solid var(--line); }
 .freebie__txt h3 { font-family: var(--font-display); font-weight: 700; font-size: clamp(1.4rem, 3vw, 2.1rem); letter-spacing: -0.02em; margin: 0.4rem 0 0.5rem; }
 .freebie__txt p { font-family: var(--font-mono); color: var(--muted); font-size: 0.95rem; max-width: 52ch; margin: 0; }
+
+/* ================================================================
+   TEAL WORLD — "cursos / producto" (WGSN 2026 Transformative Teal)
+   Scoped palette: redefine the brand tokens on a wrapper and every
+   descendant that reads var(--token) recolors automatically. The
+   global chrome (.frame, .nav, .vignette) uses hardcoded blue and
+   stays blue on purpose, so only the section body shifts to teal.
+   Apply to a <main class="tema-cursos"> or a <section class="section--teal">.
+   ================================================================ */
+.tema-cursos, .section--teal {
+  --primary:       oklch(0.49 0.075 195);   /* Teal Core  ~#14676A  (links, borders, chips; AA on white) */
+  --primary-press: oklch(0.41 0.065 195);   /* teal hover/press */
+  --ink-blue:      oklch(0.44 0.070 195);   /* secondary teal: em/b, ghost button text */
+  --surface-blue:  oklch(0.49 0.075 195);   /* in-scope dark fills (.cta / .band) */
+  --surface-ink:   oklch(0.34 0.055 195);   /* Teal Deep ~#0C4A4C: dark blocks / footers in-world */
+  --accent:        oklch(0.92 0.240 128);   /* Green Glow ~#C6F000 — ONLY on dark within this scope */
+}
+/* Green Glow is decorative on light backgrounds (fails contrast as text on white):
+   keep it to accents/fills on dark. On teal dark blocks it reads as the energy spark. */
+.tema-cursos .band--glow, .section--teal .band--glow { background: var(--surface-ink); color: var(--on-blue); }
