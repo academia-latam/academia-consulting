@@ -35,8 +35,8 @@
     var l2 = splitChars(hero.querySelector(".l2"));
     var heroChars = [].concat(l1 ? l1.chars : [], l2 ? l2.chars : []);
     if (heroChars.length) {
-      gsap.set(heroChars, { yPercent: 115, opacity: 0 });
-      gsap.to(heroChars, { yPercent: 0, opacity: 1, duration: 0.9, ease: "expo.out", stagger: 0.018, delay: 0.15 });
+      gsap.set(heroChars, { yPercent: 130, opacity: 0 });
+      gsap.to(heroChars, { yPercent: 0, opacity: 1, duration: 1.0, ease: "expo.out", stagger: 0.02, delay: 0.15 });
     }
     var sub = hero.querySelector(".mf-hero__sub");
     var kick = hero.querySelector(".mf-kick");
@@ -45,16 +45,16 @@
 
     var heroBg = hero.querySelector(".mf-hero__bg");
     if (heroBg) {
-      gsap.to(heroBg, { yPercent: 16, ease: "none", scrollTrigger: { trigger: hero, start: "top top", end: "bottom top", scrub: true } });
+      gsap.to(heroBg, { yPercent: 26, ease: "none", scrollTrigger: { trigger: hero, start: "top top", end: "bottom top", scrub: true } });
     }
     // warp the Faust etching as you leave the hero
     var warp = document.querySelector("#mf-warp feDisplacementMap");
     if (warp) {
-      gsap.fromTo(warp, { attr: { scale: 0 } }, { attr: { scale: 34 }, ease: "none",
+      gsap.fromTo(warp, { attr: { scale: 0 } }, { attr: { scale: 52 }, ease: "none",
         scrollTrigger: { trigger: hero, start: "top top", end: "bottom top", scrub: true } });
     }
     // title drifts up + fades as hero exits
-    gsap.to(".mf-hero__in", { yPercent: -18, opacity: 0.15, ease: "none",
+    gsap.to(".mf-hero__in", { yPercent: -28, opacity: 0.12, ease: "none",
       scrollTrigger: { trigger: hero, start: "center top", end: "bottom top", scrub: true } });
   }
 
@@ -74,7 +74,7 @@
       scrollTrigger: {
         trigger: act,
         start: "top top",
-        end: "+=130%",
+        end: "+=155%",
         pin: !small,
         scrub: 0.6,
         anticipatePin: 1
@@ -82,19 +82,19 @@
     });
 
     // numeral stays visible (opacity from CSS) and anchors each scene; only scales
-    if (num) tl.fromTo(num, { scale: 1.16, yPercent: (act.classList.contains("act--split") ? -4 : 4) },
+    if (num) tl.fromTo(num, { scale: 1.24, yPercent: (act.classList.contains("act--split") ? -6 : 6) },
                             { scale: 1, yPercent: 0, ease: "none" }, 0);
     // split acts: clip-wipe the bounded media column
-    if (splitMedia) tl.fromTo(splitMedia, { clipPath: "inset(0% 100% 0% 0%)", scale: 1.14 },
+    if (splitMedia) tl.fromTo(splitMedia, { clipPath: "inset(0% 100% 0% 0%)", scale: 1.2 },
                                           { clipPath: "inset(0% 0% 0% 0%)", scale: 1, ease: "none" }, 0);
     // full-bleed acts: keep the etching present (fade + settle), never an empty color field
-    if (fullBg) tl.fromTo(fullBg, { scale: 1.16, opacity: 0.5 }, { scale: 1, opacity: 1, ease: "none" }, 0);
+    if (fullBg) tl.fromTo(fullBg, { scale: 1.24, opacity: 0.5 }, { scale: 1, opacity: 1, ease: "none" }, 0);
     var warpMap = act.querySelector("feDisplacementMap");
-    if (warpMap) tl.fromTo(warpMap, { attr: { scale: 0 } }, { attr: { scale: 26 }, ease: "none" }, 0);
+    if (warpMap) tl.fromTo(warpMap, { attr: { scale: 0 } }, { attr: { scale: 42 }, ease: "none" }, 0);
     if (eyebrow) tl.fromTo(eyebrow, { opacity: 0, y: 16 }, { opacity: 1, y: 0, ease: "none" }, 0.05);
     if (chars.length) {
       gsap.set(chars, { display: "inline-block" });
-      tl.fromTo(chars, { yPercent: 120, opacity: 0 }, { yPercent: 0, opacity: 1, stagger: 0.012, ease: "none" }, 0.08);
+      tl.fromTo(chars, { yPercent: 135, opacity: 0 }, { yPercent: 0, opacity: 1, stagger: 0.014, ease: "none" }, 0.08);
     } else if (h) {
       tl.fromTo(h, { opacity: 0, y: 30 }, { opacity: 1, y: 0, ease: "none" }, 0.08);
     }
