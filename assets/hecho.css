@@ -1,0 +1,58 @@
+/* AcademIAS — Hecho con IA. Page-scoped: solo /es/hecho-con-ia/**.
+   Reglas: nada de tarjetas, sombras ni radios distintos de 2px.
+   Todos los colores salen de los tokens de styles.css. Sin valores nuevos. */
+
+/* ---- PROMPT (bloque copiable) ---- */
+.prompt { margin: 1.4rem 0; border: 1.5px solid var(--line); border-radius: 2px; background: var(--surface); }
+.prompt__head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.6rem 1rem;
+  padding: 0.6rem 0.9rem; border-bottom: 1px solid var(--line); }
+.prompt__lab { font-family: var(--font-mono); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--primary); }
+.prompt__copy { font-family: var(--font-mono); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--ink-blue); background: transparent; border: 1.5px solid var(--line);
+  border-radius: 2px; padding: 0.3rem 0.7rem; cursor: pointer; transition: color 0.15s var(--ease-out), border-color 0.15s var(--ease-out); }
+.prompt__copy:hover { color: var(--primary); border-color: var(--primary); }
+.prompt__copy:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+.prompt__copy[hidden] { display: none; }
+.prompt__body { margin: 0; padding: 0.9rem; font-family: var(--font-mono); font-size: 0.92rem; line-height: 1.6;
+  color: var(--ink); white-space: pre-wrap; overflow-x: auto; }
+.prompt__body code { font: inherit; }
+
+/* ---- PASOS (numerados, admiten bloques dentro) ---- */
+.pasos { margin-top: 1.4rem; border-top: 1px solid var(--line); }
+.paso { padding: clamp(1.2rem, 3vw, 1.9rem) 0; border-bottom: 1px solid var(--line); }
+.paso__n { font-family: var(--font-mono); font-weight: 600; font-size: 0.8rem; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--primary); }
+.paso h3 { font-family: var(--font-display); font-weight: 400; font-size: clamp(1.25rem, 2.6vw, 1.9rem);
+  text-transform: none; margin: 0.35rem 0 0.6rem; }
+.paso p { font-family: var(--font-mono); font-size: 0.97rem; margin: 0 0 0.8rem; max-width: 66ch; }
+.paso p:last-child { margin-bottom: 0; }
+
+/* ---- VTAB (afirmación / cita / página) ---- */
+.vtab-wrap { overflow-x: auto; margin: 1.4rem 0; border: 1.5px solid var(--line); border-radius: 2px; }
+.vtab { width: 100%; min-width: 640px; border-collapse: collapse; font-family: var(--font-mono); font-size: 0.9rem; }
+.vtab th { text-align: left; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--primary); background: var(--surface); padding: 0.7rem 0.9rem; border-bottom: 1.5px solid var(--line); }
+.vtab td { padding: 0.8rem 0.9rem; border-bottom: 1px solid var(--line); vertical-align: top; color: var(--ink); }
+.vtab tr:last-child td { border-bottom: 0; }
+.vtab .no { color: var(--muted); }
+
+/* ---- AVISO (dónde se rompe) ---- */
+.aviso { margin: 1.2rem 0; padding: 0.9rem 1.1rem; background: var(--surface);
+  border-left: 1.5px solid var(--primary); border-radius: 0 2px 2px 0; }
+.aviso__lab { display: block; font-family: var(--font-mono); font-size: 0.72rem; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--primary); margin-bottom: 0.4rem; }
+.aviso p { font-family: var(--font-mono); font-size: 0.95rem; margin: 0; max-width: 66ch; }
+.aviso p + p { margin-top: 0.6rem; }
+
+/* ---- CAPTURAS ----
+   No reutilizar .engraving: aplica mix-blend-mode:multiply y lava una captura. */
+.shot { display: block; width: 100%; height: auto; border: 1.5px solid var(--line); border-radius: 2px; background: var(--surface); }
+.plate figcaption .fecha { color: var(--muted); }
+
+/* ---- REJILLA DE PIEZAS (hub) ---- */
+.piezas-grid { display: grid; gap: clamp(1.6rem, 4vw, 2.6rem); margin-top: 1.4rem; }
+@media (min-width: 900px) { .piezas-grid { grid-template-columns: repeat(3, 1fr); } }
+.piezas-grid figure { margin: 0; }
+.piezas-grid figcaption { font-family: var(--font-mono); font-size: 0.88rem; color: var(--muted); margin-top: 0.7rem; }
+.piezas-grid figcaption b { display: block; color: var(--ink); font-weight: 600; margin-bottom: 0.2rem; }

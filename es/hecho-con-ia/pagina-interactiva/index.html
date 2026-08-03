@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script>(function(){var d=document.documentElement;if(matchMedia('(prefers-reduced-motion: reduce)').matches||navigator.webdriver)return;d.classList.add('anim');window.__revealFS=setTimeout(function(){d.classList.remove('anim');},2200);})();</script>
+  <title>Una página interactiva para tu clase · Hecho con IA · AcademIAS</title>
+  <meta name="description" content="Cómo pedirle a la IA un archivo HTML con un caso que se ramifica según lo que decida el alumno. Lo guardas, lo abres con doble clic y funciona sin internet." />
+  <link rel="canonical" href="https://academias.dev/es/hecho-con-ia/pagina-interactiva/" />
+  <link rel="alternate" hreflang="es" href="https://academias.dev/es/hecho-con-ia/pagina-interactiva/" />
+  <link rel="icon" href="/assets/favicon.png" type="image/png" sizes="256x256" />
+  <link rel="icon" href="/assets/favicon-32.png" type="image/png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="/assets/favicon.png" />
+  <meta property="og:title" content="Una página interactiva para tu clase · AcademIAS" />
+  <meta property="og:description" content="Un archivo HTML con un caso que se ramifica. Se guarda, se abre con doble clic y corre sin internet." />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_MX" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Bodoni+Moda:opsz,wght@6..96,400..600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/styles.css?v=20260708" />
+  <link rel="stylesheet" href="/assets/hecho.css?v=20260803" />
+</head>
+<body>
+  <a class="skip" href="#top">Saltar al contenido</a>
+  <div class="frame" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+
+  <header class="nav">
+    <div class="nav-in">
+      <a class="brand" href="/es/"><img class="brand-mark" src="/assets/img/logo6-h4-t.webp" alt="" width="64" height="64" /><span>ACADEMIAS</span></a>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true" tabindex="-1" />
+      <nav class="nav-menu" aria-label="Principal">
+        <a href="/es/manifesto/">Manifiesto</a>
+        <a href="/es/consultoria/">Consultor&iacute;a</a>
+        <a href="/es/cursos/">Cursos</a>
+        <a href="/es/hecho-con-ia/" aria-current="true">Hecho&nbsp;con&nbsp;IA</a>
+        <a href="/es/recursos/">Recursos</a>
+      </nav>
+      <div class="nav-right">
+        <a class="btn btn-ghost" href="https://calendly.com/hesus-cobos/30min" target="_blank" rel="noopener" style="padding:0.5rem 0.9rem;">Agenda una llamada</a>
+        <span class="lang"><a href="/en/" data-lang-set="en">EN</a> / <a href="/es/hecho-con-ia/pagina-interactiva/" aria-current="true" data-lang-set="es">ES</a></span>
+        <label for="nav-toggle" class="nav-burger" aria-label="Abrir menú"><span></span><span></span><span></span></label>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="page-hero">
+      <div class="wrap">
+        <span class="idx" data-reveal>TUTORIAL 03 &middot; HECHO CON IA</span>
+        <h1 data-reveal>Una página interactiva<br /><em>para tu clase.</em></h1>
+        <p class="lede" data-reveal>Al terminar vas a tener un archivo en tu computadora que, al abrirlo, presenta un caso y deja que el alumno decida qué hacer. Cada decisión lleva a una consecuencia distinta. Funciona sin internet y no le pide cuenta a nadie.</p>
+        <div class="meta-bar" data-reveal>
+          <span><b>40 min</b></span>
+          <span>Solo navegador</span>
+          <span>Corre sin internet</span>
+          <span><a href="/es/hecho-con-ia/">&larr; Los tres tutoriales</a></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 00 · LA PIEZA -->
+    <section class="section" id="pieza">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="idx" data-reveal>00 &middot; LA PIEZA TERMINADA</span>
+          <h2 data-reveal>Un caso donde cada respuesta cambia el desenlace.</h2>
+        </div>
+        <figure class="plate" data-reveal>
+          <img class="shot" src="/assets/img/hecho/pieza-brujula.webp" alt="Pantalla de inicio de La Brújula Social: dos modos de juego, Explorar y Reto, y tres casos para elegir: calificación injusta, acoso entre pares y crisis emocional." width="1200" height="750" />
+          <figcaption>La Brújula Social. Eliges un caso, conversas con el estudiante y ves si tu respuesta sostiene la claridad, el respeto y el vínculo. En modo Reto no te dice qué estilo tiene cada opción hasta que ya elegiste. <span class="fecha">Captura de agosto de 2026.</span></figcaption>
+        </figure>
+        <div class="hero-cta" data-reveal>
+          <a class="btn btn-ghost" href="https://hesusg.github.io/ser-tutor/brujula-social.html" target="_blank" rel="noopener">Juégalo en una pestaña &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 01 · POR QUÉ -->
+    <section class="section section--surface" id="porque">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="idx" data-reveal>01 &middot; POR QUÉ ESTO IMPORTA</span>
+          <h2 data-reveal>Una diapositiva sobre ética no enseña ética.</h2>
+        </div>
+        <p data-reveal style="max-width:66ch;">Puedes explicar durante veinte minutos qué es una respuesta asertiva y tus alumnos van a asentir. Pon a esos mismos alumnos frente a un caso donde tienen que elegir, y vas a ver cuántos escogen la respuesta que suena firme pero rompe el vínculo.</p>
+        <p data-reveal style="max-width:66ch;">Eso es lo que hace una página interactiva y no hace un PowerPoint: obliga a decidir y devuelve una consecuencia. Sirve para dilemas éticos, para diagnósticos clínicos, para casos legales, para atención a clientes, para cualquier cosa donde el criterio se ejerce eligiendo.</p>
+        <p data-reveal style="max-width:66ch;">Hasta hace poco esto lo tenía que programar alguien. Hoy se lo pides en español, y ese es el cambio de verdad.</p>
+      </div>
+    </section>
+
+    <!-- 02 · LO QUE NECESITAS -->
+    <section class="section" id="necesitas">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="idx" data-reveal>02 &middot; LO QUE NECESITAS</span>
+          <h2 data-reveal>Antes de nada, qué es un archivo HTML.</h2>
+        </div>
+        <p data-reveal style="max-width:66ch;">Una página web es un archivo de texto que termina en <code>.html</code>. Tu navegador sabe leerlo y convertirlo en algo con botones y colores. Eso es todo.</p>
+        <p data-reveal style="max-width:66ch;">Lo importante para ti es que un archivo así puede vivir en tu computadora, sin estar en internet. Le das doble clic, se abre en el navegador y funciona. Lo puedes mandar por correo o traerlo en una memoria, y en la máquina del salón va a abrir igual. Cuando el prompt dice «autocontenido» significa justo eso: un solo archivo que no depende de nada más.</p>
+        <div class="cols" data-reveal>
+          <div>
+            <h3>Sí necesitas</h3>
+            <div class="ck"><span><b>Un caso de tu materia</b> con al menos tres formas razonables de responder. Que ninguna sea obviamente la correcta, porque ahí está el aprendizaje.</span></div>
+            <div class="ck"><span><b>Un chatbot que escriba código.</b> Gemini, ChatGPT y Claude lo hacen en cuenta gratuita.</span></div>
+            <div class="ck"><span><b>Un lugar donde guardar el archivo</b> y saber volver a encontrarlo.</span></div>
+          </div>
+          <div>
+            <h3>No necesitas</h3>
+            <div class="ck"><span>Saber programar. No vas a escribir ni entender el código.</span></div>
+            <div class="ck"><span>Instalar un editor. El Bloc de notas o TextEdit alcanzan, y muchas veces ni eso.</span></div>
+            <div class="ck"><span>Un servidor, un dominio ni una cuenta de hosting.</span></div>
+            <div class="ck"><span>Internet en el salón, si lo llevas en una memoria.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 · PASO A PASO -->
+    <section class="section section--surface" id="pasos">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="idx" data-reveal>03 &middot; PASO A PASO</span>
+          <h2 data-reveal>Del caso al archivo que ya funciona.</h2>
+        </div>
+
+        <div class="pasos" data-reveal>
+          <div class="paso">
+            <span class="paso__n">Paso 1 &middot; 10 min</span>
+            <h3>Escribe el caso primero, en papel</h3>
+            <p>Este es el paso que la gente se salta y por eso le sale una página bonita y vacía. Antes de abrir nada, define la situación, las tres o cuatro respuestas posibles y qué consecuencia tiene cada una.</p>
+            <p>La consecuencia es lo que hace que funcione. Si todas las opciones llevan a «bien hecho», acabas de hacer un cuestionario disfrazado.</p>
+          </div>
+
+          <div class="paso">
+            <span class="paso__n">Paso 2 &middot; 8 min</span>
+            <h3>Pídele el archivo completo</h3>
+            <p>Nota las tres instrucciones técnicas del final. Son las que evitan que te devuelva tres archivos sueltos o algo que necesita internet para funcionar.</p>
+            <figure class="prompt">
+              <figcaption class="prompt__head">
+                <span class="prompt__lab">Prompt principal</span>
+                <button type="button" class="prompt__copy" hidden>Copiar</button>
+              </figcaption>
+              <pre class="prompt__body"><code>Hazme una actividad interactiva para mis alumnos de
+[materia] en [nivel educativo].
+
+El caso: [describe la situación en tres o cuatro
+frases].
+
+Las opciones de respuesta y su consecuencia:
+1. [opción] → [qué pasa y por qué]
+2. [opción] → [qué pasa y por qué]
+3. [opción] → [qué pasa y por qué]
+
+Cómo debe funcionar:
+- Presenta el caso, el alumno elige una opción y ve la
+  consecuencia con una explicación breve.
+- Al final, un cierre que le diga qué revela su
+  elección y le deje una pregunta para pensar.
+- Un botón para volver a empezar.
+
+Requisitos técnicos:
+- UN SOLO archivo .html autocontenido, con el estilo y
+  el código dentro del mismo archivo.
+- Que funcione sin internet, sin librerías externas ni
+  enlaces a servicios de fuera.
+- Que se lea bien en celular y en proyector.
+- Español de México. Texto grande y buen contraste.</code></pre>
+            </figure>
+          </div>
+
+          <div class="paso">
+            <span class="paso__n">Paso 3 &middot; 5 min</span>
+            <h3>Guárdalo con la terminación correcta</h3>
+            <p>Copia todo el código y pégalo en el Bloc de notas o TextEdit. Al guardar, ponle un nombre que termine en <code>.html</code>, por ejemplo <code>caso-etica.html</code>. Esa terminación es lo que hace que tu computadora sepa abrirlo con el navegador.</p>
+            <p>En Windows, elige «Todos los archivos» en el tipo, porque si no te va a guardar <code>caso-etica.html.txt</code> y no va a funcionar. En Mac, TextEdit pide pasar a formato de texto simple desde el menú Formato.</p>
+            <p>Si tu chatbot ofrece un botón para descargar el archivo, úsalo y te saltas todo esto.</p>
+          </div>
+
+          <div class="paso">
+            <span class="paso__n">Paso 4 &middot; 3 min</span>
+            <h3>Ábrelo con doble clic</h3>
+            <p>Se abre en tu navegador y ya está corriendo. Juégalo completo, eligiendo cada una de las opciones, y fíjate si alguna consecuencia se siente floja o injusta.</p>
+          </div>
+
+          <div class="paso">
+            <span class="paso__n">Paso 5 &middot; 10 min</span>
+            <h3>Arréglalo hablando</h3>
+            <p>Regresa a la misma conversación y pídele cambios en español normal. No tienes que tocar el código.</p>
+            <figure class="prompt">
+              <figcaption class="prompt__head">
+                <span class="prompt__lab">Ejemplos de ajuste</span>
+                <button type="button" class="prompt__copy" hidden>Copiar</button>
+              </figcaption>
+              <pre class="prompt__body"><code>La consecuencia de la opción 2 es muy suave, hazla
+más incómoda para el docente.
+
+Agrega un segundo caso después del primero, sobre
+[otro tema], con la misma estructura.
+
+Las letras se ven chicas cuando lo proyecto. Súbeles
+el tamaño y sepáralas más.
+
+Al final, muéstrale al alumno el resumen de las
+decisiones que tomó.</code></pre>
+            </figure>
+            <p>Cada vez te devuelve el archivo completo otra vez. Guárdalo encima del anterior y recarga con F5.</p>
+          </div>
+
+          <div class="paso">
+            <span class="paso__n">Paso 6 &middot; 4 min</span>
+            <h3>Llévalo al salón</h3>
+            <p>Tienes tres formas, de la más simple a la menos simple. La primera funciona casi siempre: copia el archivo a una memoria y ábrelo en la computadora del salón. La segunda: súbelo a tu Drive y comparte el enlace, sabiendo que a tus alumnos les va a descargar el archivo en lugar de abrirlo directo. La tercera, si quieres una liga de verdad, es un servicio gratuito de publicación donde arrastras el archivo y te da una dirección.</p>
+            <p>Para una sola clase, la memoria basta y evita que te quedes sin actividad si falla el internet de la escuela.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 · DÓNDE SE ROMPE -->
+    <section class="section" id="rompe">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="idx" data-reveal>04 &middot; DÓNDE SE ROMPE</span>
+          <h2 data-reveal>Cinco cosas que van a salir mal.</h2>
+        </div>
+
+        <div class="aviso" data-reveal>
+          <span class="aviso__lab">Se abre en blanco</span>
+          <p>Casi siempre es que el código quedó cortado. Vuelve a la conversación y pídele: «se cortó, mándame el archivo completo otra vez desde la primera línea». Revisa que lo que pegaste empiece con <code>&lt;!doctype html&gt;</code> y termine con <code>&lt;/html&gt;</code>.</p>
+        </div>
+
+        <div class="aviso" data-reveal>
+          <span class="aviso__lab">Me dio tres archivos separados</span>
+          <p>Ignoró la instrucción de un solo archivo. Pídeselo directo: «júntalo todo en un solo archivo .html, con los estilos y el código dentro». Es el error más frecuente y se arregla en un mensaje.</p>
+        </div>
+
+        <div class="aviso" data-reveal>
+          <span class="aviso__lab">Se abre en el Bloc de notas y veo puro código</span>
+          <p>El archivo se guardó como texto. Cámbiale el nombre para que termine en <code>.html</code>, o dale clic derecho, «Abrir con», y elige tu navegador. En Windows conviene activar la vista de extensiones de archivo para ver qué está pasando.</p>
+        </div>
+
+        <div class="aviso" data-reveal>
+          <span class="aviso__lab">Funciona pero se ve mal en el proyector</span>
+          <p>Los proyectores de salón suelen tener menos resolución y peor contraste que tu laptop. Pídele texto más grande y colores de más contraste, y pruébalo en el salón antes de la clase, no durante.</p>
+        </div>
+
+        <div class="aviso" data-reveal>
+          <span class="aviso__lab">Le pedí un cambio y rompió lo que ya servía</span>
+          <p>Pasa, sobre todo después de varias vueltas. Por eso conviene guardar una copia cada vez que quedes conforme: <code>caso-v1.html</code>, <code>caso-v2.html</code>. Si la versión nueva sale peor, borras y sigues con la anterior.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 · CRITERIO -->
+    <section class="section section--surface" id="criterio">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="idx" data-reveal>05 &middot; EL CRITERIO DETRÁS</span>
+          <h2 data-reveal>El archivo no es la actividad.</h2>
+        </div>
+        <p data-reveal style="max-width:66ch;">Aquí está el error más caro de todos, y no tiene nada que ver con la IA. Si repartes el simulador y dices «jueguen diez minutos», lo que va a pasar es que jueguen. Aprender es otra cosa.</p>
+        <p data-reveal style="max-width:66ch;">La Brújula Social se usó dentro de una secuencia de diez minutos con tres momentos. Dos minutos de apertura donde el presentador encuadra qué se va a observar. Seis minutos de desarrollo, cada quien en su dispositivo. Y dos minutos de cierre donde se comparte qué estilo salió y qué microcompetencia toca fortalecer. Sin el cierre, la actividad se queda en anécdota.</p>
+        <div class="cols" data-reveal>
+          <div>
+            <h3>Lo que hay que planear aparte</h3>
+            <div class="ck"><span><b>Apertura.</b> Qué van a observar mientras juegan. Sin esto, nadie observa nada.</span></div>
+            <div class="ck"><span><b>Desarrollo.</b> El tiempo real de uso, que suele ser menos del que crees.</span></div>
+            <div class="ck"><span><b>Cierre.</b> La pregunta que convierte la partida en conclusión. Es el momento que más se recorta y el que más falta hace.</span></div>
+            <div class="ck"><span>Modelo de secuencia de <b>Díaz-Barriga (2013)</b>, con evaluación formativa.</span></div>
+          </div>
+          <div>
+            <h3>El principio que aplica</h3>
+            <div class="ck"><span><b>No amplíes la brecha.</b> Un archivo autocontenido corre en la computadora vieja del salón, sin cuenta, sin plan de pago y sin internet. Esa decisión técnica es una decisión de equidad.</span></div>
+            <div class="ck"><span>Del marco <a href="https://github.com/HesusG/inteligencia-latam" target="_blank" rel="noopener">InteligencIA&nbsp;LATAM</a>, CC&nbsp;BY&nbsp;4.0.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 · LLÉVATELO -->
+    <section class="section" id="llevatelo">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="idx" data-reveal>06 &middot; LLÉVATELO A TU MATERIA</span>
+          <h2 data-reveal>Y de paso, la secuencia que lo envuelve.</h2>
+        </div>
+        <p data-reveal style="max-width:66ch;">Ya que tienes el archivo, pídele la planeación con este segundo prompt. Son dos piezas distintas y las dos hacen falta.</p>
+        <figure class="prompt" data-reveal>
+          <figcaption class="prompt__head">
+            <span class="prompt__lab">Prompt para la secuencia didáctica</span>
+            <button type="button" class="prompt__copy" hidden>Copiar</button>
+          </figcaption>
+          <pre class="prompt__body"><code>Diseña la secuencia didáctica que envuelve la actividad
+interactiva que acabas de crear, con el modelo de
+Díaz-Barriga: apertura, desarrollo y cierre.
+
+Duración total: [minutos]
+Grupo: [nivel y número de alumnos]
+
+Dame:
+- Los aprendizajes esperados, redactados como lo que el
+  alumno será capaz de hacer.
+- Qué digo yo en la apertura, palabra por palabra, para
+  encuadrar qué deben observar.
+- Cómo organizo el desarrollo si algunos no traen
+  dispositivo.
+- Tres preguntas de cierre para la discusión grupal.
+- Cómo evalúo esto de forma formativa, sin ponerle
+  calificación.</code></pre>
+        </figure>
+        <div class="cols" data-reveal>
+          <div>
+            <h3>Sabes que te salió bien si</h3>
+            <div class="ck"><span>El archivo abre con doble clic en una computadora que no es la tuya.</span></div>
+            <div class="ck"><span>Ninguna de las opciones es obviamente la correcta.</span></div>
+            <div class="ck"><span>Tienes escrito qué vas a preguntar en el cierre.</span></div>
+            <div class="ck"><span>Funciona con el internet apagado.</span></div>
+          </div>
+          <div>
+            <h3>Ya llevas los tres</h3>
+            <div class="ck"><span>Verificar fuentes, escribir con formato serio y construir algo interactivo. Con eso cubres la mayor parte de lo que un docente necesita producir.</span></div>
+            <div class="ck"><span><a class="tlink" href="/es/hecho-con-ia/">Volver al índice</a></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 · CTA -->
+    <section class="section cta" id="contact">
+      <div class="wrap">
+        <p class="label" data-reveal style="color:var(--accent);">07 &middot; SI QUIERES IR A FONDO</p>
+        <h2 data-reveal>Dos cursos siguen por aquí.</h2>
+        <p data-reveal><i>Evaluar en la era de la IA</i> trabaja las actividades donde el alumno tiene que ejercer criterio, que son las que no se resuelven copiando. <i>Claude para planificar clases</i> entra a la planeación completa, desde la secuencia hasta los materiales.</p>
+        <div class="hero-cta" data-reveal>
+          <a class="btn btn-primary" href="/es/cursos/">Ver los cursos &rarr;</a>
+          <a class="tlink" href="/es/hecho-con-ia/" style="color:var(--on-blue);border-color:var(--on-blue);">Los otros dos tutoriales</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap stamps">
+      <span class="stamp">&copy; <span data-year>2026</span> ACADEMIAS &middot; IA EN EDUCACIÓN &middot; MX</span>
+      <span class="stamp"><a href="mailto:info@academias.dev">INFO@ACADEMIAS.DEV</a> &middot; v2026.1</span>
+      <span class="stamp" style="opacity:0.66;">Probado en agosto de 2026 con Gemini, ChatGPT y Claude en cuenta gratuita.</span>
+    </div>
+  </footer>
+  <script src="/assets/main.js?v=20260708" defer></script>
+  <script src="/assets/hecho.js?v=20260803" defer></script>
+</body>
+</html>

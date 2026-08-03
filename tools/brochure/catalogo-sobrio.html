@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<title>Catálogo de formación 2026 · AcademIAS (versión sobria)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,600;0,700;0,800&family=Bodoni+Moda:opsz,wght@6..96,400..600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#fbfbfe; --ink:#10131f; --primary:#1f2bd6; --primary-deep:#141a8f;
+    --accent:#e9f43a; --muted:#4a4f6b; --line:#e2e3ee; --on-blue:#ffffff;
+    --ink-blue:#2a2f8a; --deep:#0b0f3d;
+    --fd:"Archivo",sans-serif; --fw:"Bodoni Moda",serif; --fm:"IBM Plex Mono",monospace;
+  }
+  *{box-sizing:border-box;}
+  @page{ size:Letter; margin:0; }
+  html,body{margin:0;padding:0;background:#5457c8;}
+  body{ font-family:var(--fm); color:var(--ink); -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .page{ position:relative; width:8.5in; min-height:11in; background:var(--bg); padding:0.85in 0.8in 0.7in; page-break-after:always; overflow:hidden; }
+  .page:last-child{ page-break-after:auto; }
+
+  /* ---- dark plates: gradient field + duotone engraving ---- */
+  .page--dark{ background:var(--deep); color:var(--on-blue); }
+  .grad{ position:absolute; inset:0; z-index:1; pointer-events:none;
+         background:
+           radial-gradient(120% 85% at 88% 8%, rgba(31,43,214,0.62) 0%, rgba(31,43,214,0) 62%),
+           radial-gradient(95% 70% at 6% 96%, rgba(42,47,138,0.72) 0%, rgba(11,15,61,0) 60%),
+           linear-gradient(168deg, rgba(19,26,110,0.58) 0%, rgba(11,15,61,0.36) 55%, rgba(7,10,43,0.5) 100%); }
+  /* The screen blend and the fade are baked into the JPEGs by tools/brochure/bake-etch.py.
+     Doing it in CSS forces Chromium to rasterise the whole plate and the PDF balloons to ~16 MB. */
+  .etch{ position:absolute; z-index:0; }
+  .etch--r{ right:-1.1in; top:0; width:6.2in; height:11in; object-fit:cover; }
+  .etch--band{ left:0; top:0; width:8.5in; height:3.5in; object-fit:cover; }
+  .page--dark > *:not(.grad):not(.etch):not(.disc):not(.src):not(.pageno){ position:relative; z-index:2; }
+  .page--dark .h-page{ color:var(--on-blue); }
+  .page--dark .h-page em{ color:var(--accent); }
+  .page--dark .lead{ color:rgba(255,255,255,0.82); }
+  .page--dark .kick{ color:var(--accent); border-color:var(--accent); }
+  .page--dark .top{ border-bottom-color:rgba(255,255,255,0.28); }
+  .page--dark .top .num{ color:var(--accent); }
+  .page--dark .top .tag{ color:rgba(255,255,255,0.7); }
+  .page--dark .block .lab{ color:var(--accent); }
+  .page--dark .block p{ color:rgba(255,255,255,0.9); }
+  .page--dark .pageno,.page--dark .src{ color:rgba(255,255,255,0.62); border-top-color:rgba(255,255,255,0.22); }
+
+  /* split plate: dark band on top, white below */
+  .page--split{ padding-top:0; }
+  .page--split .band{ position:relative; margin:0 -0.8in 0.34in; height:3.5in; background:var(--deep); overflow:hidden;
+                      display:flex; flex-direction:column; justify-content:flex-end; padding:0 0.8in 0.34in; color:var(--on-blue); }
+  .page--split .band .grad{ inset:0; }
+  .page--split .band > *:not(.grad):not(.etch):not(.disc){ position:relative; z-index:2; }
+  .page--split .band .h-page{ color:var(--on-blue); }
+  .page--split .band .h-page em{ color:var(--accent); }
+  .page--split .band .kick{ color:var(--accent); border-color:var(--accent); }
+
+  /* ---- ornaments ---- */
+  .disc{ position:absolute; border-radius:50%; border:1.5px solid rgba(233,244,58,0.42); z-index:1; }
+  .disc--a{ right:-1.3in; top:1.9in; width:5.2in; height:5.2in; }
+  .disc--b{ right:-0.3in; top:3.1in; width:3.1in; height:3.1in; border-color:rgba(255,255,255,0.24); }
+  .dots{ position:absolute; z-index:0; opacity:0.5;
+         background-image:radial-gradient(var(--line) 1px, transparent 1px); background-size:9px 9px; }
+  .dots--tr{ right:0.5in; top:0.5in; width:2.6in; height:1.9in; }
+  .dots--bl{ left:0.5in; bottom:0.5in; width:2.2in; height:1.5in; }
+  .page > *:not(.dots):not(.grad):not(.etch):not(.disc):not(.src):not(.pageno){ position:relative; z-index:1; }
+  .hair{ height:1.5px; background:linear-gradient(90deg, var(--primary) 0%, rgba(31,43,214,0) 100%); margin:0.16in 0 0; }
+
+  /* ---- shared type ---- */
+  .kick{ font-family:var(--fm); font-size:9.5pt; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:var(--primary); border:1.4px solid currentColor; border-radius:2px; padding:4px 8px; display:inline-block; }
+  h1{ font-family:var(--fd); font-weight:800; letter-spacing:-0.02em; line-height:0.98; margin:0; }
+  h2{ font-family:var(--fd); font-weight:800; letter-spacing:-0.02em; line-height:1.0; margin:0; }
+  p{ line-height:1.5; margin:0 0 0.5em; }
+
+  /* ---- cover ---- */
+  .cover{ display:flex; flex-direction:column; justify-content:space-between; }
+  .cover h1{ color:var(--on-blue); font-size:40pt; margin-top:0.3in; max-width:6.2in; }
+  .cover h1 em{ font-style:normal; color:var(--accent); }
+  .cover .sub{ font-family:var(--fm); font-size:12pt; line-height:1.5; color:rgba(255,255,255,0.88); max-width:4.9in; margin-top:0.26in; }
+  .cover .facts{ font-family:var(--fm); font-size:9.5pt; letter-spacing:0.06em; text-transform:uppercase; color:rgba(255,255,255,0.8); margin-top:0.3in; display:flex; flex-wrap:wrap; gap:8px 20px; }
+  .cover .facts b{ color:var(--accent); font-weight:600; }
+  .cover .brand{ font-family:var(--fw); font-size:20pt; letter-spacing:0.06em; text-transform:uppercase; }
+  .cover .foot{ font-family:var(--fm); font-size:9.5pt; letter-spacing:0.06em; color:rgba(255,255,255,0.78); border-top:1px solid rgba(255,255,255,0.28); padding-top:12px; display:flex; justify-content:space-between; }
+
+  /* ---- interior chrome ---- */
+  .top{ display:flex; align-items:center; justify-content:space-between; border-bottom:1.5px solid var(--line); padding-bottom:10px; margin-bottom:0.3in; }
+  .top .num{ font-family:var(--fd); font-weight:800; font-size:15pt; color:var(--primary); }
+  .top .tag{ font-family:var(--fm); font-size:9pt; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); }
+  .h-page{ font-family:var(--fd); font-weight:800; font-size:28pt; line-height:1.0; letter-spacing:-0.02em; color:var(--ink); max-width:6.2in; }
+  .h-page em{ font-style:normal; color:var(--primary); }
+  .lead{ font-size:11.5pt; color:var(--muted); max-width:6.2in; margin-top:0.13in; }
+  .src{ position:absolute; bottom:0.55in; left:0.8in; right:0.8in; font-family:var(--fm); font-size:8pt; color:var(--muted); border-top:1px solid var(--line); padding-top:7px; z-index:2; }
+  .pageno{ position:absolute; bottom:0.55in; right:0.8in; font-family:var(--fm); font-size:8pt; color:var(--muted); z-index:3; }
+
+  .block{ margin-top:0.24in; }
+  .block .lab{ font-family:var(--fm); font-size:9pt; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--primary); margin-bottom:6px; }
+  .block p{ font-size:11pt; color:var(--ink); max-width:6.3in; }
+
+  .kit{ margin-top:0.22in; }
+  .kit-item{ display:flex; gap:12px; padding:8px 0; border-top:1px solid var(--line); }
+  .kit-item .n{ font-family:var(--fm); font-weight:600; color:var(--primary); font-size:10pt; min-width:26px; }
+  .kit-item .t{ font-size:10.5pt; line-height:1.45; }
+  .kit-item .t b{ color:var(--ink-blue); }
+
+  /* ---- course entries ---- */
+  .course{ padding:0.13in 0; border-top:1px solid var(--line); }
+  .course:first-of-type{ border-top:1.5px solid var(--ink); }
+  .course .hd{ display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; }
+  .course .k{ font-family:var(--fm); font-weight:600; color:var(--on-blue); background:var(--primary); font-size:9pt; letter-spacing:0.06em; padding:2px 7px; border-radius:2px; }
+  .course .ti{ font-family:var(--fd); font-weight:700; font-size:16pt; letter-spacing:-0.01em; }
+  .course .mt{ font-family:var(--fm); font-size:8.5pt; text-transform:uppercase; letter-spacing:0.09em; color:var(--muted); margin-left:auto; }
+  .course .q{ font-family:var(--fd); font-style:italic; font-size:11.5pt; color:var(--ink-blue); margin:5px 0 6px; max-width:6.1in; }
+  .course .dl{ font-size:10pt; line-height:1.45; max-width:6.1in; }
+  .course .dl .lb{ display:inline-block; font-family:var(--fm); font-weight:600; font-size:7.5pt; letter-spacing:0.1em; text-transform:uppercase; color:var(--primary-deep); background:var(--accent); padding:2px 6px; border-radius:2px; margin-right:7px; }
+  .course .pr{ font-family:var(--fm); font-weight:600; font-size:11pt; color:var(--primary); margin-top:6px; }
+  .course .pr s{ color:var(--muted); font-weight:400; font-size:0.82em; margin-right:6px; }
+
+  /* quieter variant, used for the Claude line */
+  .course--quiet{ padding:0.1in 0; }
+  .course--quiet .k{ background:transparent; color:var(--muted); border:1px solid var(--line); font-size:8pt; }
+  .course--quiet .ti{ font-family:var(--fm); font-weight:600; font-size:11pt; letter-spacing:0; color:var(--ink); }
+  .course--quiet .mt{ font-size:8pt; }
+  .course--quiet .q{ display:none; }
+  .course--quiet .dl{ font-size:9.5pt; color:var(--muted); margin-top:3px; }
+  .course--quiet .dl .lb{ display:none; }
+  .course--quiet .pr{ font-size:9.5pt; font-weight:600; color:var(--ink-blue); margin-top:3px; }
+
+  .ses{ display:flex; gap:12px; padding:7px 0; border-top:1px solid var(--line); }
+  .ses .s{ font-family:var(--fm); font-weight:600; color:var(--ink-blue); font-size:9.5pt; min-width:34px; }
+  .ses .t{ font-size:10pt; line-height:1.45; }
+  .ses .t b{ color:var(--primary); font-weight:600; }
+
+  .doit{ margin-top:0.18in; background:#eef0ff; border:1.5px solid #d5d8f5; border-radius:3px; padding:13px 15px; max-width:6.3in; }
+  .doit .lab{ display:inline-block; font-family:var(--fm); font-size:8pt; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--primary-deep); background:var(--accent); padding:2px 7px; border-radius:2px; margin-bottom:7px; }
+  .doit p{ font-size:10.5pt; margin:0; }
+  .doit p + p{ margin-top:6px; }
+
+  /* ---- tables ---- */
+  .row{ display:flex; align-items:baseline; gap:10px; padding:5px 0; border-top:1px solid var(--line); font-size:10.5pt; }
+  .row .c1{ font-family:var(--fm); font-weight:600; color:var(--primary); min-width:38px; }
+  .row .c2{ flex:1; }
+  .row .c3{ font-family:var(--fm); color:var(--muted); font-size:9.5pt; min-width:56px; text-align:right; }
+  .row .c4{ font-family:var(--fm); font-weight:600; color:var(--primary); min-width:96px; text-align:right; white-space:nowrap; }
+  .row .c4 s{ display:block; font-weight:400; color:var(--muted); font-size:0.78em; }
+  .row.head{ border-top:1.5px solid var(--ink); font-family:var(--fm); font-size:8.5pt; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); }
+  .row.head .c1,.row.head .c4{ color:var(--muted); font-weight:600; }
+  .row.tot{ border-top:1.5px solid var(--ink); }
+  .row--star{ background:linear-gradient(90deg, rgba(31,43,214,0.07) 0%, rgba(31,43,214,0) 78%); padding:9px 8px; margin:0 -8px; border-top:1.5px solid var(--primary); }
+  .row--star .c2{ font-weight:600; }
+  .grp{ font-family:var(--fm); font-size:8.5pt; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--ink-blue); margin-top:0.15in; margin-bottom:2px; }
+  .grp--quiet{ color:var(--muted); }
+
+  .opt{ display:flex; gap:14px; padding:9px 0; border-top:1px solid rgba(255,255,255,0.22); }
+  .opt .l{ font-family:var(--fm); font-weight:600; font-size:10pt; color:var(--deep); background:var(--accent); border-radius:2px; padding:2px 8px; height:fit-content; }
+  .opt .r{ font-size:10.5pt; line-height:1.45; color:rgba(255,255,255,0.85); }
+  .opt .r b{ font-family:var(--fd); font-weight:700; font-size:11.5pt; display:block; margin-bottom:2px; color:var(--on-blue); }
+
+  .cta-box{ margin-top:0.26in; border:1.5px solid var(--accent); border-radius:3px; padding:16px 18px; display:flex; justify-content:space-between; align-items:center; gap:16px; }
+  .cta-box .l{ font-family:var(--fm); font-size:10.5pt; line-height:1.45; color:rgba(255,255,255,0.9); }
+  .cta-box .l b{ color:var(--accent); }
+  .cta-box .u{ font-family:var(--fw); font-size:15pt; letter-spacing:0.04em; text-transform:uppercase; white-space:nowrap; color:var(--on-blue); }
+  .fineprint{ font-family:var(--fm); font-size:8.5pt; color:var(--muted); line-height:1.5; margin-top:0.16in; max-width:6.3in; }
+  .fineprint b{ color:var(--ink-blue); }
+  .page--dark .fineprint{ color:rgba(255,255,255,0.72); }
+  .page--dark .fineprint b{ color:var(--accent); }
+
+  /* ---- SOBRIA: derivada, no editar a mano ----
+     Ver assets/lead-magnets/README.md. Sin grabados, sin gradientes, sin adornos. */
+  .page--dark{ background:var(--primary); color:var(--on-blue); }
+  .grad{ display:none; }
+  .hair{ background:var(--primary); }
+  .row--star{ background:transparent; }
+  .cover h1{ font-size:44pt; }
+</style>
+</head>
+<body>
+
+<!-- 01 · PORTADA -->
+<section class="page page--dark cover">
+  <div class="grad" aria-hidden="true"></div>
+  <div>
+    <span class="kick">ACADEMIAS &middot; CAT&Aacute;LOGO DE FORMACI&Oacute;N 2026</span>
+    <h1>Planificaci&oacute;n docente con inteligencia artificial.<br /><em>Framework A.D.A.P.T.A.</em></h1>
+    <p class="sub">Programa sincrónico de ocho horas, con un catálogo de seis cursos y dos paquetes de formación para instituciones educativas.</p>
+    <div class="facts">
+      <span><b>8</b> horas</span>
+      <span><b>4</b> horizontes de planeaci&oacute;n</span>
+      <span><b>6</b> capas de revisi&oacute;n</span>
+      <span>grupos de <b>1</b> a <b>15</b></span>
+    </div>
+  </div>
+  <div>
+    <div class="brand">AcademIAS</div>
+    <div class="foot"><span>academias.dev</span><span>IA en educaci&oacute;n &middot; primero la pedagog&iacute;a</span></div>
+  </div>
+</section>
+
+<!-- 02 · MODALIDAD -->
+<section class="page">
+  <div class="top"><span class="num">02</span><span class="tag">Modalidad de impartici&oacute;n</span></div>
+  <h2 class="h-page">Todos los cursos se imparten <em>en vivo</em>.</h2>
+  <div class="hair" aria-hidden="true"></div>
+  <p class="lead">Los cursos se imparten por Zoom, en modalidad sincrónica. Un instructor acompaña toda la sesión. Los grupos tienen máximo quince participantes. Los productos se elaboran durante la sesión.</p>
+
+  <div class="kit">
+    <div class="kit-item"><span class="n">01</span><span class="t"><b>Sesiones sincrónicas.</b> El instructor acompaña la sesión en tiempo real. La grabación se entrega a la institución cuando la solicita.</span></div>
+    <div class="kit-item"><span class="n">02</span><span class="t"><b>Tarifa por grupo.</b> El precio cubre al grupo completo, de uno a quince participantes. No cambia según el número de asistentes. Para plantillas mayores se abren grupos paralelos.</span></div>
+    <div class="kit-item"><span class="n">03</span><span class="t"><b>Sin requisitos técnicos previos.</b> El programa no requiere conocimientos de programación. Trabaja con la herramienta de IA que la institución ya use.</span></div>
+    <div class="kit-item"><span class="n">04</span><span class="t"><b>Productos elaborados en sesión.</b> Cada sesión termina con un producto completo: una planeación, una unidad didáctica o un instrumento de evaluación.</span></div>
+    <div class="kit-item"><span class="n">05</span><span class="t"><b>Facturación.</b> Comprobante fiscal digital (CFDI), transferencia SPEI y pago diferido a meses sin intereses. La contratación se formaliza con la institución.</span></div>
+    <div class="kit-item"><span class="n">06</span><span class="t"><b>Enfoque pedagógico.</b> El diseño parte del objetivo de aprendizaje. También incluye criterios para decidir cuándo conviene no usar IA.</span></div>
+  </div>
+
+  <div class="doit">
+    <span class="lab">Requisitos del participante</span>
+    <p>Se requiere equipo de cómputo, conexión a internet, Zoom y una cuenta de Google. Para el programa de planificación también se solicita el programa oficial de la asignatura.</p>
+  </div>
+
+  <div class="src">Modalidad presencial disponible, consultar.</div>
+  <div class="pageno">02</div>
+</section>
+
+<!-- 03 · MAPA DEL CATÁLOGO -->
+<section class="page">
+  <div class="top"><span class="num">03</span><span class="tag">Cat&aacute;logo</span></div>
+  <h2 class="h-page">Un programa principal y <em>tres grupos</em> de apoyo.</h2>
+  <div class="hair" aria-hidden="true"></div>
+  <p class="lead">Los precios aplican para grupos de uno a quince participantes, en línea por Zoom. La cifra tachada es el precio de lista.</p>
+
+  <div class="grp">Curso de planificación</div>
+  <div class="row head"><span class="c1">ID</span><span class="c2">Curso o programa</span><span class="c3">Horas</span><span class="c4">Lanzamiento</span></div>
+  <div class="row row--star"><span class="c1">P1</span><span class="c2">Planificaci&oacute;n con IA &middot; Framework A.D.A.P.T.A.</span><span class="c3">8 h</span><span class="c4"><s>$12,000</s>$8,800</span></div>
+
+  <div class="grp">Otros cursos</div>
+  <div class="row"><span class="c1">C1</span><span class="c2">Entender la IA (sin c&oacute;digo)</span><span class="c3">2.5 h</span><span class="c4"><s>$3,750</s>$2,750</span></div>
+  <div class="row"><span class="c1">C2</span><span class="c2">Hablarle bien a la IA</span><span class="c3">2 h</span><span class="c4"><s>$3,000</s>$2,200</span></div>
+  <div class="row"><span class="c1">C3</span><span class="c2">Evaluar en la era de la IA</span><span class="c3">2 h</span><span class="c4"><s>$3,000</s>$2,200</span></div>
+
+  <div class="grp grp--quiet">Complemento &middot; l&iacute;nea Claude</div>
+  <div class="row"><span class="c1">CL1</span><span class="c2">Claude para planificar clases</span><span class="c3">2 h</span><span class="c4"><s>$3,000</s>$2,200</span></div>
+  <div class="row"><span class="c1">CL2</span><span class="c2">Claude + hojas de c&aacute;lculo para profes</span><span class="c3">2.5 h</span><span class="c4"><s>$3,750</s>$2,750</span></div>
+
+  <div class="grp">Paquetes</div>
+  <div class="row"><span class="c1">M1</span><span class="c2">M&oacute;dulo intro &middot; Entender la IA</span><span class="c3">6 h</span><span class="c4"><s>$9,900</s>$6,900</span></div>
+  <div class="row tot"><span class="c1">&nbsp;</span><span class="c2">Curso completo &middot; IA para docentes</span><span class="c3">22 h</span><span class="c4"><s>$33,000</s>$24,900</span></div>
+
+  <p class="fineprint">Precios en pesos mexicanos. El precio de lanzamiento aplica a los primeros grupos de 2026. Los paquetes incluyen un descuento por volumen sobre la tarifa de los cursos individuales.</p>
+
+  <div class="pageno">03</div>
+</section>
+
+<!-- 04 · A.D.A.P.T.A. (apertura oscura) -->
+<section class="page page--dark">
+  <div class="grad" aria-hidden="true"></div>
+  <div class="top"><span class="num">04</span><span class="tag">Programa principal</span></div>
+  <h2 class="h-page">Framework<br /><em>A.D.A.P.T.A.</em></h2>
+  <p class="lead" style="max-width:4.6in;">Análisis, Diseño, Alineación, Pensamiento crítico, Transformación y Aprendizaje. Metodología de planeación creada por AcademIAS. Integra cuatro horizontes, desde el ciclo escolar completo hasta la sesión de clase. En cada horizonte aplica seis capas de revisión pedagógica.</p>
+
+  <div class="block" style="max-width:4.6in;">
+    <div class="lab">Situaci&oacute;n que atiende</div>
+    <p>La generación automatizada de planeaciones produce documentos extensos que pocas veces se revisan. Los objetivos suelen usar verbos no observables. Las actividades tienden a quedarse en niveles cognitivos bajos. La evaluación se orienta a lo más fácil de calificar. La planeación se rehace desde cero en cada ciclo.</p>
+  </div>
+
+  <div class="block" style="max-width:4.6in;">
+    <div class="lab">Estructura</div>
+    <p>Cuatro sesiones de dos horas. Cada sesión corresponde a un horizonte de planeación y termina con su documento, elaborado sobre la asignatura del participante.</p>
+  </div>
+
+  <p class="fineprint" style="max-width:4.6in;"><b>8 horas · 4 sesiones · <s>$12,000</s> $8,800 MXN por grupo</b></p>
+
+  <div class="pageno">04</div>
+</section>
+
+<!-- 05 · LOS SEIS MODOS -->
+<section class="page">
+  <div class="top"><span class="num">05</span><span class="tag">A.D.A.P.T.A. &middot; capas de revisi&oacute;n</span></div>
+  <h2 class="h-page">Seis capas sobre <em>cada horizonte</em>.</h2>
+  <div class="hair" aria-hidden="true"></div>
+  <p class="lead">Las capas no son sesiones independientes. Funcionan como revisión sobre cada uno de los cuatro horizontes de planeación.</p>
+
+  <div class="kit">
+    <div class="kit-item"><span class="n">01</span><span class="t"><b>Mentor pedagógico.</b> El sistema revisa las decisiones didácticas. Señala actividades que no desarrollan el objetivo y evidencias que no demuestran la competencia.</span></div>
+    <div class="kit-item"><span class="n">02</span><span class="t"><b>Investigador educativo.</b> Cuando hay dos estrategias posibles, se elige la que tiene mayor respaldo en investigación educativa.</span></div>
+    <div class="kit-item"><span class="n">03</span><span class="t"><b>Abogado del diablo.</b> Al terminar la planeación, se hace una revisión adversa. Ahí se identifican incoherencias, actividades prescindibles y sobrecarga cognitiva. Con esos hallazgos se reconstruye el documento.</span></div>
+    <div class="kit-item"><span class="n">04</span><span class="t"><b>Innovación.</b> Cada tema relevante incluye al menos una propuesta distinta, con una finalidad pedagógica clara.</span></div>
+    <div class="kit-item"><span class="n">05</span><span class="t"><b>Impacto.</b> La planeación se ajusta según lo que el estudiante debería conservar del curso a largo plazo.</span></div>
+    <div class="kit-item"><span class="n">06</span><span class="t"><b>Humanidad.</b> Un índice de 0 a 100 valora colaboración, reflexión, autonomía y relevancia. Si queda por debajo de 80, la planeación se corrige antes de entregarse.</span></div>
+  </div>
+
+  <div class="doit">
+    <span class="lab">Los cuatro horizontes</span>
+    <p>Anual, semestral, mensual con Taxonomía de Bloom y diario. Cada horizonte se deriva del anterior. Así, la planeación de una sesión conserva la trazabilidad hasta los objetivos del ciclo.</p>
+  </div>
+
+  <div class="pageno">05</div>
+</section>
+
+<!-- 06 · LAS CUATRO SESIONES -->
+<section class="page">
+  <div class="top"><span class="num">06</span><span class="tag">A.D.A.P.T.A. &middot; estructura</span></div>
+  <h2 class="h-page">Cuatro sesiones, <em>cuatro documentos</em>.</h2>
+  <div class="hair" aria-hidden="true"></div>
+  <p class="lead">El participante trabaja con su propia asignatura desde la primera sesión.</p>
+
+  <div class="ses" style="border-top:1.5px solid var(--ink);margin-top:0.2in;"><span class="s">S1</span><span class="t"><b>Horizonte anual.</b> Se verifica que las semanas disponibles alcancen para cubrir el temario. También se revisa la secuencia de menor a mayor complejidad, la distribución de la carga y la previsión ante suspensión de clases.<br /><i>Documento: planeación anual con evidencias y esquema de evaluación.</i></span></div>
+  <div class="ses"><span class="s">S2</span><span class="t"><b>Horizonte semestral.</b> Se deriva de la planeación anual y conserva la progresión de dificultad. Después se hace una revisión adversa del borrador y se reconstruye con base en los hallazgos.<br /><i>Documento: planeación semestral con estrategia didáctica y horas estimadas.</i></span></div>
+  <div class="ses"><span class="s">S3</span><span class="t"><b>Horizonte mensual.</b> Se audita la congruencia entre objetivos, competencias y evaluación. Se sustituyen verbos no observables conforme a la <b>Taxonomía de Bloom revisada</b>. También se revisa la progresión cognitiva del mes.<br /><i>Documento: planeación mensual con matriz de cobertura y un mínimo de 50% de actividades en analizar, evaluar o crear.</i></span></div>
+  <div class="ses"><span class="s">S4</span><span class="t"><b>Horizonte diario.</b> Incluye previsiones A a F para el desarrollo real de la sesión, preguntas por nivel cognitivo y estrategias de retención a una semana y a un mes.<br /><i>Documento: planeación de clase con índice de humanidad igual o superior a 80.</i></span></div>
+
+  <div class="doit">
+    <span class="lab">Previsiones A a F</span>
+    <p>Cada actividad relevante se diseña con seis posibles desarrollos: el previsto, el de un grupo que termina antes, el de un grupo con dificultades, el de una falla técnica, el de una baja de atención y el de una discusión que conviene extender más de lo planeado.</p>
+    <p><b>Precio del programa: <s>$12,000</s> $8,800 MXN por grupo de 1 a 15 participantes.</b></p>
+  </div>
+
+  <div class="pageno">06</div>
+</section>
+
+<!-- 07 · OTROS CURSOS (white) -->
+<section class="page">
+  <div class="top"><span class="num">07</span><span class="tag">Complemento</span></div>
+  <h2 class="h-page">Otros <em>cursos</em>.</h2>
+  <div class="hair" aria-hidden="true"></div>
+  <p class="lead">Tres cursos sobre lo que todo docente necesita saber. Complementan el programa de planificación o se toman de forma independiente.</p>
+
+  <div class="course">
+    <div class="hd"><span class="k">C1</span><span class="ti">Entender la IA (sin c&oacute;digo)</span><span class="mt">2.5 h</span></div>
+    <p class="dl"><span class="lb">Producto</span>Análisis de una herramienta en uso: qué modelo la sustenta, a quién pertenece y cómo trata los datos de los estudiantes.</p>
+    <p class="pr"><s>$3,750</s>$2,750 MXN por grupo</p>
+  </div>
+
+  <div class="course">
+    <div class="hd"><span class="k">C2</span><span class="ti">Hablarle bien a la IA</span><span class="mt">2 h</span></div>
+    <p class="dl"><span class="lb">Producto</span>Tres actividades asistidas por IA que pueden transferirse a cualquier herramienta, con criterios para detectar respuestas fabricadas y reducirlas mediante fuentes propias.</p>
+    <p class="pr"><s>$3,000</s>$2,200 MXN por grupo</p>
+  </div>
+
+  <div class="course">
+    <div class="hd"><span class="k">C3</span><span class="ti">Evaluar en la era de la IA</span><span class="mt">2 h</span></div>
+    <p class="dl"><span class="lb">Producto</span>Una tarea rediseñada con defensa oral, sustentada en el diseño de la evidencia y no en herramientas de detección.</p>
+    <p class="pr"><s>$3,000</s>$2,200 MXN por grupo</p>
+  </div>
+
+  <p class="fineprint">Los tres cursos suman 6.5 horas. Como programa continuo, el módulo intro cubre el mismo contenido en 6 horas por $6,900 e incluye un producto evaluado.</p>
+
+  <div class="pageno">07</div>
+</section>
+
+<!-- 08 · LÍNEA CLAUDE + PAQUETES -->
+<section class="page">
+  <div class="top"><span class="num">08</span><span class="tag">Complemento y paquetes</span></div>
+
+  <div class="grp grp--quiet" style="margin-top:0;">Complemento &middot; l&iacute;nea Claude</div>
+  <p class="fineprint" style="margin-top:4px;">Dos cursos operativos sobre una herramienta específica, Claude de Anthropic. Funcionan como complemento del programa de planificación. Cubren la ejecución puntual de una unidad y el análisis de calificaciones.</p>
+
+  <div class="course course--quiet" style="border-top:1px solid var(--line);">
+    <div class="hd"><span class="k">CL1</span><span class="ti">Claude para planificar clases</span><span class="mt">2 h</span></div>
+    <p class="dl">Una unidad de la asignatura del participante con plan, secuencia y rúbrica.</p>
+    <p class="pr"><s>$3,000</s> $2,200 MXN por grupo</p>
+  </div>
+  <div class="course course--quiet">
+    <div class="hd"><span class="k">CL2</span><span class="ti">Claude + hojas de c&aacute;lculo para profes</span><span class="mt">2.5 h</span></div>
+    <p class="dl">Análisis del grupo con gráficas, identificación de estudiantes que requieren apoyo y retroalimentación individual.</p>
+    <p class="pr"><s>$3,750</s> $2,750 MXN por grupo</p>
+  </div>
+
+  <div class="hair" style="margin-top:0.3in;" aria-hidden="true"></div>
+  <h2 class="h-page" style="font-size:24pt;margin-top:0.22in;">Paquetes de <em>formaci&oacute;n</em>.</h2>
+  <p class="lead" style="margin-bottom:0.1in;">Programas continuos para la plantilla docente, con evaluación y defensa final. Incluyen descuento por volumen.</p>
+
+  <div class="course">
+    <div class="hd"><span class="k">M1</span><span class="ti">M&oacute;dulo intro &middot; Entender la IA</span><span class="mt">6 h &middot; 3 sesiones</span></div>
+    <p class="dl"><span class="lb">Incluye</span>Las tres sesiones del módulo 1 del curso completo: qué hace un modelo de lenguaje, cómo opera sin programación y qué tratamiento reciben los datos de los estudiantes.</p>
+    <p class="pr"><s>$9,900</s>$6,900 MXN por grupo</p>
+  </div>
+
+  <div class="course">
+    <div class="hd"><span class="k">&nbsp;&nbsp;</span><span class="ti">Curso completo &middot; IA para docentes</span><span class="mt">22 h &middot; 11 sesiones</span></div>
+    <p class="dl"><span class="lb">Incluye</span>Los tres módulos y la defensa final. Producto: una unidad didáctica de tres clases lista para impartir, presentada en formato Pecha Kucha. Se acredita con al menos el 80% de la rúbrica.</p>
+    <p class="pr"><s>$33,000</s>$24,900 MXN por grupo</p>
+  </div>
+
+  <p class="fineprint">Diseñados con el estándar <b>CONOCER EC0301</b> como referencia. Certificación en proceso.</p>
+
+  <div class="pageno">08</div>
+</section>
+
+<!-- 09 · PRECIOS -->
+<section class="page">
+  <div class="top"><span class="num">09</span><span class="tag">Esquema de precios</span></div>
+  <h2 class="h-page">Precios <em>por grupo</em>.</h2>
+  <div class="hair" aria-hidden="true"></div>
+  <p class="lead">Precios en pesos mexicanos, en línea por Zoom, para grupos de uno a quince participantes.</p>
+
+  <div class="row head" style="margin-top:0.16in;"><span class="c1">ID</span><span class="c2">Curso o programa</span><span class="c3">Horas</span><span class="c4">Lanzamiento</span></div>
+  <div class="row row--star"><span class="c1">P1</span><span class="c2">Planificaci&oacute;n con IA &middot; A.D.A.P.T.A.</span><span class="c3">8 h</span><span class="c4"><s>$12,000</s>$8,800</span></div>
+  <div class="row"><span class="c1">C1</span><span class="c2">Entender la IA (sin c&oacute;digo)</span><span class="c3">2.5 h</span><span class="c4"><s>$3,750</s>$2,750</span></div>
+  <div class="row"><span class="c1">C2</span><span class="c2">Hablarle bien a la IA</span><span class="c3">2 h</span><span class="c4"><s>$3,000</s>$2,200</span></div>
+  <div class="row"><span class="c1">C3</span><span class="c2">Evaluar en la era de la IA</span><span class="c3">2 h</span><span class="c4"><s>$3,000</s>$2,200</span></div>
+  <div class="row"><span class="c1">CL1</span><span class="c2">Claude para planificar clases</span><span class="c3">2 h</span><span class="c4"><s>$3,000</s>$2,200</span></div>
+  <div class="row"><span class="c1">CL2</span><span class="c2">Claude + hojas de c&aacute;lculo para profes</span><span class="c3">2.5 h</span><span class="c4"><s>$3,750</s>$2,750</span></div>
+  <div class="row tot"><span class="c1">M1</span><span class="c2">M&oacute;dulo intro &middot; Entender la IA</span><span class="c3">6 h</span><span class="c4"><s>$9,900</s>$6,900</span></div>
+  <div class="row"><span class="c1">&nbsp;</span><span class="c2">Curso completo &middot; IA para docentes</span><span class="c3">22 h</span><span class="c4"><s>$33,000</s>$24,900</span></div>
+
+  <div class="doit" style="margin-top:0.05in;">
+    <span class="lab">Requisitos del participante</span>
+    <p>Equipo de c&oacute;mputo, conexi&oacute;n a internet, Zoom y una cuenta de Google. Para el programa de planificaci&oacute;n se solicita adem&aacute;s el programa oficial de la asignatura.</p>
+  </div>
+
+  <p class="fineprint"><b>Tarifa cerrada por grupo, de 1 a 15 participantes.</b> El precio de lanzamiento aplica a los primeros grupos de 2026. Comprobante fiscal digital, transferencia SPEI y pago a meses sin intereses. Para plantillas mayores a quince se abren grupos paralelos con la misma tarifa.<br /><b>Modalidad presencial disponible, consultar.</b></p>
+
+  <div class="src">Precios vigentes a agosto de 2026 &middot; academias.dev &middot; info@academias.dev</div>
+  <div class="pageno">09</div>
+</section>
+
+<!-- 10 · CALENDARIOS + CIERRE -->
+<section class="page page--dark">
+  <div class="grad" aria-hidden="true"></div>
+  <div class="top"><span class="num">10</span><span class="tag">Programaci&oacute;n</span></div>
+  <h2 class="h-page">Tres esquemas <em>de calendario</em>.</h2>
+  <p class="lead" style="max-width:5.4in;">El contenido es el mismo en los tres. Cambia la distribución de las sesiones. La institución elige una opción al contratar. Las fechas se definen en la llamada inicial.</p>
+
+  <div class="opt" style="border-top:1.5px solid rgba(255,255,255,0.4);margin-top:0.2in;">
+    <span class="l">A</span>
+    <span class="r"><b>Entre semana</b>Sesiones de dos horas, martes y jueves. Un programa de ocho horas concluye en dos semanas.</span>
+  </div>
+  <div class="opt">
+    <span class="l">B</span>
+    <span class="r"><b>S&aacute;bados</b>Sesiones de cuatro horas, dos s&aacute;bados. Para plantillas que no pueden liberar horas entre semana.</span>
+  </div>
+  <div class="opt">
+    <span class="l">C</span>
+    <span class="r"><b>Semanal</b>Una sesi&oacute;n de dos horas por semana, en un d&iacute;a fijo de lunes a viernes, durante cuatro semanas. Deja mayor intervalo entre sesiones para aplicar lo revisado.</span>
+  </div>
+
+  <div class="block" style="max-width:5.4in;">
+    <div class="lab">La contrataci&oacute;n incluye</div>
+    <p>Instructor en todas las sesiones. Materiales y plantillas de trabajo para cada participante. Los productos elaborados en sesi&oacute;n. Constancia de participaci&oacute;n y comprobante fiscal a nombre de la instituci&oacute;n.</p>
+  </div>
+
+  <div class="src">academias.dev</div>
+  <div class="pageno">10</div>
+</section>
+
+</body>
+</html>

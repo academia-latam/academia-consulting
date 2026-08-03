@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script>(function(){var d=document.documentElement;if(matchMedia('(prefers-reduced-motion: reduce)').matches||navigator.webdriver)return;d.classList.add('anim');window.__revealFS=setTimeout(function(){d.classList.remove('anim');},2200);})();</script>
+  <title>Que no te invente fuentes · Hecho con IA · AcademIAS</title>
+  <meta name="description" content="Cómo lograr que el chatbot cite de verdad: súbele el PDF, pídele la cita textual con página y compruébala con el buscador. Tutorial para docentes, sin programar." />
+  <link rel="canonical" href="https://academias.dev/es/hecho-con-ia/citas-verificadas/" />
+  <link rel="alternate" hreflang="es" href="https://academias.dev/es/hecho-con-ia/citas-verificadas/" />
+  <link rel="icon" href="/assets/favicon.png" type="image/png" sizes="256x256" />
+  <link rel="icon" href="/assets/favicon-32.png" type="image/png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="/assets/favicon.png" />
+  <meta property="og:title" content="Que no te invente fuentes · AcademIAS" />
+  <meta property="og:description" content="Súbele el PDF, pídele la cita textual con página, compruébala con el buscador. Lo que no aguanta se cae." />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_MX" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Bodoni+Moda:opsz,wght@6..96,400..600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/styles.css?v=20260708" />
+  <link rel="stylesheet" href="/assets/hecho.css?v=20260803" />
+</head>
+<body>
+  <a class="skip" href="#top">Saltar al contenido</a>
+  <div class="frame" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+
+  <header class="nav">
+    <div class="nav-in">
+      <a class="brand" href="/es/"><img class="brand-mark" src="/assets/img/logo6-h4-t.webp" alt="" width="64" height="64" /><span>ACADEMIAS</span></a>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true" tabindex="-1" />
+      <nav class="nav-menu" aria-label="Principal">
+        <a href="/es/manifesto/">Manifiesto</a>
+        <a href="/es/consultoria/">Consultor&iacute;a</a>
+        <a href="/es/cursos/">Cursos</a>
+        <a href="/es/hecho-con-ia/" aria-current="true">Hecho&nbsp;con&nbsp;IA</a>
+        <a href="/es/recursos/">Recursos</a>
+      </nav>
+      <div class="nav-right">
+        <a class="btn btn-ghost" href="https://calendly.com/hesus-cobos/30min" target="_blank" rel="noopener" style="padding:0.5rem 0.9rem;">Agenda una llamada</a>
+        <span class="lang"><a href="/en/" data-lang-set="en">EN</a> / <a href="/es/hecho-con-ia/citas-verificadas/" aria-current="true" data-lang-set="es">ES</a></span>
+        <label for="nav-toggle" class="nav-burger" aria-label="Abrir menú"><span></span><span></span><span></span></label>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="page-hero">
+      <div class="wrap">
+        <span class="idx" data-reveal>TUTORIAL 01 &middot; HECHO CON IA</span>
+        <h1 data-reveal>Que no te<br /><em>invente fuentes.</em></h1>
+        <p class="lede" data-reveal>Al terminar vas a tener una tabla con las afirmaciones de tu tema, cada una con su cita textual y su página, y todas comprobadas por ti. Lo que no aguantó la comprobación también queda anotado, porque saber qué se cayó es la mitad del ejercicio.</p>
+        <div class="meta-bar" data-reveal>
+          <span><b>35 min</b></span>
+          <span>Solo navegador</span>
+          <span>Cuenta gratuita</span>
+          <span><a href="/es/hecho-con-ia/">&larr; Los tres tutoriales</a></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 00 · LA PIEZA -->
+    <section class="section" id="pieza">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="idx" data-reveal>00 &middot; LA PIEZA TERMINADA</span>
+          <h2 data-reveal>Un decálogo donde cada punto abre su prueba.</h2>
+        </div>
+        <figure class="plate" data-reveal>
+          <img class="shot" src="/assets/img/hecho/pieza-decalogo.webp" alt="Portada del decálogo de ética profesional docente: cinco valores y cinco normas, con fuentes de acceso abierto y descargables." width="1200" height="750" />
+          <figcaption>Cinco valores y cinco normas de ética docente. Cada punto abre el pasaje del artículo que lo sostiene, con su página, y todas las fuentes son de acceso abierto. <span class="fecha">Captura de agosto de 2026.</span></figcaption>
+        </figure>
+        <div class="hero-cta" data-reveal>
+          <a class="btn btn-ghost" href="https://hesusg.github.io/ser-tutor/decalogo/" target="_blank" rel="noopener">Ábrelo en una pestaña &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 01 · POR QUÉ -->
+    <section class="section section--surface" id="porque">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="idx" data-reveal>01 &middot; POR QUÉ ESTO IMPORTA</span>
+          <h2 data-reveal>La cita inventada suena mejor que la real.</h2>
+        </div>
+        <p data-reveal style="max-width:66ch;">Le pides una cita a un chatbot y te la da entrecomillada, con autor, año y número de página. Suena impecable. Y una parte considerable de las veces esa frase no existe en ninguna parte, o existe pero en otra página, o el autor es real y la frase no.</p>
+        <p data-reveal style="max-width:66ch;">Esto te afecta en dos frentes. Si estás escribiendo tu tesis o un trabajo de maestría, una cita falsa es una falta de integridad académica aunque tú no la hayas inventado. Y si estás calificando, necesitas poder distinguir el trabajo de un alumno que leyó del de uno que le pidió referencias a un chatbot y las pegó sin abrirlas.</p>
+        <p data-reveal style="max-width:66ch;">La buena noticia es que el arreglo no es técnico. Son tres cambios en cómo pides las cosas y un hábito de comprobación que toma segundos.</p>
+      </div>
+    </section>
+
+    <!-- 02 · LO QUE NECESITAS -->
+    <section class="section" id="necesitas">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="idx" data-reveal>02 &middot; LO QUE NECESITAS</span>
+          <h2 data-reveal>Un PDF que domines y media hora.</h2>
+        </div>
+        <div class="cols" data-reveal>
+          <div>
+            <h3>Sí necesitas</h3>
+            <div class="ck"><span><b>Un documento que conozcas bien.</b> Tu programa oficial, el reglamento de tu escuela, un artículo que has trabajado en clase. Que sea tuyo importa: vas a poder detectar el invento sin buscar en internet.</span></div>
+            <div class="ck"><span><b>Un chatbot que acepte archivos.</b> Gemini, ChatGPT o Claude sirven, incluso en cuenta gratuita.</span></div>
+            <div class="ck"><span><b>Un visor de PDF con buscador.</b> El de tu navegador basta. Ctrl+F en Windows, Cmd+F en Mac.</span></div>
+            <div class="ck"><span><b>35 minutos</b> sin interrupciones.</span></div>
+          </div>
+          <div>
+            <h3>No necesitas</h3>
+            <div class="ck"><span>Instalar absolutamente nada.</span></div>
+            <div class="ck"><span>Saber programar, ni abrir una terminal.</span></div>
+            <div class="ck"><span>Pagar una suscripción. Todo esto cabe en el plan gratuito.</span></div>
+            <div class="ck"><span>Entender qué es un modelo de lenguaje. Ayuda, pero el método funciona sin eso.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 · PASO A PASO -->
+    <section class="section section--surface" id="pasos">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="idx" data-reveal>03 &middot; PASO A PASO</span>
+          <h2 data-reveal>Primero lo atrapas, luego lo corriges.</h2>
+        </div>
+        <p class="lede" data-reveal>El orden importa. Si empiezas por la versión que funciona, nunca vas a ver el problema y no vas a adquirir el reflejo de comprobar.</p>
+
+        <div class="pasos" data-reveal>
+          <div class="paso">
+            <span class="paso__n">Paso 1 &middot; 2 min</span>
+            <h3>Abre el documento aparte</h3>
+            <p>Abre tu PDF en una ventana y déjalo listo para buscar dentro de él. Vas a regresar a esa ventana tres veces.</p>
+          </div>
+
+          <div class="paso">
+            <span class="paso__n">Paso 2 &middot; 4 min</span>
+            <h3>Pregunta sin darle el documento</h3>
+            <p>Conversación nueva, sin adjuntar nada. Pide algo hiperespecífico sobre un tema que domines. Lo hiperespecífico es donde aparece el invento.</p>
+            <figure class="prompt">
+              <figcaption class="prompt__head">
+                <span class="prompt__lab">Prompt A &middot; sin documento</span>
+                <button type="button" class="prompt__copy" hidden>Copiar</button>
+              </figcaption>
+              <pre class="prompt__body"><code>Dame la cita textual y la página exacta donde
+[nombre del documento que dominas] menciona
+[el tema que dominas].</code></pre>
+            </figure>
+            <p>Si tu documento no tiene páginas numeradas, pide otro dato comprobable: el número de apartado, el año, el número de acuerdo, el nombre completo del responsable.</p>
+          </div>
+
+          <div class="paso">
+            <span class="paso__n">Paso 3 &middot; 5 min</span>
+            <h3>Comprueba esa respuesta</h3>
+            <p>Copia la frase entrecomillada, pégala en el buscador de tu PDF y presiona enter. Después ve a la página que te indicó y léela. Anota qué parte no resistió: la frase, la página, el año o el nombre.</p>
+            <p>Casi siempre falla algo. Y fíjate en el tono de la respuesta, porque no venía con ninguna duda.</p>
+          </div>
+
+          <div class="paso">
+            <span class="paso__n">Paso 4 &middot; 6 min</span>
+            <h3>Ahora sí, dale el mapa</h3>
+            <p>Abre una conversación nueva y adjunta el PDF. Si tu chatbot no acepta archivos, pega el texto dentro del mensaje. Después manda la misma pregunta con dos candados nuevos: que se limite al documento y que admita cuando algo no está.</p>
+            <figure class="prompt">
+              <figcaption class="prompt__head">
+                <span class="prompt__lab">Prompt B &middot; con documento</span>
+                <button type="button" class="prompt__copy" hidden>Copiar</button>
+              </figcaption>
+              <pre class="prompt__body"><code>Con base ÚNICAMENTE en este documento, dame la cita
+textual y la página donde se menciona [el mismo tema
+del prompt A]. Si la respuesta no está en el
+documento, dilo.</code></pre>
+            </figure>
+            <p>Comprueba igual que antes: frase al buscador, enter. Esta vez debería aparecer.</p>
+          </div>
+
+          <div class="paso">
+            <span class="paso__n">Paso 5 &middot; 4 min</span>
+            <h3>Ponle una trampa</h3>
+            <p>En esa misma conversación, pregunta por algo que sabes que el documento no contiene. Aquí se ve si de verdad está leyendo el archivo o si sigue rellenando el molde de lo que suena a respuesta.</p>
+            <figure class="prompt">
+              <figcaption class="prompt__head">
+                <span class="prompt__lab">Prompt C &middot; la trampa</span>
+                <button type="button" class="prompt__copy" hidden>Copiar</button>
+              </figcaption>
+              <pre class="prompt__body"><code>Con base ÚNICAMENTE en este documento, dime
+[algo que sabes que el documento no contiene].
+Si la respuesta no está en el documento, dilo.</code></pre>
+            </figure>
+          </div>
+
+          <div class="paso">
+            <span class="paso__n">Paso 6 &middot; 14 min</span>
+            <h3>Arma tu tabla</h3>
+            <p>Ya con el método probado, recorre las afirmaciones que necesitas para tu trabajo y vacíalas en una tabla como esta. Una fila por afirmación. La última columna es la que manda.</p>
+            <div class="vtab-wrap">
+              <table class="vtab">
+                <thead>
+                  <tr><th>Afirmación</th><th>Cita textual</th><th>Pág.</th><th>Comprobada</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>El bien intrínseco de la docencia es que los alumnos aprendan.</td><td>«El bien intrínseco de la práctica de la docencia es que los alumnos aprendan»</td><td>106</td><td>Sí</td></tr>
+                  <tr><td>No maleficencia: por sobre todo, no hacer daño.</td><td>«El principio de no maleficencia enfatiza la obligación de no infligir daño a otros»</td><td>107</td><td>Sí</td></tr>
+                  <tr class="no"><td>La ética docente se evalúa con rúbricas institucionales.</td><td>No aparece en el documento</td><td>&mdash;</td><td>No, se cae</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p>Esa tercera fila es la que hace que el ejercicio valga. Si terminas con una tabla donde todo pasó, lo más probable es que no estés comprobando de verdad.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 · DÓNDE SE ROMPE -->
+    <section class="section" id="rompe">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="idx" data-reveal>04 &middot; DÓNDE SE ROMPE</span>
+          <h2 data-reveal>Lo que te va a pasar y cómo sales.</h2>
+        </div>
+
+        <div class="aviso" data-reveal>
+          <span class="aviso__lab">El prompt A salió correcto</span>
+          <p>Pasa cuando el sistema busca en internet antes de responder, o cuando tu documento es muy conocido. No rompe nada, sube la exigencia. En la misma conversación pide la cita, más la página, más la frase del párrafo anterior. Ahí aparece el invento.</p>
+        </div>
+
+        <div class="aviso" data-reveal>
+          <span class="aviso__lab">Con el documento adjunto también inventó</span>
+          <p>Buen hallazgo, y anótalo. Revisa que tu prompt incluya la frase «si la respuesta no está en el documento, dilo» y vuelve a preguntar. Darle el documento reduce los inventos, no los elimina. Por eso la comprobación con el buscador no es opcional aunque hayas adjuntado el archivo.</p>
+        </div>
+
+        <div class="aviso" data-reveal>
+          <span class="aviso__lab">Mi chatbot no deja adjuntar</span>
+          <p>Pega el texto dentro de la conversación, antes del prompt B. Cumple la misma función. Y si el documento es enorme y no lo acepta completo, adjunta nada más el capítulo donde vive tu tema. El método funciona igual con cinco páginas que con doscientas.</p>
+        </div>
+
+        <div class="aviso" data-reveal>
+          <span class="aviso__lab">La comprobación me está tomando mucho</span>
+          <p>Busca con cinco o seis palabras, no con el párrafo entero. Las citas inventadas suelen fallar desde las primeras palabras, así que rara vez necesitas leer completo para descartarlas.</p>
+        </div>
+
+        <div class="aviso" data-reveal>
+          <span class="aviso__lab">El PDF es una foto y el buscador no encuentra nada</span>
+          <p>Te tocó un escaneo sin texto. El buscador no puede leerlo y el chatbot va a tener el mismo problema. Consigue otra versión del documento, o cambia a uno donde sí puedas seleccionar el texto con el cursor. Esa es la prueba rápida: si no puedes seleccionar una palabra, es imagen.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 · CRITERIO -->
+    <section class="section section--surface" id="criterio">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="idx" data-reveal>05 &middot; EL CRITERIO DETRÁS</span>
+          <h2 data-reveal>Por qué funciona pedir la cita textual.</h2>
+        </div>
+        <p data-reveal style="max-width:66ch;">Un chatbot no consulta una base de datos de frases cuando le pides una cita. Predice qué texto sigue, y una cita con comillas y número de página es un patrón que ha visto muchísimas veces. Puede reproducir la forma sin tener el contenido. Por eso suena tan segura.</p>
+        <p data-reveal style="max-width:66ch;">Adjuntar el documento cambia el juego porque le das el texto real de donde sacar. La instrucción de admitir cuando algo no está ahí es el segundo candado, y funciona porque le abres una salida que no es inventar.</p>
+        <div class="cols" data-reveal>
+          <div>
+            <h3>El principio que aplica</h3>
+            <div class="ck"><span><b>Verifica todo.</b> La comprobación es tuya y no se delega. Si no puedes señalar dónde está la frase, la frase no entra a tu trabajo.</span></div>
+            <div class="ck"><span>Del marco <a href="https://github.com/HesusG/inteligencia-latam" target="_blank" rel="noopener">InteligencIA&nbsp;LATAM</a>, CC&nbsp;BY&nbsp;4.0, apoyado en las recomendaciones de la UNESCO sobre IA generativa en educación.</span></div>
+          </div>
+          <div>
+            <h3>Lo que estás aprendiendo sin darte cuenta</h3>
+            <div class="ck"><span>Que la seguridad con que responde no dice nada sobre si es cierto.</span></div>
+            <div class="ck"><span>Que darle contexto cambia el resultado más que pedirle amablemente.</span></div>
+            <div class="ck"><span>Que dejar por escrito «si no está, dilo» le da permiso de no saber.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 · LLÉVATELO -->
+    <section class="section" id="llevatelo">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="idx" data-reveal>06 &middot; LLÉVATELO A TU MATERIA</span>
+          <h2 data-reveal>El mismo método, con tus alumnos.</h2>
+        </div>
+        <p data-reveal style="max-width:66ch;">Esto también funciona como actividad de clase, y ahí pega más fuerte que cualquier advertencia sobre no confiar en la IA. Que lo comprueben ellos.</p>
+        <figure class="prompt" data-reveal>
+          <figcaption class="prompt__head">
+            <span class="prompt__lab">Prompt para armar la actividad</span>
+            <button type="button" class="prompt__copy" hidden>Copiar</button>
+          </figcaption>
+          <pre class="prompt__body"><code>Soy docente de [tu materia] en [nivel educativo].
+Diseña una actividad de 25 minutos donde mis alumnos
+le pidan una cita a un chatbot sobre [tema de tu
+programa], la comprueben en [documento o fuente que
+usaremos] y registren qué parte no resistió.
+
+Dame: la consigna tal como se la voy a leer, la tabla
+de registro que van a llenar, y tres preguntas de
+cierre para la discusión grupal.</code></pre>
+        </figure>
+        <div class="cols" data-reveal>
+          <div>
+            <h3>Sabes que te salió bien si</h3>
+            <div class="ck"><span>Puedes señalar en pantalla una afirmación que se cayó, y decir por qué.</span></div>
+            <div class="ck"><span>Tu tabla tiene al menos una fila marcada como no comprobada.</span></div>
+            <div class="ck"><span>Comprobar una cita te toma menos de un minuto.</span></div>
+            <div class="ck"><span>Ya no copias una referencia sin abrirla, ni cuando tienes prisa.</span></div>
+          </div>
+          <div>
+            <h3>El siguiente paso natural</h3>
+            <div class="ck"><span>Esa tabla es la materia prima del tutorial 02. Con las citas ya comprobadas, escribir el trabajo deja de ser lo difícil.</span></div>
+            <div class="ck"><span><a class="tlink" href="/es/hecho-con-ia/trabajo-academico/">Tutorial 02 &rarr;</a></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 · CTA -->
+    <section class="section cta" id="contact">
+      <div class="wrap">
+        <p class="label" data-reveal style="color:var(--accent);">07 &middot; SI QUIERES IR A FONDO</p>
+        <h2 data-reveal>Esto es una técnica del curso C2.</h2>
+        <p data-reveal>En <i>Hablarle bien a la IA</i> esta lección viene con video, cuaderno de trabajo y autoevaluación, y va acompañada de las otras cuatro reglas que cambian lo que obtienes. Cinco lecciones, dos horas, a tu ritmo.</p>
+        <div class="hero-cta" data-reveal>
+          <a class="btn btn-primary" href="/es/cursos/">Ver el curso C2 &rarr;</a>
+          <a class="tlink" href="/es/hecho-con-ia/" style="color:var(--on-blue);border-color:var(--on-blue);">Los otros dos tutoriales</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap stamps">
+      <span class="stamp">&copy; <span data-year>2026</span> ACADEMIAS &middot; IA EN EDUCACIÓN &middot; MX</span>
+      <span class="stamp"><a href="mailto:info@academias.dev">INFO@ACADEMIAS.DEV</a> &middot; v2026.1</span>
+      <span class="stamp" style="opacity:0.66;">Probado en agosto de 2026 con Gemini, ChatGPT y Claude en cuenta gratuita.</span>
+    </div>
+  </footer>
+  <script src="/assets/main.js?v=20260708" defer></script>
+  <script src="/assets/hecho.js?v=20260803" defer></script>
+</body>
+</html>

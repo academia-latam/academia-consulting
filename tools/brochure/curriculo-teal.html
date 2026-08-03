@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<title>Currículo 2026 · AcademIAS (teal)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,600;0,700;0,800&family=Bodoni+Moda:opsz,wght@6..96,400..600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#fbfbfe; --ink:#10131f; --primary:#0e7a8a; --primary-deep:#095a68;
+    --accent:#6fe3d4; --muted:#4a4f6b; --line:#dbe6e6; --on-blue:#ffffff;
+    --ink-blue:#2a2f8a; --deep:#062126;
+    --fd:"Archivo",sans-serif; --fw:"Bodoni Moda",serif; --fm:"IBM Plex Mono",monospace;
+  }
+  *{box-sizing:border-box;}
+  @page{ size:Letter; margin:0; }
+  html,body{margin:0;padding:0;background:#5457c8;}
+  body{ font-family:var(--fm); color:var(--ink); -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .page{ position:relative; width:8.5in; min-height:11in; background:var(--bg); padding:0.85in 0.8in 0.7in; page-break-after:always; overflow:hidden; }
+  .page:last-child{ page-break-after:auto; }
+
+  .page--dark{ background:var(--deep); color:var(--on-blue); }
+  .grad{ position:absolute; inset:0; z-index:1; pointer-events:none;
+         background:
+           radial-gradient(120% 85% at 88% 8%, rgba(14,122,138,0.62) 0%, rgba(31,43,214,0) 62%),
+           radial-gradient(95% 70% at 6% 96%, rgba(9,90,104,0.72) 0%, rgba(11,15,61,0) 60%),
+           linear-gradient(168deg, rgba(9,90,104,0.58) 0%, rgba(11,15,61,0.36) 55%, rgba(4,20,25,0.5) 100%); }
+  .etch{ position:absolute; z-index:0; }
+  .etch--r{ right:-1.1in; top:0; width:6.2in; height:11in; object-fit:cover; }
+  .page--dark > *:not(.grad):not(.etch):not(.src):not(.pageno){ position:relative; z-index:2; }
+  .page--dark .h-page{ color:var(--on-blue); }
+  .page--dark .h-page em{ color:var(--accent); }
+  .page--dark .lead{ color:rgba(255,255,255,0.82); }
+  .page--dark .top{ border-bottom-color:rgba(255,255,255,0.28); }
+  .page--dark .top .num{ color:var(--accent); }
+  .page--dark .top .tag{ color:rgba(255,255,255,0.7); }
+  .page--dark .pageno,.page--dark .src{ color:rgba(255,255,255,0.62); border-top-color:rgba(255,255,255,0.22); }
+
+  .disc{ position:absolute; border-radius:50%; border:1.5px solid rgba(111,227,212,0.42); z-index:1; }
+  .disc--a{ right:-1.3in; top:1.9in; width:5.2in; height:5.2in; }
+  .page > *:not(.disc):not(.grad):not(.etch):not(.src):not(.pageno){ position:relative; z-index:1; }
+  .hair{ height:1.5px; background:linear-gradient(90deg, var(--primary) 0%, rgba(31,43,214,0) 100%); margin:0.16in 0 0; }
+
+  .kick{ font-family:var(--fm); font-size:9.5pt; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:var(--primary); border:1.4px solid currentColor; border-radius:2px; padding:4px 8px; display:inline-block; }
+  h1{ font-family:var(--fd); font-weight:800; letter-spacing:-0.02em; line-height:0.98; margin:0; }
+  h2{ font-family:var(--fd); font-weight:800; letter-spacing:-0.02em; line-height:1.0; margin:0; }
+  p{ line-height:1.55; margin:0 0 0.5em; }
+
+  .cover{ display:flex; flex-direction:column; justify-content:space-between; }
+  .cover h1{ color:var(--on-blue); font-size:48pt; margin-top:0.4in; max-width:6.2in; }
+  .cover h1 em{ font-style:normal; color:var(--accent); }
+  .cover .sub{ font-family:var(--fm); font-size:11pt; line-height:1.5; color:rgba(255,255,255,0.88); max-width:4.9in; margin-top:0.26in; }
+  .cover .brand{ font-family:var(--fw); font-size:20pt; letter-spacing:0.06em; text-transform:uppercase; }
+  .cover .foot{ font-family:var(--fm); font-size:9.5pt; letter-spacing:0.06em; color:rgba(255,255,255,0.78); border-top:1px solid rgba(255,255,255,0.28); padding-top:12px; }
+
+  .top{ display:flex; align-items:center; justify-content:space-between; border-bottom:1.5px solid var(--line); padding-bottom:10px; margin-bottom:0.3in; }
+  .top .num{ font-family:var(--fd); font-weight:800; font-size:15pt; color:var(--primary); }
+  .top .tag{ font-family:var(--fm); font-size:9pt; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); }
+  .h-page{ font-family:var(--fd); font-weight:800; font-size:28pt; line-height:1.0; letter-spacing:-0.02em; color:var(--ink); max-width:6.2in; }
+  .h-page em{ font-style:normal; color:var(--primary); }
+  .lead{ font-size:11.5pt; color:var(--muted); max-width:6.2in; margin-top:0.13in; }
+  .src{ position:absolute; bottom:0.55in; left:0.8in; right:0.8in; font-family:var(--fm); font-size:8pt; color:var(--muted); border-top:1px solid var(--line); padding-top:7px; z-index:2; }
+  .pageno{ position:absolute; bottom:0.55in; right:0.8in; font-family:var(--fm); font-size:8pt; color:var(--muted); z-index:3; }
+
+  .block{ margin-top:0.22in; }
+  .block .lab{ font-family:var(--fm); font-size:9pt; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--primary); margin-bottom:6px; }
+  .block p{ font-size:10pt; color:var(--ink); max-width:6.3in; line-height:1.5; }
+
+  .sec-title{ font-family:var(--fd); font-weight:700; font-size:14pt; letter-spacing:-0.01em; color:var(--ink); margin:0.12in 0 0.06in; }
+  .sec-title em{ color:var(--primary); font-style:normal; }
+
+  .obj-list{ margin:0.04in 0; }
+  .obj-item{ display:flex; gap:6px; padding:2px 0; font-size:9.5pt; line-height:1.4; max-width:6.2in; }
+  .obj-item .bullet{ font-family:var(--fm); font-weight:600; color:var(--primary); min-width:14px; }
+  .obj-item .text{ color:var(--ink); flex:1; }
+
+  .note-box{ margin-top:0.12in; background:#eef0ff; border-left:2px solid var(--primary); padding:8px 10px; max-width:6.2in; }
+  .note-box .lab{ font-family:var(--fm); font-size:8pt; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--primary-deep); margin-bottom:4px; }
+  .note-box p{ font-size:10pt; color:var(--ink); margin:0; }
+
+  .fineprint{ font-family:var(--fm); font-size:8.5pt; color:var(--muted); line-height:1.5; margin-top:0.16in; max-width:6.3in; }
+  .page--dark .fineprint{ color:rgba(255,255,255,0.72); }
+  .page--dark .fineprint b{ color:var(--accent); }
+
+  .ornament{ position:absolute; font-family:var(--fm); font-size:8pt; color:var(--primary); opacity:0.4; }
+  .ornament--bottom-left{ bottom:0.4in; left:0.8in; }
+  .ornament--bottom-right{ bottom:0.4in; right:0.8in; }
+
+  .tool-well{ margin-top:0.1in; display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; max-width:6.2in; }
+  .tool-item{ font-size:9pt; line-height:1.35; }
+  .tool-item .name{ font-family:var(--fd); font-weight:600; color:var(--primary); margin-bottom:2px; }
+  .tool-item .desc{ font-size:8.5pt; color:var(--muted); }
+
+  .bio-row{ margin-top:0.08in; margin-bottom:0.1in; padding-top:0.06in; border-top:1px solid rgba(255,255,255,0.22); max-width:6.2in; }
+  .bio-row .who{ font-family:var(--fd); font-weight:700; font-size:10.5pt; color:rgba(255,255,255,0.95); margin-bottom:3px; }
+  .bio-row .bio{ font-size:9pt; color:rgba(255,255,255,0.75); line-height:1.45; }
+
+  .illus{ position:absolute; right:0.8in; top:2.4in; width:1.2in; opacity:0.85; }
+  svg{ width:100%; height:auto; }
+</style>
+</head>
+<body>
+
+<!-- 01 · PORTADA -->
+<section class="page page--dark cover">
+  <img class="etch etch--r" src="img/athens-teal.jpg" alt="" />
+  <div class="grad" aria-hidden="true"></div>
+  <div class="disc disc--a" aria-hidden="true"></div>
+  <div>
+    <span class="kick">ACADEMIAS &middot; CURR&Iacute;CULO 2026</span>
+    <h1>Temario de los cursos.</h1>
+    <p class="sub">Seis programas de formación en IA, estructurados por competencias.</p>
+  </div>
+  <div>
+    <div class="brand">AcademIAS</div>
+    <div class="foot">academias.dev &middot; IA en educación &middot; primero la pedagogía</div>
+  </div>
+</section>
+
+<!-- 02 · ADAPTA APERTURA (blanca) -->
+<section class="page">
+  <div class="top"><span class="num">02</span><span class="tag">Programa principal</span></div>
+  <h2 class="h-page">Marco <em>A.D.A.P.T.A.</em></h2>
+  <p class="lead" style="max-width:4.6in;">Análisis, Diseño, Alineación, Pensamiento crítico, Transformación y Aprendizaje. Metodología de planeación creada por AcademIAS que integra cuatro horizontes de tiempo.</p>
+
+  <div class="block" style="max-width:4.6in;">
+    <div class="lab">Independiente de herramientas</div>
+    <p>A.D.A.P.T.A. enseña una forma de pensar y trabajar con IA que no depende de una herramienta específica. Funciona igual con ChatGPT, Claude, Gemini u otra que uses en tu institución.</p>
+  </div>
+
+  <p class="fineprint" style="max-width:4.6in;"><b>8 horas en vivo por Zoom, 4 sesiones</b></p>
+
+  <div class="illus">
+    <svg viewBox="0 0 100 140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+      <defs>
+        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:rgba(31,43,214,0.3);stop-opacity:1" />
+          <stop offset="100%" style="stop-color:rgba(31,43,214,0.05);stop-opacity:1" />
+        </linearGradient>
+      </defs>
+      <circle cx="50" cy="20" r="6" fill="url(#grad1)" stroke="#0e7a8a" stroke-width="0.8" opacity="0.8"/>
+      <line x1="50" y1="26" x2="50" y2="45" stroke="#0e7a8a" stroke-width="0.8" opacity="0.6"/>
+      <rect x="40" y="45" width="20" height="12" fill="none" stroke="#0e7a8a" stroke-width="0.8" opacity="0.7" rx="2"/>
+      <line x1="30" y1="51" x2="20" y2="60" stroke="#0e7a8a" stroke-width="0.6" opacity="0.5"/>
+      <line x1="70" y1="51" x2="80" y2="60" stroke="#0e7a8a" stroke-width="0.6" opacity="0.5"/>
+      <line x1="50" y1="57" x2="50" y2="75" stroke="#0e7a8a" stroke-width="0.8" opacity="0.6"/>
+      <circle cx="50" cy="85" r="8" fill="none" stroke="#0e7a8a" stroke-width="0.8" opacity="0.7"/>
+      <path d="M 35 95 Q 50 110 65 95" stroke="#0e7a8a" stroke-width="0.8" fill="none" opacity="0.5"/>
+      <circle cx="20" cy="75" r="3" fill="#0e7a8a" opacity="0.4"/>
+      <circle cx="80" cy="75" r="3" fill="#0e7a8a" opacity="0.4"/>
+    </svg>
+  </div>
+
+  <div class="ornament ornament--bottom-left">◆◇◆</div>
+  <div class="ornament ornament--bottom-right">◆◇◆</div>
+
+  <div class="pageno">02</div>
+</section>
+
+<!-- 03 · ADAPTA SESIONES -->
+<section class="page">
+  <div class="top"><span class="num">03</span><span class="tag">Marco A.D.A.P.T.A.</span></div>
+  <h2 class="h-page">Cuatro <em>escalas</em> de planeación.</h2>
+  <div class="hair" aria-hidden="true"></div>
+  <p class="lead">Esto es lo que se trabaja sesión por sesión en A.D.A.P.T.A. Cada horizonte produce un documento terminado para tu asignatura.</p>
+
+<div class="sec-title">Sesión 1: El ciclo escolar completo</div>
+  <div class="obj-list" style="margin-top:0.04in;">
+    <div class="obj-item"><span class="bullet">A.</span><span class="text">Analizar cuántas semanas tiene el ciclo escolar y cuántas unidades debe cubrir.</span></div>
+    <div class="obj-item"><span class="bullet">B.</span><span class="text">Distribuir la carga cognitiva sin concentrar los temas difíciles en un solo periodo.</span></div>
+    <div class="obj-item"><span class="bullet">C.</span><span class="text">Identificar espacios de recuperación ante suspensiones de clase.</span></div>
+    <div class="obj-item"><span class="bullet">D.</span><span class="text">Justificar el orden de las unidades y explicar por qué esa secuencia funciona.</span></div>
+  </div>
+
+<div class="sec-title" style="margin-top:0.08in;">Sesión 2: La estructura del semestre</div>
+  <div class="obj-list">
+    <div class="obj-item"><span class="bullet">A.</span><span class="text">Derivar la estructura semestral desde la planeación anual.</span></div>
+    <div class="obj-item"><span class="bullet">B.</span><span class="text">Revisar un borrador con mirada crítica para detectar inconsistencias.</span></div>
+    <div class="obj-item"><span class="bullet">C.</span><span class="text">Eliminar actividades que no apoyan el objetivo.</span></div>
+    <div class="obj-item"><span class="bullet">D.</span><span class="text">Reconstruir la planeación con base en los hallazgos.</span></div>
+  </div>
+
+<div class="sec-title" style="margin-top:0.08in;">Sesión 3: Planeación mes a mes</div>
+  <div class="obj-list">
+    <div class="obj-item"><span class="bullet">A.</span><span class="text">Revisar que cada objetivo use un verbo observable según Bloom.</span></div>
+    <div class="obj-item"><span class="bullet">B.</span><span class="text">Verificar que al menos el 50% de las actividades exijan análisis, evaluación o creación.</span></div>
+    <div class="obj-item"><span class="bullet">C.</span><span class="text">Evitar que el mes se limite a recordar o comprender.</span></div>
+    <div class="obj-item"><span class="bullet">D.</span><span class="text">Ajustar la secuencia para que la complejidad cognitiva avance.</span></div>
+  </div>
+
+<div class="sec-title" style="margin-top:0.08in;">Sesión 4: Clase por clase</div>
+  <div class="obj-list">
+    <div class="obj-item"><span class="bullet">A.</span><span class="text">Diseñar una clase con seis planes de contingencia para distintos ritmos del grupo.</span></div>
+    <div class="obj-item"><span class="bullet">B.</span><span class="text">Formular preguntas por nivel cognitivo.</span></div>
+    <div class="obj-item"><span class="bullet">C.</span><span class="text">Integrar evidencia de aprendizaje que dependa del juicio del estudiante.</span></div>
+    <div class="obj-item"><span class="bullet">D.</span><span class="text">Validar que la clase tenga un índice de humanidad ≥80.</span></div>
+  </div>
+
+  <div class="pageno">03</div>
+</section>
+
+<!-- 04 · FUNDAMENTOS C1-C3 -->
+<section class="page">
+  <div class="top"><span class="num">04</span><span class="tag">Formación en IA</span></div>
+  <h2 class="h-page">Fundamentos de <em>IA</em> con criterio.</h2>
+  <div class="hair" aria-hidden="true"></div>
+  <p class="lead" style="max-width:6.2in;">Fundamentos de IA es una línea de formación compuesta por tres cursos: Entender, Pedir y Evaluar. Se pueden tomar de forma individual o como paquete completo, con descuento por tomar los tres.</p>
+
+  <div class="sec-title">Entender la IA (sin código)</div>
+  <div class="note-box">
+    <div class="lab">Nota</div>
+    <p>No enseñamos programación ni matemática avanzada. Sí explicamos cómo funciona un modelo de lenguaje, qué datos consume, quién lo entrena, cómo se gestiona tu información en la nube y qué garantías de privacidad ofrece.</p>
+  </div>
+  <div class="obj-list" style="margin-top:0.08in;">
+    <div class="obj-item"><span class="bullet">A.</span><span class="text">Explicar qué hace un modelo de lenguaje sin usar código.</span></div>
+    <div class="obj-item"><span class="bullet">B.</span><span class="text">Distinguir entre clasificación, generación de texto y búsqueda vectorial.</span></div>
+    <div class="obj-item"><span class="bullet">C.</span><span class="text">Identificar quién entrena y posee cada herramienta.</span></div>
+    <div class="obj-item"><span class="bullet">D.</span><span class="text">Examinar qué datos consume cada herramienta.</span></div>
+  </div>
+
+  <div class="sec-title">Hablarle bien a la IA</div>
+  <div class="obj-list">
+    <div class="obj-item"><span class="bullet">A.</span><span class="text">Escribir instrucciones precisas según la arquitectura de cada herramienta.</span></div>
+    <div class="obj-item"><span class="bullet">B.</span><span class="text">Reconocer respuestas fabricadas cuando aparezcan.</span></div>
+    <div class="obj-item"><span class="bullet">C.</span><span class="text">Reducir errores con contexto tomado de fuentes propias.</span></div>
+    <div class="obj-item"><span class="bullet">D.</span><span class="text">Diseñar una actividad donde el estudiante formule la instrucción.</span></div>
+  </div>
+
+  <div class="sec-title">Evaluar en la era de la IA</div>
+  <div class="obj-list">
+    <div class="obj-item"><span class="bullet">A.</span><span class="text">Identificar tareas que el estudiante podría generar con IA.</span></div>
+    <div class="obj-item"><span class="bullet">B.</span><span class="text">Rediseñar esas tareas para que el estudiante demuestre su juicio.</span></div>
+    <div class="obj-item"><span class="bullet">C.</span><span class="text">Integrar la defensa oral como acto pedagógico.</span></div>
+    <div class="obj-item"><span class="bullet">D.</span><span class="text">Construir una rúbrica que evalúe el pensamiento del estudiante.</span></div>
+  </div>
+
+  <div class="block" style="margin-top:0.18in;">
+    <div class="lab">Herramientas que se practican</div>
+  </div>
+  
+  <div class="tool-well">
+    <div class="tool-item">
+      <div class="name">ChatGPT</div>
+      <div class="desc">Ideación, redacción y análisis.</div>
+    </div>
+    <div class="tool-item">
+      <div class="name">Perplexity</div>
+      <div class="desc">Búsqueda asistida con fuentes.</div>
+    </div>
+    <div class="tool-item">
+      <div class="name">Gemini</div>
+      <div class="desc">Productividad y trabajo multimodal.</div>
+    </div>
+    <div class="tool-item">
+      <div class="name">NotebookLM</div>
+      <div class="desc">Síntesis de documentos propios.</div>
+    </div>
+    <div class="tool-item">
+      <div class="name">DeepSeek</div>
+      <div class="desc">Razonamiento y apoyo técnico.</div>
+    </div>
+    <div class="tool-item">
+      <div class="name">Canva AI</div>
+      <div class="desc">Materiales visuales y presentaciones.</div>
+    </div>
+  </div>
+
+  <div class="pageno">04</div>
+</section>
+
+<!-- 05 · CLAUDE CL1-CL2 -->
+<section class="page">
+  <div class="top"><span class="num">05</span><span class="tag">Línea Claude</span></div>
+  <h2 class="h-page">Claude: aplicaciones <em>concretas</em>.</h2>
+  <div class="hair" aria-hidden="true"></div>
+  <p class="lead" style="max-width:6.2in;">Claude es una herramienta valiosa para análisis profundo, escritura de larga forma, razonamiento paso a paso y trabajo extenso con documentos. Estos dos cursos te enseñan a dominarla en contextos reales de aula.</p>
+
+  <div class="sec-title">Claude para planificar clases</div>
+  <div class="obj-list">
+    <div class="obj-item"><span class="bullet">A.</span><span class="text">Usar Claude para diseñar una unidad de tres clases en tu asignatura, desde cero.</span></div>
+    <div class="obj-item"><span class="bullet">B.</span><span class="text">Generar planeación, secuencia didáctica y rúbrica usando técnicas que funcionan mejor con Claude.</span></div>
+    <div class="obj-item"><span class="bullet">C.</span><span class="text">Crear un sistema repetible para aplicar este flujo cada semana.</span></div>
+    <div class="obj-item"><span class="bullet">D.</span><span class="text">Trabajar más rápido la próxima vez, aprovechando lo que sabes de Claude.</span></div>
+  </div>
+
+  <p class="fineprint" style="margin-top:0.1in;">Este curso profundiza en una herramienta. No comparamos Claude con otras IA. El objetivo es exprimir esta herramienta.</p>
+
+  <div class="sec-title">Claude + hojas de cálculo para profes</div>
+  <div class="obj-list">
+    <div class="obj-item"><span class="bullet">A.</span><span class="text">Analizar datos de calificaciones con Claude y hojas de cálculo (Google Sheets o Excel).</span></div>
+    <div class="obj-item"><span class="bullet">B.</span><span class="text">Generar gráficos y reportes de desempeño automáticos por estudiante.</span></div>
+    <div class="obj-item"><span class="bullet">C.</span><span class="text">Identificar qué estudiantes necesitan apoyo antes de la siguiente evaluación formal.</span></div>
+    <div class="obj-item"><span class="bullet">D.</span><span class="text">Producir retroalimentación individual concreta y accionable para cada estudiante.</span></div>
+  </div>
+
+  <p class="fineprint">Como el anterior, profundizamos en Claude. Una herramienta, explorada a fondo.</p>
+
+  <div class="pageno">05</div>
+</section>
+
+<!-- 06 · CIERRE CON SEMBLANZAS -->
+<section class="page page--dark">
+  <div class="grad" aria-hidden="true"></div>
+  <div class="top"><span class="num">06</span><span class="tag">Quiénes somos</span></div>
+  <h2 class="h-page">Los que diseñan <em>AcademIAS</em>.</h2>
+  
+  <div class="bio-row">
+    <div class="who">Hesus García Cobos</div>
+    <div class="bio">Ha trabajado en la intersección entre inteligencia artificial, datos y educación. Escribió cursos de IA para Coursera en DeepLearning.AI, con foco en RAG y context engineering. Enseñó análisis de datos, Python y toma de decisiones en Tec de Monterrey, Bedu y TripleTen LatAm, y participó en proyectos de Business Intelligence y observabilidad en Oracle y Converge.</div>
+  </div>
+
+  <div class="bio-row">
+    <div class="who">Gabriela González Domínguez</div>
+    <div class="bio">Combina experiencia educativa internacional, diseño curricular y acompañamiento estudiantil. En 2U/EdX trabajó con estrategias de retención apoyadas en datos, Tableau y Salesforce. En Malasia coordinó certificaciones Cambridge English y lideró implementación curricular británica; en Hong Kong enseñó y desarrolló materiales de fonética. También autor de graded readers, tutora de español y traductora técnica y literaria.</div>
+  </div>
+
+  <div style="margin-top:0.22in; font-family:var(--fm); font-size:9.5pt; color:rgba(255,255,255,0.72);">
+    Más información: <span style="color:var(--accent);">academias.dev</span>
+  </div>
+
+  <div class="src">academias.dev &middot; IA en educación &middot; primero la pedagogía</div>
+  <div class="pageno">06</div>
+</section>
+
+</body>
+</html>
